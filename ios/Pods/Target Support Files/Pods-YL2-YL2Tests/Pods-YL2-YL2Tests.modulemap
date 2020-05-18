@@ -1,0 +1,6 @@
+module Pods_YL2_YL2Tests {
+  umbrella header "Pods-YL2-YL2Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}
