@@ -1,0 +1,8 @@
+//overlay
+export const OVERLAY_SHOWING = 'OVERLAY_SHOWING';
+
+//user
+export const SET_USER_PROFILE_IMAGE = 'SET_USER_PROFILE_IMAGE';
+export const SET_USERNAME = 'SET_USERNAME';
+export const SET_USER_FOLLOWERS = 'SET_USER_FOLLOWERS';
+export const SET_USER_FOLLOWING = 'SET_USER_FOLLOWING';

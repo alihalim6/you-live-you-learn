@@ -3,10 +3,10 @@ import {StatusBar} from 'react-native';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import {NavigationContainer} from '@react-navigation/native';
 import SplashScreen from 'react-native-splash-screen';
-import AppStyles from './styles/AppStyles';
 import MenuStyles from './styles/MenuStyles';
 import Home from './components/Home';
 import Menu from './components/Menu';
+import {BASE_COLOR_LIGHT} from './constants/AppConstants';
 
 export default class App extends Component {  
   componentDidMount() {
@@ -18,7 +18,7 @@ export default class App extends Component {
 
       return (
         <>
-          <StatusBar barStyle="dark-content" style={AppStyles.statusBar}/>
+          <StatusBar barStyle="dark-content" backgroundColor={BASE_COLOR_LIGHT}/>
 
           <NavigationContainer>
             <Drawer.Navigator 
