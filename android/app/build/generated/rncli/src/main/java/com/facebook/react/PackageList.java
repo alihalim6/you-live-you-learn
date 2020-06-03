@@ -11,6 +11,10 @@ import com.facebook.react.shell.MainReactPackage;
 import java.util.Arrays;
 import java.util.ArrayList;
 
+// @okta/okta-react-native
+import com.oktareactnative.OktaSdkBridgePackage;
+// @react-native-community/blur
+import com.cmcewen.blurview.BlurViewPackage;
 // @react-native-community/masked-view
 import org.reactnative.maskedview.RNCMaskedViewPackage;
 // react-native-gesture-handler
@@ -68,6 +72,8 @@ public class PackageList {
   public ArrayList<ReactPackage> getPackages() {
     return new ArrayList<>(Arrays.<ReactPackage>asList(
       new MainReactPackage(mConfig),
+      new OktaSdkBridgePackage(),
+      new BlurViewPackage(),
       new RNCMaskedViewPackage(),
       new RNGestureHandlerPackage(),
       new ReanimatedPackage(),

@@ -5,21 +5,23 @@
 5    android:versionName="1.0" >
 6
 7    <uses-sdk
-8        android:minSdkVersion="16"
+8        android:minSdkVersion="19"
+8-->/Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml
 9        android:targetSdkVersion="28" />
+9-->/Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml
 10
-11    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
-11-->/Users/alihalim/Development/YL2/android/app/src/debug/AndroidManifest.xml:5:5-77
-11-->/Users/alihalim/Development/YL2/android/app/src/debug/AndroidManifest.xml:5:22-75
-12    <uses-permission android:name="android.permission.INTERNET" />
-12-->/Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:4:5-67
-12-->/Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:4:22-64
-13    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-13-->[com.facebook.flipper:flipper:0.33.1] /Users/alihalim/.gradle/caches/transforms-2/files-2.1/3ed611e0e9cdd622bbe11393ad785b35/jetified-flipper-0.33.1/AndroidManifest.xml:16:5-76
-13-->[com.facebook.flipper:flipper:0.33.1] /Users/alihalim/.gradle/caches/transforms-2/files-2.1/3ed611e0e9cdd622bbe11393ad785b35/jetified-flipper-0.33.1/AndroidManifest.xml:16:22-73
+11    <uses-permission android:name="android.permission.INTERNET" />
+11-->/Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:4:5-67
+11-->/Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:4:22-64
+12    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+12-->[com.facebook.flipper:flipper:0.33.1] /Users/alihalim/.gradle/caches/transforms-2/files-2.1/3ed611e0e9cdd622bbe11393ad785b35/jetified-flipper-0.33.1/AndroidManifest.xml:16:5-76
+12-->[com.facebook.flipper:flipper:0.33.1] /Users/alihalim/.gradle/caches/transforms-2/files-2.1/3ed611e0e9cdd622bbe11393ad785b35/jetified-flipper-0.33.1/AndroidManifest.xml:16:22-73
+13    <uses-permission android:name="android.permission.USE_FINGERPRINT" />
+13-->[com.okta.android:oidc-androidx:1.0.8] /Users/alihalim/.gradle/caches/transforms-2/files-2.1/90adcdc3c729ee3f9aad68acef096c8e/oidc-androidx-1.0.8/AndroidManifest.xml:11:5-74
+13-->[com.okta.android:oidc-androidx:1.0.8] /Users/alihalim/.gradle/caches/transforms-2/files-2.1/90adcdc3c729ee3f9aad68acef096c8e/oidc-androidx-1.0.8/AndroidManifest.xml:11:22-71
 14
 15    <application
-15-->/Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:6:5-32:19
+15-->/Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:6:5-33:19
 16        android:name="com.yl2.MainApplication"
 16-->/Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:7:7-38
 17        android:allowBackup="false"
@@ -37,46 +39,80 @@
 24        android:theme="@style/AppTheme"
 24-->/Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:12:7-38
 25        android:usesCleartextTraffic="true" >
-25-->/Users/alihalim/Development/YL2/android/app/src/debug/AndroidManifest.xml:7:18-53
+25-->/Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:13:7-42
 26        <activity
-26-->/Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:13:7-21:18
+26-->/Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:14:7-22:18
 27            android:name="com.yl2.SplashActivity"
-27-->/Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:14:9-39
+27-->/Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:15:9-39
 28            android:label="@string/app_name"
-28-->/Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:16:9-41
+28-->/Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:17:9-41
 29            android:theme="@style/SplashTheme" >
-29-->/Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:15:9-43
+29-->/Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:16:9-43
 30            <intent-filter>
-30-->/Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:17:9-20:25
+30-->/Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:18:9-21:25
 31                <action android:name="android.intent.action.MAIN" />
-31-->/Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:18:13-65
-31-->/Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:18:21-62
+31-->/Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:19:13-65
+31-->/Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:19:21-62
 32
 33                <category android:name="android.intent.category.LAUNCHER" />
-33-->/Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:19:13-73
-33-->/Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:19:23-70
+33-->/Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:20:13-73
+33-->/Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:20:23-70
 34            </intent-filter>
 35        </activity>
 36        <activity
-36-->/Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:22:7-30:18
+36-->/Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:23:7-31:18
 37            android:name="com.yl2.MainActivity"
-37-->/Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:23:9-37
+37-->/Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:24:9-37
 38            android:configChanges="keyboard|keyboardHidden|orientation|screenSize|uiMode"
-38-->/Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:26:9-86
+38-->/Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:27:9-86
 39            android:exported="true"
-39-->/Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:27:9-32
+39-->/Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:28:9-32
 40            android:label="@string/app_name"
-40-->/Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:25:9-41
+40-->/Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:26:9-41
 41            android:launchMode="singleTask"
-41-->/Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:28:9-40
+41-->/Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:29:9-40
 42            android:theme="@style/AppTheme"
-42-->/Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:24:9-40
-43            android:windowSoftInputMode="adjustResize" >
-43-->/Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:29:9-51
+42-->/Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:25:9-40
+43            android:windowSoftInputMode="adjustPan" >
+43-->/Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:30:9-48
 44        </activity>
 45        <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
-45-->/Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:31:7-84
-45-->/Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:31:17-81
-46    </application>
-47
-48</manifest>
+45-->/Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:32:7-84
+45-->/Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:32:17-81
+46        <activity
+46-->[com.okta.android:oidc-androidx:1.0.8] /Users/alihalim/.gradle/caches/transforms-2/files-2.1/90adcdc3c729ee3f9aad68acef096c8e/oidc-androidx-1.0.8/AndroidManifest.xml:14:9-18:75
+47            android:name="com.okta.oidc.OktaAuthenticationActivity"
+47-->[com.okta.android:oidc-androidx:1.0.8] /Users/alihalim/.gradle/caches/transforms-2/files-2.1/90adcdc3c729ee3f9aad68acef096c8e/oidc-androidx-1.0.8/AndroidManifest.xml:15:13-68
+48            android:exported="false"
+48-->[com.okta.android:oidc-androidx:1.0.8] /Users/alihalim/.gradle/caches/transforms-2/files-2.1/90adcdc3c729ee3f9aad68acef096c8e/oidc-androidx-1.0.8/AndroidManifest.xml:16:13-37
+49            android:launchMode="singleTop"
+49-->[com.okta.android:oidc-androidx:1.0.8] /Users/alihalim/.gradle/caches/transforms-2/files-2.1/90adcdc3c729ee3f9aad68acef096c8e/oidc-androidx-1.0.8/AndroidManifest.xml:17:13-43
+50            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+50-->[com.okta.android:oidc-androidx:1.0.8] /Users/alihalim/.gradle/caches/transforms-2/files-2.1/90adcdc3c729ee3f9aad68acef096c8e/oidc-androidx-1.0.8/AndroidManifest.xml:18:13-72
+51        <activity
+51-->[com.okta.android:oidc-androidx:1.0.8] /Users/alihalim/.gradle/caches/transforms-2/files-2.1/90adcdc3c729ee3f9aad68acef096c8e/oidc-androidx-1.0.8/AndroidManifest.xml:19:9-30:20
+52            android:name="com.okta.oidc.OktaRedirectActivity"
+52-->[com.okta.android:oidc-androidx:1.0.8] /Users/alihalim/.gradle/caches/transforms-2/files-2.1/90adcdc3c729ee3f9aad68acef096c8e/oidc-androidx-1.0.8/AndroidManifest.xml:20:13-62
+53            android:exported="true" >
+53-->[com.okta.android:oidc-androidx:1.0.8] /Users/alihalim/.gradle/caches/transforms-2/files-2.1/90adcdc3c729ee3f9aad68acef096c8e/oidc-androidx-1.0.8/AndroidManifest.xml:21:13-36
+54            <intent-filter>
+54-->[com.okta.android:oidc-androidx:1.0.8] /Users/alihalim/.gradle/caches/transforms-2/files-2.1/90adcdc3c729ee3f9aad68acef096c8e/oidc-androidx-1.0.8/AndroidManifest.xml:22:13-29:29
+55                <action android:name="android.intent.action.VIEW" />
+55-->[com.okta.android:oidc-androidx:1.0.8] /Users/alihalim/.gradle/caches/transforms-2/files-2.1/90adcdc3c729ee3f9aad68acef096c8e/oidc-androidx-1.0.8/AndroidManifest.xml:23:17-69
+55-->[com.okta.android:oidc-androidx:1.0.8] /Users/alihalim/.gradle/caches/transforms-2/files-2.1/90adcdc3c729ee3f9aad68acef096c8e/oidc-androidx-1.0.8/AndroidManifest.xml:23:25-66
+56
+57                <category android:name="android.intent.category.DEFAULT" />
+57-->[com.okta.android:oidc-androidx:1.0.8] /Users/alihalim/.gradle/caches/transforms-2/files-2.1/90adcdc3c729ee3f9aad68acef096c8e/oidc-androidx-1.0.8/AndroidManifest.xml:25:17-76
+57-->[com.okta.android:oidc-androidx:1.0.8] /Users/alihalim/.gradle/caches/transforms-2/files-2.1/90adcdc3c729ee3f9aad68acef096c8e/oidc-androidx-1.0.8/AndroidManifest.xml:25:27-73
+58                <category android:name="android.intent.category.BROWSABLE" />
+58-->[com.okta.android:oidc-androidx:1.0.8] /Users/alihalim/.gradle/caches/transforms-2/files-2.1/90adcdc3c729ee3f9aad68acef096c8e/oidc-androidx-1.0.8/AndroidManifest.xml:26:17-78
+58-->[com.okta.android:oidc-androidx:1.0.8] /Users/alihalim/.gradle/caches/transforms-2/files-2.1/90adcdc3c729ee3f9aad68acef096c8e/oidc-androidx-1.0.8/AndroidManifest.xml:26:27-75
+59
+60                <data android:scheme="com.okta.dev-854536:/callback" />
+60-->[com.okta.android:oidc-androidx:1.0.8] /Users/alihalim/.gradle/caches/transforms-2/files-2.1/90adcdc3c729ee3f9aad68acef096c8e/oidc-androidx-1.0.8/AndroidManifest.xml:28:17-67
+60-->[com.okta.android:oidc-androidx:1.0.8] /Users/alihalim/.gradle/caches/transforms-2/files-2.1/90adcdc3c729ee3f9aad68acef096c8e/oidc-androidx-1.0.8/AndroidManifest.xml:28:23-64
+61            </intent-filter>
+62        </activity>
+63    </application>
+64
+65</manifest>

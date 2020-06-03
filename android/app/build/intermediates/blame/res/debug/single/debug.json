@@ -416,6 +416,10 @@
         "source": "/Users/alihalim/.gradle/caches/transforms-2/files-2.1/2b7e6ebaa515cd43f42fb356f0d1941c/appcompat-1.1.0/res/color-v23/abc_tint_default.xml"
     },
     {
+        "merged": "/Users/alihalim/Development/YL2/android/app/build/intermediates/res/merged/debug/layout_browser_actions_context_menu_row.xml.flat",
+        "source": "/Users/alihalim/.gradle/caches/transforms-2/files-2.1/1502ef13e4107c97aa0c7f716e06e9a0/browser-1.0.0/res/layout/browser_actions_context_menu_row.xml"
+    },
+    {
         "merged": "/Users/alihalim/Development/YL2/android/app/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_abc_spinner_mtrl_am_alpha.9.png.flat",
         "source": "/Users/alihalim/.gradle/caches/transforms-2/files-2.1/2b7e6ebaa515cd43f42fb356f0d1941c/appcompat-1.1.0/res/drawable-xxxhdpi-v4/abc_spinner_mtrl_am_alpha.9.png"
     },
@@ -1342,6 +1346,10 @@
     {
         "merged": "/Users/alihalim/Development/YL2/android/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_notification_bg_low_pressed.9.png.flat",
         "source": "/Users/alihalim/.gradle/caches/transforms-2/files-2.1/4f509a65121478d6153615d7ef5b7c5f/core-1.1.0/res/drawable-xhdpi-v4/notification_bg_low_pressed.9.png"
+    },
+    {
+        "merged": "/Users/alihalim/Development/YL2/android/app/build/intermediates/res/merged/debug/layout_browser_actions_context_menu_page.xml.flat",
+        "source": "/Users/alihalim/.gradle/caches/transforms-2/files-2.1/1502ef13e4107c97aa0c7f716e06e9a0/browser-1.0.0/res/layout/browser_actions_context_menu_page.xml"
     },
     {
         "merged": "/Users/alihalim/Development/YL2/android/app/build/intermediates/res/merged/debug/drawable_notification_bg_low.xml.flat",

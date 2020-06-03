@@ -1,73 +1,63 @@
 import React, {Component} from 'react';
-import {View, Text, TouchableHighlight, ImageBackground, ScrollView} from 'react-native';
-import {randomColor} from 'randomcolor';
+import {View, Text, TouchableHighlight, ScrollView} from 'react-native';
+import {connect} from 'react-redux';
+import {showOverlay} from '../redux/actions/OverlayActions';
 import MenuStyles from '../styles/MenuStyles';
-import {COLOR_FADE_OPACITY} from '../constants/AppConstants';
+import {COLOR_FADE_OPACITY, ABOUT, SIGN_UP, getRandomFadeColor} from '../constants/AppConstants';
+import MenuHeader from './MenuHeader';
 
-export default class Menu extends Component{
-	/*state = {
+class Menu extends Component{
+  /*state = {
 
-	};*/
+  };*/
 
-	getRandomColor = () => {
-		return randomColor({
-			format: 'rgba',
-			alpha: COLOR_FADE_OPACITY
-		});
-	}
+  openSettings=()=>{}
 
-	openSettings = () => {
-		this.props.navigation.closeDrawer();
-		//alert('Settings');
-	}
+  menuItemPressed = (overlay) => {
+  	this.props.navigation.closeDrawer();
+  	this.props.showOverlay(overlay);
+  }
 
-	openAbout = () => {
-		//alert('About');
-	}
+  render(){
+	return (
+	  <View style={MenuStyles.container}>
+		<ScrollView stickyHeaderIndices={[0]}>
+		  <MenuHeader navigation={this.props.navigation}/>
 
-	render(){
-		const hasProfileImage = true;/////////
+	  	  <View style={MenuStyles.menuItems}>
+		    <TouchableHighlight activeOpacity={COLOR_FADE_OPACITY} underlayColor={getRandomFadeColor()} onPress={() => this.openSettings()}>
+		  	  <View style={[MenuStyles.item, MenuStyles.topMenuItem]}>
+	      		<Text style={MenuStyles.menuItemLabel}>Analytics</Text>
+	      	  </View>
+	      	</TouchableHighlight>
 
-		return (
-		  <View style={MenuStyles.container}>
-		  	<ScrollView stickyHeaderIndices={[0]}>
-			  	<View style={MenuStyles.header}>
-				  	{hasProfileImage && <ImageBackground source={{uri: 'https://i.picsum.photos/id/1049/200/300.jpg'}} style={MenuStyles.profileImageContainer}/>}
-			  		
-			  		<Text style={MenuStyles.userName}>username1</Text>
+	      	<TouchableHighlight activeOpacity={COLOR_FADE_OPACITY} underlayColor={getRandomFadeColor()} onPress={() => this.openSettings()}>
+			  <View style={MenuStyles.item}>
+		      	<Text style={MenuStyles.menuItemLabel}>Settings</Text>
+		      </View>
+	      	</TouchableHighlight>
 
-			  		<View style={MenuStyles.followContainer}>
-				  		<Text style={[MenuStyles.followLabel, MenuStyles.following]}>2 Following</Text><Text style={[MenuStyles.followLabel, MenuStyles.followers]}>13 Followers</Text>
-				  	</View>
-			  	</View>
+	      	<TouchableHighlight activeOpacity={COLOR_FADE_OPACITY} underlayColor={getRandomFadeColor()} onPress={() => this.menuItemPressed(SIGN_UP)}>
+		      <View style={MenuStyles.item}>
+		      	<Text style={MenuStyles.menuItemLabel}>Sign Up</Text>
+		      </View>
+	      	</TouchableHighlight>
 
-			  	<View style={MenuStyles.menuItems}>
-				  	<TouchableHighlight activeOpacity={COLOR_FADE_OPACITY} underlayColor={this.getRandomColor()} onPress={() => this.openSettings()}>
-					  	<View style={[MenuStyles.item, MenuStyles.topMenuItem]}>
-				      		<Text style={MenuStyles.menuItemLabel}>Analytics</Text>
-				      	</View>
-			      	</TouchableHighlight>
+	      	<TouchableHighlight activeOpacity={COLOR_FADE_OPACITY} underlayColor={getRandomFadeColor()} onPress={() => this.menuItemPressed(ABOUT)}>
+		      <View style={MenuStyles.item}>
+		      	<Text style={MenuStyles.menuItemLabel}>About</Text>
+		      </View>
+	      	</TouchableHighlight>
+	      </View>
 
-			      	<TouchableHighlight activeOpacity={COLOR_FADE_OPACITY} underlayColor={this.getRandomColor()} onPress={() => this.openAbout()}>
-				      	<View style={MenuStyles.item}>
-				      		<Text style={MenuStyles.menuItemLabel}>Menu Item</Text>
-				      	</View>
-			      	</TouchableHighlight>
-
-			      	<TouchableHighlight activeOpacity={COLOR_FADE_OPACITY} underlayColor={this.getRandomColor()} onPress={() => this.openSettings()}>
-					  	<View style={MenuStyles.item}>
-				      		<Text style={MenuStyles.menuItemLabel}>Settings</Text>
-				      	</View>
-			      	</TouchableHighlight>
-
-			      	<TouchableHighlight activeOpacity={COLOR_FADE_OPACITY} underlayColor={this.getRandomColor()} onPress={() => this.openAbout()}>
-				      	<View style={MenuStyles.item}>
-				      		<Text style={MenuStyles.menuItemLabel}>About</Text>
-				      	</View>
-			      	</TouchableHighlight>
-		      	</View>
-	      	</ScrollView>
-	 	  </View>
-		);
-	}
+  	    </ScrollView>
+	  </View>
+    ); 
+  }
 }
+
+const mapDispatchToProps = {
+  showOverlay
+}
+
+export default connect(null, mapDispatchToProps)(Menu);
