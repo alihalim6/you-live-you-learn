@@ -1,29 +1,63 @@
-import React from 'react';
-import {View, ImageBackground, Image, TextInput, Text} from 'react-native';
+import React, {Component} from 'react';
+import {connect} from 'react-redux';
+import {
+  View, 
+  ImageBackground, 
+  Image, 
+  TextInput, 
+  Text, 
+  TouchableOpacity
+} from 'react-native';
 import ProfileImageStyles from '../styles/ProfileImageStyles';
+import Popup from './Popup';
+import {showPopup} from '../redux/actions/OverlayActions';
+import {NEW_PROFILE_IMAGE, EDIT_PROFILE_IMAGE} from '../constants/PopupConstants';
 
-export default function ProfileImage({isSignedIn, cameraOnly}){
-  const hasProfileImage = false;/////////
-  const noSignUpStyles = isSignedIn ? {} : ProfileImageStyles.noSignUpImageContainer;
+class ProfileImage extends Component{
+  handleProfileImage = () => {
+    const popupConfig = (this.props.profileImage ? EDIT_PROFILE_IMAGE : NEW_PROFILE_IMAGE);
+    this.props.showPopup(popupConfig);
+  }
 
-  const noProfileImageContents = (
-    <>
-	  {!cameraOnly && <Text style={ProfileImageStyles.you}>YOU</Text>}
-  	  <Image style={ProfileImageStyles.camera} source={require('../assets/camera.png')}/>
-  	</>
-  );
+  render(){
+    const noProfileImageContents = (
+      <View style={ProfileImageStyles.profileImageContainer}>
+        {!this.props.cameraOnly && 
+          <Text style={ProfileImageStyles.you}>YOU</Text>
+        }
 
-  return (
-    <>
-      {hasProfileImage && 
-        <ImageBackground style={[ProfileImageStyles.profileImageContainer, noSignUpStyles]} source={{uri: 'https://i.picsum.photos/id/1049/200/300.jpg'}}/>
-      }
+        <Image style={ProfileImageStyles.camera} source={require('../assets/camera.png')}/>
+      </View>
+    );
 
-     {!hasProfileImage &&
-        <View style={[ProfileImageStyles.profileImageContainer, noSignUpStyles]}>
-          {noProfileImageContents}
-        </View>
-      }
-    </>
-  );
+    return (
+      <>
+        {this.props.profileImage &&
+          <TouchableOpacity onPress={() => this.handleProfileImage()}>
+            <ImageBackground style={ProfileImageStyles.profileImageContainer} source={{uri: this.props.profileImage}}/>
+          </TouchableOpacity>
+        }
+
+       {!this.props.profileImage &&
+          <TouchableOpacity onPress={() => this.handleProfileImage()}>
+            {noProfileImageContents}
+          </TouchableOpacity>
+        }
+      </>
+    );
+  }
+
 }
+
+function mapStateToProps(state){
+  return {
+    profileImage: state.user.profileImage,
+    signedIn: state.user.signedIn
+  };
+}
+
+const mapDispatchToProps = {
+  showPopup
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(ProfileImage);

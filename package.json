@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "type": "module",
-  "live": "nodemon server/index.js",
+  "live": "node --experimental-modules --experimental-json-modules server/index.js",
   "scripts": {
     "android": "react-native run-android",
     "ios": "react-native run-ios",
@@ -12,18 +12,24 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "@react-native-community/async-storage": "^1.11.0",
     "@react-native-community/blur": "^3.6.0",
     "@react-native-community/masked-view": "^0.1.10",
     "@react-navigation/drawer": "^5.7.4",
     "@react-navigation/native": "^5.3.2",
     "axios": "^0.19.2",
+    "buffer": "^5.6.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "firebase-admin": "^8.12.1",
+    "fs": "0.0.1-security",
+    "multer": "^1.4.2",
+    "path": "^0.12.7",
     "randomcolor": "^0.5.4",
     "react": "16.11.0",
     "react-http-request": "^2.0.0",
     "react-native": "0.62.2",
+    "react-native-camera": "^3.29.0",
     "react-native-gesture-handler": "^1.6.1",
     "react-native-reanimated": "^1.8.0",
     "react-native-safe-area-context": "^1.0.0",
@@ -31,7 +37,8 @@
     "react-native-splash-screen": "^3.2.0",
     "react-redux": "^7.2.0",
     "redux": "^4.0.5",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "rn-fetch-blob": "^0.12.0"
   },
   "devDependencies": {
     "@babel/core": "7.9.6",

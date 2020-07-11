@@ -10,6 +10,22 @@ export default function(state = {}, action){
   	  return {...state, followers: action.followers};
   	case types.SET_USER_FOLLOWING :
   	  return {...state, following: action.following};
+    case types.SET_USER_SIGNED_IN :
+      if(action.signedIn){
+        return {...state, signedIn: true};
+      }
+      //clear profile image in addition
+      else{
+        return {
+          ...state, 
+          signedIn: false,
+          profileImage: null
+        };
+      }
+    case types.SET_USER_SIGNED_UP :
+      return {...state, signedUp: action.signedUp};
+    case types.SET_USER_ID :
+      return {...state, userId: action.userId};
   	default :
   	  return state;
   }

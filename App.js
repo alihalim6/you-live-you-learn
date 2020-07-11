@@ -1,16 +1,38 @@
 import React, {Component} from 'react';
-import {StatusBar} from 'react-native';
+import {StatusBar, BackHandler} from 'react-native';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import {NavigationContainer} from '@react-navigation/native';
 import SplashScreen from 'react-native-splash-screen';
-import MenuStyles from './styles/MenuStyles';
+import {connect} from 'react-redux';
+import {hideOverlay} from './redux/actions/OverlayActions';
+import {hideCamera} from './redux/actions/CameraActions';
+import {MenuStyles} from './styles/MenuStyles';
 import Home from './components/Home';
 import Menu from './components/Menu';
+import Popup from './components/Popup';
+import Camera from './components/Camera';
+import Banner from './components/Banner';
 import {BASE_COLOR_LIGHT} from './constants/AppConstants';
+import {initializeUser} from './services/UserService';
 
-export default class App extends Component {  
+class App extends Component { 
+  backAction = () => {
+    //TODO:HAVE TO TAP ANDROID BACK BUTTON TWICE TO HIDE THESE
+    this.props.hideOverlay();
+    this.props.hideCamera();
+    return true;
+  }
+
   componentDidMount() {
-    SplashScreen.hide();
+    initializeUser()
+      .then(() => {
+        SplashScreen.hide();
+        this.backHandler = BackHandler.addEventListener('hardwareBackPress', this.backAction);
+      });
+  }
+
+  componentWillUnmount() {
+    this.backHandler.remove();
   }
 
   render() {
@@ -29,7 +51,34 @@ export default class App extends Component {
               <Drawer.Screen name=" " component={Home}/>
             </Drawer.Navigator>
           </NavigationContainer>
+
+          {this.props.currentPopup &&
+            <Popup popup={this.props.currentPopup}/>
+          }
+
+          {this.props.currentCamera &&
+            <Camera/>
+          }
+
+          {this.props.currentBanner &&
+            <Banner/>
+          }
         </>
     );
   }
 }
+
+function mapStateToProps(state){
+  return {
+    currentPopup: state.overlay.currentPopup,
+    currentCamera: state.camera.currentCamera,
+    currentBanner: state.banner.currentBanner
+  };
+}
+
+const mapDispatchToProps = {
+  hideOverlay,
+  hideCamera
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);

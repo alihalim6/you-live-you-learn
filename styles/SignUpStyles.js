@@ -1,39 +1,58 @@
-import {appFontBold, appFont, BORDER_WIDTH, BASE_COLOR_DARK, BORDER_RADIUS, BASE_COLOR_LIGHT, ERROR_COLOR, BASE_GRAY} from '../constants/AppConstants';
-import {isIOS} from '../constants/AppConstants';
+import {
+	appFontBold,
+	appFont, 
+	BORDER_WIDTH, 
+	BASE_COLOR_DARK, 
+	BORDER_RADIUS, 
+	BASE_COLOR_LIGHT, 
+	ERROR_COLOR, 
+	BASE_GRAY,
+	isIOS
+} from '../constants/AppConstants';
 
 const credentialsFieldPaddingTop = (isIOS ? 4 : 10);
 const signUpButtonPaddingTop = (isIOS ? 4: 0);
 const credentialsMessageFontSize = 12;
+const transitionBarTop = (isIOS ? 65: 74);
 
 const SignUpStyles = {
-	container: {
-      flex: 1,
-      alignItems: 'center'
-	},
 	title: {
 	  marginBottom: 22
 	},
+	transitionBar: {
+		width: 1,
+		height: 14,
+		position: 'absolute',
+		backgroundColor: 'blue',
+		top: transitionBarTop
+	},
+	form: {
+	  flex: 1,
+	  alignItems: 'center',
+	  position: 'relative',
+	  top: '3%'
+	},
 	prompt: {
-      margin: 24,
-      marginBottom: 8,
-      marginTop: 28,
-      fontFamily: appFont,
-      color: BASE_COLOR_DARK,
-      textAlign: 'center'
+    margin: 24,
+    marginBottom: 8,
+    marginTop: 28,
+    fontFamily: appFont,
+    color: BASE_COLOR_DARK,
+    textAlign: 'center'
 	},
 	credentialsField: {
-      width: '75%',
-  	  height: 44,
-  	  marginTop: 10,
-  	  marginBottom: 14,
-  	  borderWidth: BORDER_WIDTH,
-  	  borderTopWidth: 0,
-  	  borderLeftWidth: 0,
-  	  borderRightWidth: 0,
-  	  paddingTop: credentialsFieldPaddingTop,
-  	  paddingLeft: 12,
-  	  fontSize: 14,
-  	  fontFamily: appFont
+    width: '75%',
+	  height: 44,
+	  marginTop: 10,
+	  marginBottom: 14,
+	  borderWidth: BORDER_WIDTH,
+	  borderTopWidth: 0,
+	  borderLeftWidth: 0,
+	  borderRightWidth: 0,
+	  paddingTop: credentialsFieldPaddingTop,
+	  paddingLeft: 12,
+	  fontSize: 14,
+	  fontFamily: appFont
 	},
 	signUpButton: {
 	  width: 150,
@@ -67,6 +86,12 @@ const SignUpStyles = {
 	  width: 90,
 	  height: 90,
 	  bottom: 14
+	},
+	errorMessage: {
+		fontFamily: appFontBold,
+		color: ERROR_COLOR,
+		textAlign: 'center',
+		padding: '5%'
 	}
 };
 

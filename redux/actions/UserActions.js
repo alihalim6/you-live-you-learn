@@ -15,3 +15,15 @@ export function setUserFollowers(followers){
 export function setUserFollowing(following){
   return {type: types.SET_USER_FOLLOWING, following};
 }
+
+export function setUserSignedIn(signedIn){
+  return {type: types.SET_USER_SIGNED_IN, signedIn};
+}
+
+export function setUserSignedUp(signedUp){
+  return {type: types.SET_USER_SIGNED_UP, signedUp};
+}
+
+export function setUserId(userId){
+  return {type: types.SET_USER_ID, userId};
+}

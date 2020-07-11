@@ -1,9 +1,9 @@
 import {StyleSheet} from 'react-native';
-import {appFontBold, BASE_COLOR_LIGHT, BASE_COLOR_DARK} from '../constants/AppConstants';
-import {isIOS} from '../constants/AppConstants';
+import {appFontBold, BASE_COLOR_LIGHT, BASE_COLOR_DARK, isIOS, BORDER_RADIUS} from '../constants/AppConstants';
 
 const overlayTop = (isIOS ? '7%' : '8%');
-const closeButtonTop = (isIOS ? 9 : 12);
+const closeButtonTop = (isIOS ? 10 : 15);
+const touchableCloseSize = 50;
 
 const OverlayStyles = StyleSheet.create({
   container: {
@@ -15,7 +15,7 @@ const OverlayStyles = StyleSheet.create({
   	alignSelf: 'center',
     width: '96%',
     height: '89%',
-    borderRadius: 3,
+    borderRadius: BORDER_RADIUS,
     backgroundColor: BASE_COLOR_LIGHT,
     elevation: 15
   },
@@ -23,8 +23,8 @@ const OverlayStyles = StyleSheet.create({
   	flexGrow: 1
   },
   touchableClose: {
-	width: 50,
-  	height: 50,
+		width: touchableCloseSize,
+  	height: touchableCloseSize,
   	position: 'absolute',
   	top: closeButtonTop,
   	right: 12
@@ -51,4 +51,14 @@ const OverlayStyles = StyleSheet.create({
   }
 });
 
-export default OverlayStyles;
+const closeButtonOneStyle = [
+	OverlayStyles.closeButton, 
+	OverlayStyles.closeButtonLineOne
+];
+
+const closeButtonTwoStyle = [
+	OverlayStyles.closeButton, 
+	OverlayStyles.closeButtonLineTwo
+];
+
+export {OverlayStyles, closeButtonOneStyle, closeButtonTwoStyle};

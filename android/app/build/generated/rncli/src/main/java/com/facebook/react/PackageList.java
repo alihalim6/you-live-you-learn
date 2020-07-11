@@ -11,12 +11,14 @@ import com.facebook.react.shell.MainReactPackage;
 import java.util.Arrays;
 import java.util.ArrayList;
 
-// @okta/okta-react-native
-import com.oktareactnative.OktaSdkBridgePackage;
+// @react-native-community/async-storage
+import com.reactnativecommunity.asyncstorage.AsyncStoragePackage;
 // @react-native-community/blur
 import com.cmcewen.blurview.BlurViewPackage;
 // @react-native-community/masked-view
 import org.reactnative.maskedview.RNCMaskedViewPackage;
+// react-native-camera
+import org.reactnative.camera.RNCameraPackage;
 // react-native-gesture-handler
 import com.swmansion.gesturehandler.react.RNGestureHandlerPackage;
 // react-native-reanimated
@@ -27,6 +29,8 @@ import com.th3rdwave.safeareacontext.SafeAreaContextPackage;
 import com.swmansion.rnscreens.RNScreensPackage;
 // react-native-splash-screen
 import org.devio.rn.splashscreen.SplashScreenReactPackage;
+// rn-fetch-blob
+import com.RNFetchBlob.RNFetchBlobPackage;
 
 public class PackageList {
   private Application application;
@@ -72,14 +76,16 @@ public class PackageList {
   public ArrayList<ReactPackage> getPackages() {
     return new ArrayList<>(Arrays.<ReactPackage>asList(
       new MainReactPackage(mConfig),
-      new OktaSdkBridgePackage(),
+      new AsyncStoragePackage(),
       new BlurViewPackage(),
       new RNCMaskedViewPackage(),
+      new RNCameraPackage(),
       new RNGestureHandlerPackage(),
       new ReanimatedPackage(),
       new SafeAreaContextPackage(),
       new RNScreensPackage(),
-      new SplashScreenReactPackage()
+      new SplashScreenReactPackage(),
+      new RNFetchBlobPackage()
     ));
   }
 }

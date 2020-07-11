@@ -33,7 +33,8 @@ const AboutStyles = StyleSheet.create({
   	color: BASE_COLOR_DARK,
   	padding: 24,
   	paddingBottom: 50,
-    fontFamily: appFont
+    fontFamily: appFont,
+    textAlign: 'center'
   },
   dedication: {
   	position: 'absolute',

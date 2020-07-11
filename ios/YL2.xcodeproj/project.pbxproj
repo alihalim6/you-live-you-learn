@@ -20,8 +20,6 @@
 		5E0DB53FB2FC02C162848CBD /* libPods-YL2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D6279135BCA1DB4ACCF97FF2 /* libPods-YL2.a */; };
 		657A79FBAEF64A84C13FB085 /* libPods-YL2-YL2Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 72BA9CF1E1BF2101BE810182 /* libPods-YL2-YL2Tests.a */; };
 		9DEB0F22D0884FC7F05FD4A5 /* libPods-YL2-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 62F69441D6B3217B70CB8C2E /* libPods-YL2-tvOS.a */; };
-		B6CBF0E4247C479900FF3EC9 /* OktaOidc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6CBF0E1247C479900FF3EC9 /* OktaOidc.framework */; };
-		B6CBF0E5247C479A00FF3EC9 /* OktaOidc.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B6CBF0E1247C479900FF3EC9 /* OktaOidc.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B6CBF0E8247C56C100FF3EC9 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CBF0E7247C56C100FF3EC9 /* File.swift */; };
 /* End PBXBuildFile section */
 
@@ -55,20 +53,6 @@
 			remoteInfo = "RNBlur-tvOS";
 		};
 /* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		B6CBF0E6247C479A00FF3EC9 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				B6CBF0E5247C479A00FF3EC9 /* OktaOidc.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		008F07F21AC5B25A0029DE68 /* main.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
@@ -116,7 +100,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B6CBF0E4247C479900FF3EC9 /* OktaOidc.framework in Frameworks */,
 				5E0DB53FB2FC02C162848CBD /* libPods-YL2.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -276,7 +259,6 @@
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				B6CBF0E6247C479A00FF3EC9 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

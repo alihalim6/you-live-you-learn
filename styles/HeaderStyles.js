@@ -1,6 +1,5 @@
 import {StyleSheet, Platform} from 'react-native';
-import {isIOS} from '../constants/AppConstants';
-import {appFont, BASE_COLOR_DARK, BASE_COLOR_LIGHT, BORDER_COLOR, BORDER_WIDTH} from '../constants/AppConstants';
+import {appFont, BASE_COLOR_DARK, BASE_COLOR_LIGHT, LIGHT_GRAY, BORDER_WIDTH, isIOS} from '../constants/AppConstants';
 
 const hamburgerMenuButtonWidth = 25;
 const searchBarPaddingTop = (isIOS ? 13 : 0);
@@ -30,13 +29,14 @@ const HeaderStyles = StyleSheet.create({
   hamburgerMenuLine: {
   	width: hamburgerMenuButtonWidth,
   	height: 4,
-  	marginBottom: 4
+  	marginBottom: 4,
+    backgroundColor: BASE_COLOR_DARK
   },
   searchBar: {
   	width: '70%',
   	height: 46,
   	borderWidth: BORDER_WIDTH,
-  	borderColor: BORDER_COLOR,
+  	borderColor: LIGHT_GRAY,
   	marginTop: 15,
   	paddingTop: searchBarPaddingTop,
   	paddingLeft: 12,

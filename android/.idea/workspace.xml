@@ -13,7 +13,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="Pixel_2_API_28" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="Nexus_6P_API_29" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -36,8 +36,8 @@
   </component>
   <component name="ProjectId" id="1bjVNpMG0jU0MOzqD5dU8WzFtKJ" />
   <component name="PropertiesComponent">
-    <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="Pixel_2_API_28" />
-    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2020-05-10T21:29:32.396Z" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="HT7AC1A05784" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2020-06-10T16:03:40.981Z" />
     <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>

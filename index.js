@@ -8,7 +8,6 @@ import App from './App';
 import {name as appName} from './app.json';
 import {Provider as ReduxProvider} from 'react-redux';
 import store from './redux';
-import config from './server/config';
 
 const YL2 = () => {
   return (

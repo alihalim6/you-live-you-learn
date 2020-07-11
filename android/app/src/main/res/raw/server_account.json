@@ -1,0 +1,20 @@
+{
+  "type": "service_account",
+  "project_id": "you-live-you-learn",
+  "private_key_id": "15eefe399d708fe0d1089ef5c6b321f3f556c462",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCm9q3wvuzB1j7Q\n4mw+aLQegKT/wOoKBcCtEcR692J46pDAD5UAx1of7a0tC7ct09YwNSEjUGTlOVa6\najHO3moDo9dnbt7ugFMlVqd3Ej8ObVqI4M5VAd/vpvRjRspPhWnx9UuP0kr4QUbE\nWBpilnW8oFvHqIzBCnXuNcbLyOZWquK0ZlXBwck+ltxE8Dd0dm2FH5B2Fx44B6zu\nNfnt3zio0cS3WgB6+BKEa564J1DHxSQyn16v3ccRmoy9GXezQEncZir4qY+n0NDp\n+6CQBAhljvcMgP74eZsu12Zy/G/eaM0GJ26flEVrS1DMIH2BJkmvUIsTOr6Jg24C\n+vDtJWOFAgMBAAECggEALzQhtCU+aYTpaIQDR1exyMflHjuLz36V3ThfPMaxK+9h\nMjOVlE1IMSuwoMIlrUqtTR7QOhwyEk52Myjv4QUnotTRAvipBXP5Td6kZPkfI7SN\n+pHYM9deWPJyOJkcfIQDEnmfvc8eC/bki4E/IG1aZxRNLnL8LF2JPuosRJQNbyXW\nUtXO8YfNj7/gf93ioGWTDC8IDEdCcS1TJpXIiyobjgngC8zbXEz03c/6c7Z+AXTO\n9KDue3YMQPXc/fC/6y/x7cQBQS+mqt04k5BeGIKWnWqYveZHPQDQE+nqRv3m0gSJ\nr2//rCFgV3j6WOEetJNmLKgP1/BSfOEg0Bl6nGElxwKBgQDocW9EfbyMILsr+aPP\nezux7QyL/j3AYfPr+U/p8QhHnH9UVwfZuT3s56zikmovdeMfvEEyLJGMjQHZBf4W\nRQPqRBrEd3H1oQcD/Ph90aD+ksIfj9JEV7CMgU8jj6yr549Ut14W1miIIcg+pQ9K\nrV37tNHczPyKp/igDOW/XCSN3wKBgQC34m1RyMmHe8brPvnGvop0f1WsFhe9Ay88\nu8SlNQeJzUq4pCzizEA/gfiBVamKy89DPuOZSsYZ906K1bUQZbvPDNTHMn+p9rUV\nWSe6BdfyBjx79ZdGBPYq0a0tLS+sFyJCeM6XeLBSzFRhXy05aH0R7JCC0kH0ckor\nBP5ktdkzGwKBgAYcbVt0ns9kUOdwEcFzsPcVj13i2kbDjIEotdQltR0E3UgfXaJ4\nv0sKMD5osQf8ZnNAJMqn50+1qVXGVY7KU7cGAVom9cUKbb/KF9Je/4eR3i6sPk/z\nqj2XbLg3n8eJN/h3Na8OBgOGN9iFyGgjNLRYZagTb5RJpDy4+hVU29UrAoGAKwhh\nPvd3Oi6cUadOOtWSf0rhWMFe0svw/QyQK31qgzQ43VcGbhkQnAwlhNbwM1wY6ArK\nprAaBi+bAOCcW/cC6aR+ExPdToA+xn0zz9PYQnp1IylJOoikt0aUeXMOqf5L9TRi\nXI5Q7T+GK7djVQD/6/bppsPfzX4Fn2WuxxDLgKsCgYAe5C9FvUIkO0oqsv9No3q9\nvxBZew6XKo9hWwhpPmo4Q3KQrQcrltIUExQVVmSxSSoHrMjuLYv46B6H9lguo4Vq\naGM/9aaSyTMM4TeQlf6q+jE4pJlvEHyjrwboWAA7wL2ojqmSvasRssz32wlzc1Of\nWXslM9LlIkX/WlcHhzE5KQ==\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-eejqg@you-live-you-learn.iam.gserviceaccount.com",
+  "client_id": "116892129538649701904",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-eejqg%40you-live-you-learn.iam.gserviceaccount.com",
+
+  "apiKey": "AIzaSyBVfXi_TXtNUTFY41IzbJBFYvK-Dfftczo",
+  "authDomain": "you-live-you-learn.firebaseapp.com",
+  "databaseURL": "https://you-live-you-learn.firebaseio.com",
+  "storageBucket": "you-live-you-learn.appspot.com",
+  "messagingSenderId": "348185578550",
+  "appId": "1:348185578550:web:ddd5c8d6c2bb2438a89c97",
+  "measurementId": "G-5CTHKFXBPE"
+}

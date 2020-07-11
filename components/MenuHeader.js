@@ -1,32 +1,34 @@
 import React, {Component} from 'react';
 import {View, Text} from 'react-native';
 import {connect} from 'react-redux';
-import MenuStyles from '../styles/MenuStyles';
+import {MenuStyles, headerHeight} from '../styles/MenuStyles';
 import ProfileImage from './ProfileImage';
 
-class MenuHeader extends Component{
+class MenuHeader extends Component{	
   render(){
-  	const isSignedIn = false;/////////
-  	//can use Followers/Following label from useer profile
-
   	return (
-      <View style={MenuStyles.header}>
-	  	{isSignedIn &&
+      <View style={[MenuStyles.header, {height: headerHeight(this.props.signedIn)}]}>
+	  	{this.props.signedIn &&
 	  	  <>
-	  	    <ProfileImage isSignedIn={true}/>
-  		    <Text style={MenuStyles.userName}>username1</Text>
+	  	    <ProfileImage/>
+  		    <Text style={MenuStyles.username}>{this.props.username}</Text>
 
   		    <View style={MenuStyles.followContainer}>
-	  	      <Text style={[MenuStyles.followLabel, MenuStyles.following]}>2 Following</Text><Text style={[MenuStyles.followLabel, MenuStyles.followers]}>13 Followers</Text>
+	  	      <Text style={[MenuStyles.followLabel, MenuStyles.following]}>2 Following</Text>
+	  	      <Text style={[MenuStyles.followLabel, MenuStyles.followers]}>13 Followers</Text>
 	  	    </View>
 	  	  </>
   		}
 
-  		{!isSignedIn &&
+  		{!this.props.signedIn &&
 	      <View style={MenuStyles.liveLearnContainer}>
 	        <Text style={MenuStyles.live}>LIVE</Text>
-	        <ProfileImage isSignedIn={false}/>
-	        <Text style={MenuStyles.learn}>LEARN</Text>
+          
+          <View style={MenuStyles.profileImage}>
+	         <ProfileImage/>
+          </View>
+	        
+          <Text style={MenuStyles.learn}>LEARN</Text>
 	      </View>
   		}
   	  </View>
@@ -36,7 +38,8 @@ class MenuHeader extends Component{
 
 function mapStateToProps(state){
   return {
-    userProfileImage: state.user.profileImage
+  	username: state.user.username,
+  	signedIn: state.user.signedIn
   };
 }
 
