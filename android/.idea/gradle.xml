@@ -12,7 +12,6 @@
             <option value="$USER_HOME$/.npm-global/lib/node_modules/react-native-randombytes/android" />
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
-            <option value="$PROJECT_DIR$/../node_modules/@okta/okta-react-native/android" />
             <option value="$PROJECT_DIR$/../node_modules/@react-native-community/blur/android" />
             <option value="$PROJECT_DIR$/../node_modules/@react-native-community/masked-view/android" />
             <option value="$PROJECT_DIR$/../node_modules/react-native-gesture-handler/android" />

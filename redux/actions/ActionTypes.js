@@ -1,8 +1,18 @@
 //overlay
 export const OVERLAY_SHOWING = 'OVERLAY_SHOWING';
+export const POPUP_SHOWING = 'POPUP_SHOWING';
 
 //user
 export const SET_USER_PROFILE_IMAGE = 'SET_USER_PROFILE_IMAGE';
 export const SET_USERNAME = 'SET_USERNAME';
 export const SET_USER_FOLLOWERS = 'SET_USER_FOLLOWERS';
 export const SET_USER_FOLLOWING = 'SET_USER_FOLLOWING';
+export const SET_USER_SIGNED_IN = 'SET_USER_SIGNED_IN';
+export const SET_USER_SIGNED_UP = 'SET_USER_SIGNED_UP';
+export const SET_USER_ID = 'SET_USER_ID';
+
+//camera
+export const CAMERA_SHOWING = 'CAMERA_SHOWING';
+
+//banner
+export const BANNER_SHOWING = 'BANNER_SHOWING';

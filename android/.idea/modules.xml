@@ -4,7 +4,6 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/YL2.iml" filepath="$PROJECT_DIR$/YL2.iml" group="YL2" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="YL2/app" />
-      <module fileurl="file://$PROJECT_DIR$/../node_modules/@okta/okta-react-native/android/okta_okta-react-native.iml" filepath="$PROJECT_DIR$/../node_modules/@okta/okta-react-native/android/okta_okta-react-native.iml" group="YL2/okta_okta-react-native" />
       <module fileurl="file://$PROJECT_DIR$/../node_modules/@react-native-community/blur/android/react-native-community_blur.iml" filepath="$PROJECT_DIR$/../node_modules/@react-native-community/blur/android/react-native-community_blur.iml" group="YL2/react-native-community_blur" />
       <module fileurl="file://$PROJECT_DIR$/../node_modules/@react-native-community/masked-view/android/react-native-community_masked-view.iml" filepath="$PROJECT_DIR$/../node_modules/@react-native-community/masked-view/android/react-native-community_masked-view.iml" group="YL2/react-native-community_masked-view" />
       <module fileurl="file://$PROJECT_DIR$/../node_modules/react-native-gesture-handler/android/react-native-gesture-handler.iml" filepath="$PROJECT_DIR$/../node_modules/react-native-gesture-handler/android/react-native-gesture-handler.iml" group="YL2/react-native-gesture-handler" />

@@ -1,24 +1,42 @@
-import {appFont, appFontBold, BASE_COLOR_LIGHT, BASE_COLOR_DARK, BORDER_COLOR, BORDER_WIDTH, BASE_GRAY, getRandomFadeColor} from '../constants/AppConstants';
-import {isIOS} from '../constants/AppConstants';
+import {
+	appFont,
+	appFontBold,
+	BASE_COLOR_LIGHT,
+	BASE_COLOR_DARK,
+	LIGHT_GRAY,
+	BORDER_WIDTH,
+	BASE_GRAY,
+	getRandomFadeColor,
+	isIOS
+} from '../constants/AppConstants';
 
-const menuContainerMarginTop = false ? (isIOS ? 38 : 18) : (isIOS ? 8 : 0);///isSignedIn////////////////
+const noSignInContainerMarginTop = (isIOS ? 19 : 0);
 const followingPadding = 12;
 const learnPaddingTop = (isIOS ? 7 : 0);
+const noSignInHeaderHeight = 264;
+const itemPaddingTop = (isIOS ? 22 : 20);
 
-const headerHeight = false ? 230 : 264;///isSignedIn////////////////
+function containerMarginTop(signedIn){
+	return (signedIn ? (isIOS ? 46 : 18) : noSignInContainerMarginTop);
+}
+
+function headerHeight(signedIn){
+	return (signedIn ? 230 : noSignInHeaderHeight);
+}
 
 const MenuStyles = {
   container: {
-    flex: 1,
-    marginTop: menuContainerMarginTop
+    flex: 1
   },
   header: {
-    height: headerHeight,
     backgroundColor: BASE_COLOR_LIGHT,
     borderBottomWidth: BORDER_WIDTH,
-    borderColor: BORDER_COLOR
+    borderColor: LIGHT_GRAY
   },
-  userName: {
+  profileImage: {
+  	paddingTop: 34
+  },
+  username: {
     margin: 12,
     marginBottom: 10,
     fontSize: 18,
@@ -77,8 +95,8 @@ const MenuStyles = {
   },
   item: {
     borderTopWidth: BORDER_WIDTH,
-    borderColor: BORDER_COLOR,
-    paddingTop: 20,
+    borderColor: LIGHT_GRAY,
+    paddingTop: itemPaddingTop,
     paddingLeft: 26,
     height: 60,
     backgroundColor: BASE_COLOR_LIGHT
@@ -89,8 +107,8 @@ const MenuStyles = {
   menuItemLabel: {
     color: BASE_COLOR_DARK,
     fontSize: 16,
-    fontFamily: appFont
+    fontFamily: appFontBold
   }
 };
 
-export default MenuStyles;
+export {MenuStyles, containerMarginTop, headerHeight};

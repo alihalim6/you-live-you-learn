@@ -11,10 +11,10 @@ import {
 import {randomColor} from 'randomcolor';
 import {connect} from 'react-redux';
 import {hideOverlay} from '../redux/actions/OverlayActions';
-import OverlayStyles from '../styles/OverlayStyles';
+import {OverlayStyles, closeButtonOneStyle, closeButtonTwoStyle} from '../styles/OverlayStyles';
 import About from './About';
 import SignUp from './SignUp';
-import {SIGN_UP, ABOUT, isIOS} from '../constants/AppConstants';
+import {SIGN_UP, ABOUT, isIOS, getRandomDarkColor} from '../constants/AppConstants';
 
 class Overlay extends Component{
   closeModal = () => {
@@ -22,7 +22,7 @@ class Overlay extends Component{
   }
 
   render(){
-  	const closeButtonColor = randomColor({luminosity: 'dark'});
+  	const closeButtonColor = getRandomDarkColor();
   	const keyboardAvoidingBehavior = (isIOS ? 'padding' : 'height');
 
   	return (
@@ -33,9 +33,9 @@ class Overlay extends Component{
               {(this.props.currentOverlay === ABOUT) && <About/>}
               {(this.props.currentOverlay === SIGN_UP) && <SignUp/>}
 
-			  <TouchableOpacity onPress={() => this.closeModal()} style={OverlayStyles.touchableClose}>
-                <View style={[OverlayStyles.closeButton, OverlayStyles.closeButtonLineOne, {backgroundColor: closeButtonColor}]}></View>
-                <View style={[OverlayStyles.closeButton, OverlayStyles.closeButtonLineTwo, {backgroundColor: closeButtonColor}]}></View>
+			 		 		<TouchableOpacity onPress={() => this.closeModal()} style={OverlayStyles.touchableClose}>
+                <View style={[closeButtonOneStyle, {backgroundColor: closeButtonColor}]}></View>
+                <View style={[closeButtonTwoStyle, {backgroundColor: closeButtonColor}]}></View>
               </TouchableOpacity>
             </ScrollView>
           </SafeAreaView>
@@ -43,6 +43,7 @@ class Overlay extends Component{
       </Modal>
     );
   }
+
 }
 
 const mapDispatchToProps = {
