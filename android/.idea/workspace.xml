@@ -6,7 +6,7 @@
     </shared>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="793e359b-f1b2-4725-b16b-79845507e867" name="Default Changelist" comment="" />
+    <list default="true" id="6731ee49-fa70-40fe-8639-d8025ad8760e" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,18 +26,8 @@
       </state>
     </system>
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="layoutResourceFile_vertical" />
-        <option value="valueResourceFile" />
-      </list>
-    </option>
-  </component>
-  <component name="ProjectId" id="1bjVNpMG0jU0MOzqD5dU8WzFtKJ" />
+  <component name="ProjectId" id="1f8dtovcxfwHuZngw8zjf7g0pOP" />
   <component name="PropertiesComponent">
-    <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="HT7AC1A05784" />
-    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2020-06-10T16:03:40.981Z" />
     <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
@@ -118,11 +108,11 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="793e359b-f1b2-4725-b16b-79845507e867" name="Default Changelist" comment="" />
-      <created>1589145452683</created>
+      <changelist id="6731ee49-fa70-40fe-8639-d8025ad8760e" name="Default Changelist" comment="" />
+      <created>1595603870543</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1589145452683</updated>
+      <updated>1595603870543</updated>
     </task>
     <servers />
   </component>

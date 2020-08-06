@@ -91,6 +91,7 @@
     </content>
     <orderEntry type="jdk" jdkName="Android API 28 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" scope="TEST" name="Gradle: androidx.multidex:multidex-instrumentation:2.0.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.facebook.soloader:nativeloader:0.8.2@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.facebook.infer.annotation:infer-annotation:0.11.2@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.google.code.findbugs:jsr305:3.0.2@jar" level="project" />
@@ -104,6 +105,7 @@
     <orderEntry type="library" name="Gradle: com.facebook.yoga:proguard-annotations:1.14.1@jar" level="project" />
     <orderEntry type="library" name="Gradle: javax.inject:javax.inject:1@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.facebook.fbjni:fbjni-java-only:0.0.3@jar" level="project" />
+    <orderEntry type="library" name="Gradle: androidx.multidex:multidex:2.0.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.facebook.flipper:flipper:0.33.1@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.facebook.react:react-native:0.62.2@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.facebook.soloader:soloader:0.8.2@aar" level="project" />
@@ -142,12 +144,15 @@
     <orderEntry type="library" name="Gradle: com.facebook.fresco:nativeimagetranscoder:2.0.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: org.webkit:android-jsc:r245459@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.facebook.fresco:animated-gif:2.0.0@aar" level="project" />
+    <orderEntry type="module" module-name="react-native-community_async-storage" />
     <orderEntry type="module" module-name="react-native-community_blur" />
     <orderEntry type="module" module-name="react-native-community_masked-view" />
+    <orderEntry type="module" module-name="react-native-camera" />
     <orderEntry type="module" module-name="react-native-gesture-handler" />
     <orderEntry type="module" module-name="react-native-reanimated" />
     <orderEntry type="module" module-name="react-native-safe-area-context" />
     <orderEntry type="module" module-name="react-native-screens" />
     <orderEntry type="module" module-name="react-native-splash-screen" />
+    <orderEntry type="module" module-name="rn-fetch-blob" />
   </component>
 </module>

@@ -4,12 +4,14 @@ ADDED from /Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.
 INJECTED from /Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:1:1-44:12
 INJECTED from /Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:1:1-44:12
 INJECTED from /Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:1:1-44:12
+MERGED from [:@react-native-community_cameraroll] /Users/alihalim/Development/YL2/node_modules/@react-native-community/cameraroll/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-9:12
 MERGED from [com.facebook.flipper:flipper:0.33.1] /Users/alihalim/.gradle/caches/transforms-2/files-2.1/3ed611e0e9cdd622bbe11393ad785b35/jetified-flipper-0.33.1/AndroidManifest.xml:8:1-18:12
 MERGED from [com.facebook.flipper:flipper-network-plugin:0.33.1] /Users/alihalim/.gradle/caches/transforms-2/files-2.1/fa9d249d56579007dba70f8ee4dd5b3f/flipper-network-plugin-0.33.1/AndroidManifest.xml:8:1-15:12
 MERGED from [com.facebook.flipper:flipper-fresco-plugin:0.33.1] /Users/alihalim/.gradle/caches/transforms-2/files-2.1/5a1065d4748ae359265a740b2069d44b/flipper-fresco-plugin-0.33.1/AndroidManifest.xml:8:1-15:12
 MERGED from [androidx.multidex:multidex:2.0.0] /Users/alihalim/.gradle/caches/transforms-2/files-2.1/2c67e628ec5e10a6dc480e38352e91b8/multidex-2.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [:react-native-community_async-storage] /Users/alihalim/Development/YL2/node_modules/@react-native-community/async-storage/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-9:12
 MERGED from [:react-native-community_blur] /Users/alihalim/Development/YL2/node_modules/@react-native-community/blur/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
+MERGED from [:react-native-community_cameraroll] /Users/alihalim/Development/YL2/node_modules/@react-native-community/cameraroll/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-9:12
 MERGED from [:react-native-community_masked-view] /Users/alihalim/Development/YL2/node_modules/@react-native-community/masked-view/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-9:12
 MERGED from [:react-native-camera] /Users/alihalim/Development/YL2/node_modules/react-native-camera/android/build/intermediates/library_manifest/generalDebug/AndroidManifest.xml:2:1-18:12
 MERGED from [:react-native-gesture-handler] /Users/alihalim/Development/YL2/node_modules/react-native-gesture-handler/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
@@ -219,6 +221,8 @@ uses-sdk
 INJECTED from /Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml
 INJECTED from /Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml
+MERGED from [:@react-native-community_cameraroll] /Users/alihalim/Development/YL2/node_modules/@react-native-community/cameraroll/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:@react-native-community_cameraroll] /Users/alihalim/Development/YL2/node_modules/@react-native-community/cameraroll/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [com.facebook.flipper:flipper:0.33.1] /Users/alihalim/.gradle/caches/transforms-2/files-2.1/3ed611e0e9cdd622bbe11393ad785b35/jetified-flipper-0.33.1/AndroidManifest.xml:11:5-13:41
 MERGED from [com.facebook.flipper:flipper:0.33.1] /Users/alihalim/.gradle/caches/transforms-2/files-2.1/3ed611e0e9cdd622bbe11393ad785b35/jetified-flipper-0.33.1/AndroidManifest.xml:11:5-13:41
 MERGED from [com.facebook.flipper:flipper-network-plugin:0.33.1] /Users/alihalim/.gradle/caches/transforms-2/files-2.1/fa9d249d56579007dba70f8ee4dd5b3f/flipper-network-plugin-0.33.1/AndroidManifest.xml:11:5-13:41
@@ -231,6 +235,8 @@ MERGED from [:react-native-community_async-storage] /Users/alihalim/Development/
 MERGED from [:react-native-community_async-storage] /Users/alihalim/Development/YL2/node_modules/@react-native-community/async-storage/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-community_blur] /Users/alihalim/Development/YL2/node_modules/@react-native-community/blur/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
 MERGED from [:react-native-community_blur] /Users/alihalim/Development/YL2/node_modules/@react-native-community/blur/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-community_cameraroll] /Users/alihalim/Development/YL2/node_modules/@react-native-community/cameraroll/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-community_cameraroll] /Users/alihalim/Development/YL2/node_modules/@react-native-community/cameraroll/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-community_masked-view] /Users/alihalim/Development/YL2/node_modules/@react-native-community/masked-view/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-community_masked-view] /Users/alihalim/Development/YL2/node_modules/@react-native-community/masked-view/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-camera] /Users/alihalim/Development/YL2/node_modules/react-native-camera/android/build/intermediates/library_manifest/generalDebug/AndroidManifest.xml:5:5-7:41

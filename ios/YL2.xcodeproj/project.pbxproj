@@ -20,6 +20,7 @@
 		5E0DB53FB2FC02C162848CBD /* libPods-YL2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D6279135BCA1DB4ACCF97FF2 /* libPods-YL2.a */; };
 		657A79FBAEF64A84C13FB085 /* libPods-YL2-YL2Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 72BA9CF1E1BF2101BE810182 /* libPods-YL2-YL2Tests.a */; };
 		9DEB0F22D0884FC7F05FD4A5 /* libPods-YL2-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 62F69441D6B3217B70CB8C2E /* libPods-YL2-tvOS.a */; };
+		B695AB0824C8827E004D191A /* librn-fetch-blob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B695AB0724C8827E004D191A /* librn-fetch-blob.a */; };
 		B6CBF0E8247C56C100FF3EC9 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CBF0E7247C56C100FF3EC9 /* File.swift */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +53,13 @@
 			remoteGlobalIDString = 64D1BD361EEFE88700F3F219;
 			remoteInfo = "RNBlur-tvOS";
 		};
+		B695AB0524C88240004D191A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B695AAFF24C88240004D191A /* RNFetchBlob.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A15C300E1CD25C330074CB35;
+			remoteInfo = RNFetchBlob;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -79,6 +87,8 @@
 		72BA9CF1E1BF2101BE810182 /* libPods-YL2-YL2Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YL2-YL2Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		99725A39DF6EE6591C2C5AD8 /* libPods-YL2-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YL2-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B66E2C822474389E00C14D7D /* RNBlur.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNBlur.xcodeproj; path = "../node_modules/@react-native-community/blur/ios/RNBlur.xcodeproj"; sourceTree = "<group>"; };
+		B695AAFF24C88240004D191A /* RNFetchBlob.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNFetchBlob.xcodeproj; path = "../node_modules/rn-fetch-blob/ios/RNFetchBlob.xcodeproj"; sourceTree = "<group>"; };
+		B695AB0724C8827E004D191A /* librn-fetch-blob.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "librn-fetch-blob.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6CBF0E1247C479900FF3EC9 /* OktaOidc.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OktaOidc.framework; path = Carthage/Build/iOS/OktaOidc.framework; sourceTree = "<group>"; };
 		B6CBF0E7247C56C100FF3EC9 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		C973F689E77CCF53457027C1 /* Pods-YL2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YL2.release.xcconfig"; path = "Target Support Files/Pods-YL2/Pods-YL2.release.xcconfig"; sourceTree = "<group>"; };
@@ -101,6 +111,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E0DB53FB2FC02C162848CBD /* libPods-YL2.a in Frameworks */,
+				B695AB0824C8827E004D191A /* librn-fetch-blob.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -157,6 +168,7 @@
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B695AB0724C8827E004D191A /* librn-fetch-blob.a */,
 				B6CBF0E1247C479900FF3EC9 /* OktaOidc.framework */,
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				ED2971642150620600B7C4FE /* JavaScriptCore.framework */,
@@ -171,6 +183,7 @@
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				B695AAFF24C88240004D191A /* RNFetchBlob.xcodeproj */,
 				B66E2C822474389E00C14D7D /* RNBlur.xcodeproj */,
 			);
 			name = Libraries;
@@ -208,6 +221,14 @@
 			children = (
 				B66E2C882474389E00C14D7D /* libRNBlur.a */,
 				B66E2C8A2474389E00C14D7D /* libRNBlur.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B695AB0024C88240004D191A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B695AB0624C88240004D191A /* libRNFetchBlob.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -351,6 +372,10 @@
 					ProductGroup = B66E2C832474389E00C14D7D /* Products */;
 					ProjectRef = B66E2C822474389E00C14D7D /* RNBlur.xcodeproj */;
 				},
+				{
+					ProductGroup = B695AB0024C88240004D191A /* Products */;
+					ProjectRef = B695AAFF24C88240004D191A /* RNFetchBlob.xcodeproj */;
+				},
 			);
 			projectRoot = "";
 			targets = (
@@ -375,6 +400,13 @@
 			fileType = archive.ar;
 			path = libRNBlur.a;
 			remoteRef = B66E2C892474389E00C14D7D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B695AB0624C88240004D191A /* libRNFetchBlob.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRNFetchBlob.a;
+			remoteRef = B695AB0524C88240004D191A /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -894,7 +926,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = "/usr/lib/swift $(inherited)";
 				LIBRARY_SEARCH_PATHS = (
 					"\"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)\"",
@@ -947,7 +979,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = "/usr/lib/swift $(inherited)";
 				LIBRARY_SEARCH_PATHS = (
 					"\"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)\"",
