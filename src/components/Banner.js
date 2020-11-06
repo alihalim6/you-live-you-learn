@@ -42,10 +42,8 @@ class Banner extends Component{
   }
 
 	render(){
-		if(this.props.currentBanner.message){
-			this.revealBanner();
-		}
-
+		this.revealBanner();
+		
 		return (
 			<Animated.View style={[
 				BannerStyles.container, 
@@ -66,6 +64,6 @@ function mapStateToProps(state){
 
 const mapDispatchToProps = {
 	showBanner
-}
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(Banner);

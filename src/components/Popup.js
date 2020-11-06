@@ -3,23 +3,20 @@ import {FlatList, View, TouchableOpacity, Text} from 'react-native';
 import {connect} from 'react-redux';
 import {PopupStyles, setBorder} from '../styles/PopupStyles';
 import AppStyles from '../styles/AppStyles';
-import {OverlayStyles, closeButtonOneStyle, closeButtonTwoStyle} from '../styles/OverlayStyles';
-import {hidePopup} from '../redux/actions/OverlayActions';
+import {PageStyles, closeButtonOneStyle, closeButtonTwoStyle} from '../styles/PageStyles';
+import {closeOverlay} from '../redux/actions/OverlayActions';
 import {showCamera} from '../redux/actions/CameraActions';
+import {getCurrentPopup} from '../constants/AppConstants';
 
 class Popup extends Component{
-	closePopup = () => {
-  	this.props.hidePopup();
-  }
-
-  popupItemPressed = (item) => {
+  popupItemPressed = (item) => {  	
   	if(item.usesCamera){
   		//TODO: SHOW INFO IF PERMISSION BLOCKS CAMERA
-  		this.props.showCamera(item.cameraType, item.pictureCallback);
+  		this.props.showCamera(item.cameraType, item.mediaCallback);
   	}
   	else{
+  		//this.props.closeOverlay();
   		item.handlerFn();
-  		this.closePopup();
   	}
   }
 
@@ -33,12 +30,10 @@ class Popup extends Component{
 			const defaultPositioning = (popup && popup.defaultPositioning);
 			containerStyles = popup.containerStyles;
 			itemContainerStyles = popup.itemContainerStyles;
-			closeButtonStyles = popup.closeButtonStyles;
 
 			if(defaultPositioning){
 				containerStyles = popup.defaultContainerStyles;
 				itemContainerStyles = {};//use styles in PopupStyles
-				closeButtonStyles = popup.defaultCloseButtonStyles;
 			}
 		}
 
@@ -49,14 +44,22 @@ class Popup extends Component{
 						<View style={[PopupStyles.itemContainer, itemContainerStyles]}>
 							<FlatList 
 								data={popup.options}
+								ListHeaderComponent={() => {
+									return (
+										<TouchableOpacity 
+											onPress={() => this.props.closeOverlay()} 
+											style={[PopupStyles.touchableClose]}>
+												<View style={[closeButtonOneStyle, PopupStyles.closeButton]}></View>
+							        	<View style={[closeButtonTwoStyle, PopupStyles.closeButton]}></View>
+										</TouchableOpacity>
+									);
+								}}
 							  renderItem={({item}) => {
 							  	return (
-							  		<>
-								  		<TouchableOpacity onPress={() => this.popupItemPressed(item)} accessible={true} accessibilityLabel={item.a11yLabel}>
-								  			<View style={PopupStyles.item}>
-								  				<Text style={[PopupStyles.label, item.labelStyles]}>{item.label}</Text>
-								  			</View>
-							  			</TouchableOpacity>
+							  		<>						  		
+								  		<TouchableOpacity style={PopupStyles.item} onPress={() => this.popupItemPressed(item)} accessible={true} accessibilityLabel={item.a11yLabel}>
+								  			<Text style={[PopupStyles.label, item.labelStyles]}>{item.label}</Text>
+								  		</TouchableOpacity>
 
 						  				<View style={setBorder(item)}></View>
 						  			</>
@@ -65,13 +68,6 @@ class Popup extends Component{
 							  keyExtractor={item => item.id}
 							/>
 						</View>
-
-						<TouchableOpacity 
-							onPress={() => this.closePopup()} 
-							style={[PopupStyles.touchableClose, PopupStyles.closeButtonContainer, closeButtonStyles]}>
-								<View style={[closeButtonOneStyle, PopupStyles.closeButton]}></View>
-			        	<View style={[closeButtonTwoStyle, PopupStyles.closeButton]}></View>
-						</TouchableOpacity>
 					</View>
 				}
 			</>
@@ -82,13 +78,13 @@ class Popup extends Component{
 
 function mapStateToProps(state){
   return {
-    currentPopup: state.overlay.currentPopup
+    currentPopup: getCurrentPopup()
   };
 }
 
 const mapDispatchToProps = {
-  hidePopup,
+  closeOverlay,
   showCamera
-}
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(Popup);

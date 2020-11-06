@@ -18,9 +18,14 @@ import {
 	USER_ID,
 	USER_SIGNED_IN,
 	PROFILE_IMAGE,
-	handleAsyncStorageError
+	handleAsyncStorageError,
+	BLACK_COLOR,
+	getCurrentPopup,
+	PAGE
 } from '../constants/AppConstants';
 import MenuHeader from './MenuHeader';
+import {showBanner} from '../redux/actions/BannerActions';
+import AboutStyles from '../styles/AboutStyles';
 
 class Menu extends Component{
   /*state = {
@@ -39,8 +44,6 @@ class Menu extends Component{
   }
 
   signOutPressed = () => {
-  	//TODO SHOW BANNER (BLACK)
-
   	AsyncStorage.setItem(USER_ID, '', handleAsyncStorageError);
   	AsyncStorage.setItem(USER_SIGNED_IN, '', handleAsyncStorageError);
   	AsyncStorage.setItem(PROFILE_IMAGE, '', handleAsyncStorageError);
@@ -50,6 +53,11 @@ class Menu extends Component{
   	this.props.setUserProfileImage(null);
 
   	this.props.navigation.closeDrawer();
+
+  	this.props.showBanner({
+			color: BLACK_COLOR,
+			message: 'SUCCESSFULLY SIGNED OUT.'
+		});
   }
 
   render(){
@@ -61,7 +69,7 @@ class Menu extends Component{
 					<ScrollView>
 			  	  <View style={MenuStyles.menuItems}>
 			      	{!this.props.signedIn && 
-				      	<TouchableHighlight activeOpacity={COLOR_FADE_OPACITY} underlayColor={getRandomFadeColor()} onPress={() => this.menuItemPressed(SIGN_UP)}>
+				      	<TouchableHighlight activeOpacity={COLOR_FADE_OPACITY} underlayColor={getRandomFadeColor()} onPress={() => this.menuItemPressed({name: SIGN_UP, type: PAGE})}>
 						      <View style={MenuStyles.item}>
 						      	<Text style={MenuStyles.menuItemLabel}>Sign Up</Text>
 						      </View>
@@ -88,7 +96,10 @@ class Menu extends Component{
 					      </View>
 			      	</TouchableHighlight>
 
-			      	<TouchableHighlight activeOpacity={COLOR_FADE_OPACITY} underlayColor={getRandomFadeColor()} onPress={() => this.menuItemPressed(ABOUT)}>
+			      	<TouchableHighlight 
+			      		activeOpacity={COLOR_FADE_OPACITY} 
+			      		underlayColor={getRandomFadeColor()} 
+			      		onPress={() => this.menuItemPressed({name: ABOUT, styles: AboutStyles.page, type: PAGE})}>
 					      <View style={MenuStyles.item}>
 					      	<Text style={MenuStyles.menuItemLabel}>About</Text>
 					      </View>
@@ -121,7 +132,7 @@ class Menu extends Component{
 function mapStateToProps(state){
   return {
     signedIn: state.user.signedIn,
-    currentPopup: state.overlay.currentPopup
+    currentPopup: getCurrentPopup()
   };
 }
 
@@ -129,7 +140,8 @@ const mapDispatchToProps = {
   showOverlay,
   setUserId,
   setUserSignedIn,
-  setUserProfileImage
+  setUserProfileImage,
+  showBanner
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Menu);

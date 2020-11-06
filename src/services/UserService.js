@@ -16,7 +16,8 @@ import {
 	handleAsyncStorageError,
 	HTTP_200,
 	configureProfileImagePath,
-	isTest
+	isTest,
+	hasPermission
 } from '../constants/AppConstants';
 import store from '../redux';
 import {
@@ -29,6 +30,8 @@ import {
 } from '../redux/actions/UserActions';
 import {showBanner} from '../redux/actions/BannerActions';
 import mapError from '../utilities/ErrorMapper';
+import {INIT_USER_PROFILE_IMAGE} from '../constants/CameraConstants';
+import {INVALID_INPUT} from '../constants/SignUpConstants';
 
 function setUserInfo(user, signedIn){
 	AsyncStorage.setItem(USER_ID, user.uid, handleAsyncStorageError);
@@ -80,7 +83,16 @@ async function getProfileImage(userId){
 	else{
 		//TODO: HANDLE FILE PATH NOT BEING FOUND ON DEVICE
 
-		profileImagePath = userProfileImage;
+		//COMMENTING OUT B/C IF USER TAKES PIC THEN REVOKES/NEVER GAVE PERMISSION TO READ IT, THIS IS BLOCKING IT FROM LOADING ON LAUNCH;
+		//IT'S A PIC THEY TOOK IN APP ITSELF AND FUNCTIONALITY TO REMOVE IT IS THERE IF THEY DON'T WANT GALLERY ACCESSED
+		/*const hasGalleryPermission = await hasPermission('gallery');
+		
+		if(!hasGalleryPermission){
+			handleError(INIT_USER_PROFILE_IMAGE);
+		}
+		else{*/
+			profileImagePath = userProfileImage;
+		//}
 	}
 
   store.dispatch(setUserProfileImage(profileImagePath));
@@ -89,7 +101,7 @@ async function getProfileImage(userId){
 export async function initializeUser(){
 	const userId = await AsyncStorage.getItem(USER_ID, handleAsyncStorageError);
 	const userSignedIn = await AsyncStorage.getItem(USER_SIGNED_IN, handleAsyncStorageError);
-
+	
 	if(userId){
 		try{
 	    const response = await axios(`http://${serverHost}:${config.serverPort}${config.user.serverEndpoint}${config.user.getUser}`, {
@@ -105,7 +117,6 @@ export async function initializeUser(){
 	   	getProfileImage(userId);
 	  }
 	 	catch(error){
-	 		console.log(JSON.stringify(error))
 	 		handleError(error.response.data);
 	 	}
  	}
@@ -142,19 +153,24 @@ export async function signUpUser(username, password){
 //!!!!!!!!!!
 
 
-export async function signInUser(username, password){
+export async function signInUser(username, password, invalidSignIn){
   try{
     const response = await axios(`http://${serverHost}:${config.serverPort}${config.user.serverEndpoint}${config.user.signInUser}`, {
   	  params: {
   		  username,
   		  password
-  	  }});
+  	  }
+  	});
 
    	setUserInfo(response.data, true);
    	getProfileImage(response.data.uid);
+   	return true;
   }
  	catch(error){
- 		handleError(error.response.data);
+ 		const errorKey = (invalidSignIn ? INVALID_INPUT : error.response.data);
+ 		handleError(errorKey);
+ 		
+ 		return false;
  	}
 }
 

@@ -1,6 +1,9 @@
 //overlay
-export const OVERLAY_SHOWING = 'OVERLAY_SHOWING';
-export const POPUP_SHOWING = 'POPUP_SHOWING';
+export const OVERLAY_INVISIBLE = 'OVERLAY_INVISIBLE';
+export const SHOW_OVERLAY = 'SHOW_OVERLAY';
+export const NAVIGATE_OVERLAY = 'NAVIGATE_OVERLAY';
+export const CLOSE_OVERLAY = 'CLOSE_OVERLAY';
+export const CLEAR_OVERLAYS = 'CLEAR_OVERLAYS';
 
 //user
 export const SET_USER_PROFILE_IMAGE = 'SET_USER_PROFILE_IMAGE';
@@ -16,3 +19,6 @@ export const CAMERA_SHOWING = 'CAMERA_SHOWING';
 
 //banner
 export const BANNER_SHOWING = 'BANNER_SHOWING';
+
+//post
+export const POST_PAGE = 'POST_PAGE';

@@ -376,6 +376,14 @@
         "source": "/Users/alihalim/.gradle/caches/transforms-2/files-2.1/2b7e6ebaa515cd43f42fb356f0d1941c/appcompat-1.1.0/res/drawable-xxxhdpi-v4/abc_btn_radio_to_on_mtrl_015.png"
     },
     {
+        "merged": "/Users/alihalim/Development/YL2/android/app/build/intermediates/res/merged/debug/drawable-mdpi_src_assets_media.png.flat",
+        "source": "/Users/alihalim/Development/YL2/android/app/src/main/res/drawable-mdpi/src_assets_media.png"
+    },
+    {
+        "merged": "/Users/alihalim/Development/YL2/android/app/build/intermediates/res/merged/debug/drawable-mdpi_src_assets_loading.gif.flat",
+        "source": "/Users/alihalim/Development/YL2/android/app/src/main/res/drawable-mdpi/src_assets_loading.gif"
+    },
+    {
         "merged": "/Users/alihalim/Development/YL2/android/app/build/intermediates/res/merged/debug/color_mtrl_choice_chip_ripple_color.xml.flat",
         "source": "/Users/alihalim/.gradle/caches/transforms-2/files-2.1/7b4521e09033db39989053c4a0984cc2/material-1.1.0/res/color/mtrl_choice_chip_ripple_color.xml"
     },
@@ -534,6 +542,10 @@
     {
         "merged": "/Users/alihalim/Development/YL2/android/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_list_selector_disabled_holo_light.9.png.flat",
         "source": "/Users/alihalim/.gradle/caches/transforms-2/files-2.1/2b7e6ebaa515cd43f42fb356f0d1941c/appcompat-1.1.0/res/drawable-xxhdpi-v4/abc_list_selector_disabled_holo_light.9.png"
+    },
+    {
+        "merged": "/Users/alihalim/Development/YL2/android/app/build/intermediates/res/merged/debug/drawable-mdpi_src_assets_camera.png.flat",
+        "source": "/Users/alihalim/Development/YL2/android/app/src/main/res/drawable-mdpi/src_assets_camera.png"
     },
     {
         "merged": "/Users/alihalim/Development/YL2/android/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_list_pressed_holo_light.9.png.flat",
@@ -804,6 +816,10 @@
         "source": "/Users/alihalim/.gradle/caches/transforms-2/files-2.1/2b7e6ebaa515cd43f42fb356f0d1941c/appcompat-1.1.0/res/drawable-xxhdpi-v4/abc_popup_background_mtrl_mult.9.png"
     },
     {
+        "merged": "/Users/alihalim/Development/YL2/android/app/build/intermediates/res/merged/debug/drawable-mdpi_src_assets_brain.png.flat",
+        "source": "/Users/alihalim/Development/YL2/android/app/src/main/res/drawable-mdpi/src_assets_brain.png"
+    },
+    {
         "merged": "/Users/alihalim/Development/YL2/android/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_list_pressed_holo_dark.9.png.flat",
         "source": "/Users/alihalim/.gradle/caches/transforms-2/files-2.1/2b7e6ebaa515cd43f42fb356f0d1941c/appcompat-1.1.0/res/drawable-hdpi-v4/abc_list_pressed_holo_dark.9.png"
     },
@@ -1028,6 +1044,10 @@
         "source": "/Users/alihalim/Development/YL2/android/app/src/main/res/mipmap-xxhdpi/yl2.png"
     },
     {
+        "merged": "/Users/alihalim/Development/YL2/android/app/build/intermediates/res/merged/debug/drawable-mdpi_src_assets_magnifyingglass.png.flat",
+        "source": "/Users/alihalim/Development/YL2/android/app/src/main/res/drawable-mdpi/src_assets_magnifyingglass.png"
+    },
+    {
         "merged": "/Users/alihalim/Development/YL2/android/app/build/intermediates/res/merged/debug/drawable_abc_list_selector_holo_dark.xml.flat",
         "source": "/Users/alihalim/.gradle/caches/transforms-2/files-2.1/2b7e6ebaa515cd43f42fb356f0d1941c/appcompat-1.1.0/res/drawable/abc_list_selector_holo_dark.xml"
     },
@@ -1150,6 +1170,10 @@
     {
         "merged": "/Users/alihalim/Development/YL2/android/app/build/intermediates/res/merged/debug/drawable_common_google_signin_btn_text_disabled.xml.flat",
         "source": "/Users/alihalim/.gradle/caches/transforms-2/files-2.1/c287f5d712175642f4d7110425f0bbfd/jetified-play-services-base-16.0.1/res/drawable/common_google_signin_btn_text_disabled.xml"
+    },
+    {
+        "merged": "/Users/alihalim/Development/YL2/android/app/build/intermediates/res/merged/debug/raw_src_server_account.json.flat",
+        "source": "/Users/alihalim/Development/YL2/android/app/src/main/res/raw/src_server_account.json"
     },
     {
         "merged": "/Users/alihalim/Development/YL2/android/app/build/intermediates/res/merged/debug/layout_design_navigation_item_separator.xml.flat",
@@ -1608,6 +1632,10 @@
         "source": "/Users/alihalim/.gradle/caches/transforms-2/files-2.1/7b4521e09033db39989053c4a0984cc2/material-1.1.0/res/color/test_mtrl_calendar_day_selected.xml"
     },
     {
+        "merged": "/Users/alihalim/Development/YL2/android/app/build/intermediates/res/merged/debug/drawable-mdpi_src_assets_news.png.flat",
+        "source": "/Users/alihalim/Development/YL2/android/app/src/main/res/drawable-mdpi/src_assets_news.png"
+    },
+    {
         "merged": "/Users/alihalim/Development/YL2/android/app/build/intermediates/res/merged/debug/drawable_ic_edit_black_24dp.xml.flat",
         "source": "/Users/alihalim/.gradle/caches/transforms-2/files-2.1/7b4521e09033db39989053c4a0984cc2/material-1.1.0/res/drawable/ic_edit_black_24dp.xml"
     },
@@ -1700,6 +1728,10 @@
         "source": "/Users/alihalim/.gradle/caches/transforms-2/files-2.1/2b7e6ebaa515cd43f42fb356f0d1941c/appcompat-1.1.0/res/drawable-xhdpi-v4/abc_list_selector_disabled_holo_dark.9.png"
     },
     {
+        "merged": "/Users/alihalim/Development/YL2/android/app/build/intermediates/res/merged/debug/drawable-mdpi_src_assets_video.png.flat",
+        "source": "/Users/alihalim/Development/YL2/android/app/src/main/res/drawable-mdpi/src_assets_video.png"
+    },
+    {
         "merged": "/Users/alihalim/Development/YL2/android/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_common_full_open_on_phone.png.flat",
         "source": "/Users/alihalim/.gradle/caches/transforms-2/files-2.1/c287f5d712175642f4d7110425f0bbfd/jetified-play-services-base-16.0.1/res/drawable-xhdpi-v4/common_full_open_on_phone.png"
     },
@@ -1782,6 +1814,10 @@
     {
         "merged": "/Users/alihalim/Development/YL2/android/app/build/intermediates/res/merged/debug/color_design_error.xml.flat",
         "source": "/Users/alihalim/.gradle/caches/transforms-2/files-2.1/7b4521e09033db39989053c4a0984cc2/material-1.1.0/res/color/design_error.xml"
+    },
+    {
+        "merged": "/Users/alihalim/Development/YL2/android/app/build/intermediates/res/merged/debug/drawable-mdpi_src_assets_microphone.png.flat",
+        "source": "/Users/alihalim/Development/YL2/android/app/src/main/res/drawable-mdpi/src_assets_microphone.png"
     },
     {
         "merged": "/Users/alihalim/Development/YL2/android/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_googleg_standard_color_18.png.flat",
@@ -2564,6 +2600,10 @@
         "source": "/Users/alihalim/.gradle/caches/transforms-2/files-2.1/2b7e6ebaa515cd43f42fb356f0d1941c/appcompat-1.1.0/res/interpolator/btn_checkbox_unchecked_mtrl_animation_interpolator_1.xml"
     },
     {
+        "merged": "/Users/alihalim/Development/YL2/android/app/build/intermediates/res/merged/debug/drawable-mdpi_src_assets_following_brain.png.flat",
+        "source": "/Users/alihalim/Development/YL2/android/app/src/main/res/drawable-mdpi/src_assets_following_brain.png"
+    },
+    {
         "merged": "/Users/alihalim/Development/YL2/android/app/build/intermediates/res/merged/debug/color_mtrl_filled_stroke_color.xml.flat",
         "source": "/Users/alihalim/.gradle/caches/transforms-2/files-2.1/7b4521e09033db39989053c4a0984cc2/material-1.1.0/res/color/mtrl_filled_stroke_color.xml"
     },
@@ -2714,6 +2754,10 @@
     {
         "merged": "/Users/alihalim/Development/YL2/android/app/build/intermediates/res/merged/debug/color_abc_secondary_text_material_dark.xml.flat",
         "source": "/Users/alihalim/.gradle/caches/transforms-2/files-2.1/2b7e6ebaa515cd43f42fb356f0d1941c/appcompat-1.1.0/res/color/abc_secondary_text_material_dark.xml"
+    },
+    {
+        "merged": "/Users/alihalim/Development/YL2/android/app/build/intermediates/res/merged/debug/drawable-mdpi_src_assets_text.png.flat",
+        "source": "/Users/alihalim/Development/YL2/android/app/src/main/res/drawable-mdpi/src_assets_text.png"
     },
     {
         "merged": "/Users/alihalim/Development/YL2/android/app/build/intermediates/res/merged/debug/color_design_icon_tint.xml.flat",

@@ -10,17 +10,25 @@ import {
 } from 'react-native';
 import ProfileImageStyles from '../styles/ProfileImageStyles';
 import Popup from './Popup';
-import {showPopup} from '../redux/actions/OverlayActions';
+import {showOverlay} from '../redux/actions/OverlayActions';
 import {NEW_PROFILE_IMAGE, EDIT_PROFILE_IMAGE} from '../constants/PopupConstants';
-import {PROFILE_IMAGE_A11Y_LABEL, NO_PROFILE_IMAGE_A11Y_LABEL, SIGN_UP, CAMERA_ICON_A11Y_LABEL} from '../constants/AppConstants';
+import {
+  PROFILE_IMAGE_A11Y_LABEL,
+  NO_PROFILE_IMAGE_A11Y_LABEL,
+  SIGN_UP,
+  CAMERA_ICON_A11Y_LABEL,
+  getCurrentPage,
+  POPUP
+} from '../constants/AppConstants';
 
 class ProfileImage extends Component{
   profileImagePressed = () => {
     const popupConfig = (this.props.profileImage ? EDIT_PROFILE_IMAGE : NEW_PROFILE_IMAGE);
 
-    this.props.showPopup({
+    this.props.showOverlay({
       ...popupConfig,
-      defaultPositioning: (this.props.currentOverlay === SIGN_UP)
+      defaultPositioning: (this.props.currentPage && (this.props.currentPage.name === SIGN_UP)),
+      type: POPUP
     });
   }
 
@@ -58,12 +66,12 @@ function mapStateToProps(state){
   return {
     profileImage: state.user.profileImage,
     signedIn: state.user.signedIn,
-    currentOverlay: state.overlay.currentOverlay
+    currentPage: getCurrentPage()
   };
 }
 
 const mapDispatchToProps = {
-  showPopup
-}
+  showOverlay
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(ProfileImage);

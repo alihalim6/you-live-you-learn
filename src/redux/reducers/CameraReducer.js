@@ -6,8 +6,8 @@ export default function(state = {}, action){
   	  return {
         ...state, 
         currentCamera: action.camera,
-        pictureCallback: action.pictureCallback,
-        videoCallback: action.videoCallback
+        mediaCallback: action.mediaCallback,
+        closeCallback: action.closeCallback
       };
   	default :
   	  return state;

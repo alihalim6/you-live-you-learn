@@ -4,35 +4,31 @@ import {appFont, appFontBold, BASE_COLOR_DARK, BASE_GRAY, LOGO_ASPECT_RATIO} fro
 const AboutStyles = StyleSheet.create({
   container: {
   	flex: 1,
-  	alignItems: 'center'
-  },
-  logo: {
-  	width: '100%',
-  	height: undefined,
-  	aspectRatio: (LOGO_ASPECT_RATIO * 2.5),
-  	marginTop: -34
+  	alignItems: 'center',
+    justifyContent: 'flex-start'
   },
   appName: {
   	color: BASE_COLOR_DARK,
-  	fontSize: 22,
+  	fontSize: 30,
   	fontFamily: appFontBold,
   	textAlign: 'center',
-  	paddingBottom: 8
+  	paddingBottom: 8,
+    marginTop: 54
   },
   author: {
-    paddingBottom: 28,
+    paddingBottom: 48,
     fontFamily: appFont
   },
   version: {
   	color: BASE_GRAY,
     fontSize: 14,
     fontFamily: appFontBold,
-  	paddingBottom: 6
+  	paddingBottom: 20
   },
   rateReview: {
   	color: BASE_COLOR_DARK,
-  	padding: 24,
-  	paddingBottom: 50,
+  	padding: 28,
+  	paddingBottom: 110,
     fontFamily: appFont,
     textAlign: 'center'
   },
@@ -44,8 +40,8 @@ const AboutStyles = StyleSheet.create({
   	fontStyle: 'italic',
   	fontFamily: appFont
   },
-  heart: {
-  	fontStyle: 'normal'
+  page: {
+    height: 'auto'
   }
 });
 

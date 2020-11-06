@@ -7,11 +7,12 @@ import {
 	BASE_COLOR_LIGHT, 
 	ERROR_COLOR, 
 	BASE_GRAY,
-	isIOS
+	isIOS,
+	BUTTON_STYLES,
+	BUTTON_PADDING_TOP
 } from '../constants/AppConstants';
 
 const credentialsFieldPaddingTop = (isIOS ? 4 : 10);
-const signUpButtonPaddingTop = (isIOS ? 4: 0);
 const credentialsMessageFontSize = 12;
 const transitionBarTop = (isIOS ? 65: 74);
 
@@ -19,23 +20,30 @@ const SignUpStyles = {
 	title: {
 	  marginBottom: 22
 	},
-	transitionBar: {
+	signInTitle: {
+		marginTop: 40,
+		marginBottom: 0
+	},
+	colorBar: {
 		width: 1,
 		height: 14,
 		position: 'absolute',
-		backgroundColor: 'blue',
 		top: transitionBarTop
 	},
 	form: {
-	  flex: 1,
 	  alignItems: 'center',
-	  position: 'relative',
-	  top: '3%'
+	  top: '3%',
+	  height: 'auto',
+	  paddingBottom: 200
+	},
+	profileImageText: {
+		width: '100%'
 	},
 	prompt: {
     margin: 24,
-    marginBottom: 8,
+    marginBottom: 18,
     marginTop: 28,
+    fontSize: 16,
     fontFamily: appFont,
     color: BASE_COLOR_DARK,
     textAlign: 'center'
@@ -54,10 +62,8 @@ const SignUpStyles = {
 	  fontSize: 14,
 	  fontFamily: appFont
 	},
-	signUpButton: {
-	  width: 150,
-	  padding: 9,
-	  marginTop: 8,
+	submitButton: {
+	  ...BUTTON_STYLES,
 	  backgroundColor: BASE_COLOR_DARK,
 	  borderRadius: BORDER_RADIUS
 	},
@@ -66,7 +72,7 @@ const SignUpStyles = {
 	  fontSize: 20,
 	  color: BASE_COLOR_LIGHT,
 	  textAlign: 'center',
-	  paddingTop: signUpButtonPaddingTop
+	  paddingTop: BUTTON_PADDING_TOP
 	},
 	invalidMessage: {
 	  alignSelf: 'flex-end',
@@ -80,7 +86,7 @@ const SignUpStyles = {
 	},
 	requirementMessage: {
 	  fontSize: credentialsMessageFontSize,
-      color: BASE_GRAY
+    color: BASE_GRAY
 	},
 	loading: {
 	  width: 90,
@@ -92,6 +98,14 @@ const SignUpStyles = {
 		color: ERROR_COLOR,
 		textAlign: 'center',
 		padding: '5%'
+	},
+	signInText: {
+		fontFamily: appFontBold,
+		color: BASE_COLOR_DARK,
+		textDecorationLine: 'underline'
+	},
+	signInStyles: {
+		height: 'auto'
 	}
 };
 

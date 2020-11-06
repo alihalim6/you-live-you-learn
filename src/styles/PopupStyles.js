@@ -19,8 +19,7 @@ function setBorder(item){
 }
 
 const closeButtonContainerSize = 40;
-const itemPaddingLeftRight = 38;
-const touchableCloseSize = 39;
+const itemPaddingLeftRight = 30;
 
 const PopupStyles = StyleSheet.create({
   container: {
@@ -36,30 +35,27 @@ const PopupStyles = StyleSheet.create({
   item: {
     paddingLeft: itemPaddingLeftRight,
     paddingRight: itemPaddingLeftRight,
-    paddingTop: 16,
-    paddingBottom: 14,
-    minWidth: 190
+    paddingTop: 17,
+    paddingBottom: 13,
+    minWidth: 226
   },
   label: {
+    padding: 5,
     fontFamily: appFontBold,
-    fontSize: 14,
-    textAlign: 'center',
-    color: BASE_COLOR_DARK
+    fontSize: 16,
+    color: BASE_COLOR_DARK,
+    //backgroundColor: 'orange'
   },
   touchableClose: {
-    position: 'absolute',
-    width: touchableCloseSize,
-    height: touchableCloseSize,
-    backgroundColor: getRandomDarkColor()
-  },
-  closeButtonContainer: {
-    top: -20
+    alignSelf: 'flex-end',
+    width: 60,
+    height: 40
   },
   closeButton: {
-    backgroundColor: BASE_COLOR_LIGHT,
-    position: 'absolute',
-    top: 2.5,
-    left: 18
+    backgroundColor: getRandomDarkColor(),
+    top: 8,
+    right: 26,
+    height: 32
   },
   camera: {
     height: '100%'

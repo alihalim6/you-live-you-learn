@@ -15,7 +15,7 @@ export default function Home({navigation}){
 			</TouchableOpacity>
 
 			<View style={HeaderStyles.searchBar}>
-			  <TextInput placeholder="Search"/>
+			  <TextInput style={HeaderStyles.search} placeholder="Search"/>
 			</View>
 	  </View>
 	);

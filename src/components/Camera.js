@@ -3,9 +3,12 @@ import {View, TouchableOpacity} from 'react-native';
 import {connect} from 'react-redux';
 import {RNCamera} from 'react-native-camera';
 import CameraStyles from '../styles/CameraStyles';
-import {hidePopup} from '../redux/actions/OverlayActions';
 import {hideCamera} from '../redux/actions/CameraActions';
-import {PICTURE_CAMERA, VIDEO_CAMERA, CAMERA_TAKE_PICTURE_A11Y_LABEL} from '../constants/AppConstants';
+import {CAMERA_TAKE_PICTURE_A11Y_LABEL, ERROR_COLOR} from '../constants/AppConstants';
+import {PICTURE_CAMERA, VIDEO_CAMERA, CAMERA_NOT_AUTHORIZED} from '../constants/CameraConstants';
+import mapError from '../utilities/ErrorMapper';
+import {showBanner} from '../redux/actions/BannerActions';
+import {PageStyles, closeButtonOneStyle, closeButtonTwoStyle} from '../styles/PageStyles';
 
 class Camera extends Component{
 	constructor(props) {
@@ -23,67 +26,109 @@ class Camera extends Component{
       	base64: true
       });
 
-      this.props.pictureCallback(picture);
-      this.hideOverlays();
+      this.props.mediaCallback(picture);
+      this.props.hideCamera();
   	}
     catch(error){
     	console.log('error taking pic: ' + error);
     }
 	}
 
-	hideOverlays = () => {
-		this.props.hidePopup();
-		this.props.hideCamera();
-	}
-
 	handleCameraAuthChange = (auth) => {
 		if(auth.cameraStatus === RNCamera.Constants.CameraStatus.NOT_AUTHORIZED){
-			this.hideOverlays();
+			this.props.hideCamera();
 		}
 	}
 
 	handleAudioAuthChange = (auth) => {
 		if(auth.recordAudioPermissionStatus === RNCamera.Constants.CameraStatus.NOT_AUTHORIZED){
-			this.hideOverlays();
+			this.props.hideCamera();
+		}
+	}
+
+	closeButtonPressed = () => {
+		this.props.hideCamera();
+
+		if(this.props.closeCallback){
+			this.props.closeCallback();
 		}
 	}
 
 	render(){
 		return (
-				<>
-					{(this.props.currentCamera === PICTURE_CAMERA) &&
-						<RNCamera
-								style={CameraStyles.container}
-								ref={this.camera}
-				        type={this.state.currentCameraType}
-				        captureAudio={false}
-				        onStatusChange={this.handleCameraAuthChange}
-				        type={this.state.currentCameraType}
-				        notAuthorizedView={<View></View>}
-				        pendingAuthorizationView={<View style={CameraStyles.pendingAuth}></View>}
-				      />
-					}
+			<>
+				<View style={CameraStyles.actionContainer}></View>
 
-					{(this.props.currentCamera === VIDEO_CAMERA) &&
+				{(this.props.currentCamera === PICTURE_CAMERA) &&
+					<>
 						<RNCamera
-								style={CameraStyles.container}
-				        ref={this.camera}
-				        type={this.state.currentCameraType}
-				        onStatusChange={this.handleAudioAuthChange}
-				        type={this.state.currentCameraType}
-				        notAuthorizedView={<View></View>}
-				        pendingAuthorizationView={<View style={CameraStyles.pendingAuth}></View>}
-				      />
-					}
+							style={CameraStyles.container}
+							ref={this.camera}
+			        type={this.state.currentCameraType}
+			        captureAudio={false}
+			        onStatusChange={this.handleCameraAuthChange}
+			        type={this.state.currentCameraType}
+			        notAuthorizedView={<View></View>}
+			        pendingAuthorizationView={<View style={CameraStyles.pendingAuth}></View>}
+			      >
+			      	{({status}) => {
+		            if(status === RNCamera.Constants.CameraStatus.NOT_AUTHORIZED){
+		            	this.props.showBanner({
+						        color: ERROR_COLOR,
+						        message: mapError(CAMERA_NOT_AUTHORIZED)
+						      });
+		            }
+		          }}
+					  </RNCamera>
 
-					<TouchableOpacity 
-						style={CameraStyles.takePicture}
-						onPress={() => this.takePicturePressed()}
-						accessible={true}
-						accessibilityLabel={CAMERA_TAKE_PICTURE_A11Y_LABEL}
+						<TouchableOpacity 
+							style={[CameraStyles.actionButton, CameraStyles.takePictureButton]}
+							onPress={() => this.takePicturePressed()}
+							accessible={true}
+							accessibilityLabel={CAMERA_TAKE_PICTURE_A11Y_LABEL}
 						>
-					</TouchableOpacity>
-				</>
+						</TouchableOpacity>
+					</>
+				}
+
+				{(this.props.currentCamera === VIDEO_CAMERA) &&
+					<>
+						<RNCamera
+							style={CameraStyles.container}
+			        ref={this.camera}
+			        type={this.state.currentCameraType}
+			        onStatusChange={this.handleAudioAuthChange}
+			        type={this.state.currentCameraType}
+			        notAuthorizedView={<View></View>}
+			        pendingAuthorizationView={<View style={CameraStyles.pendingAuth}></View>}
+				    >
+				    	{({status}) => {
+		            if(status === RNCamera.Constants.CameraStatus.NOT_AUTHORIZED){
+		            	this.props.showBanner({
+						        color: ERROR_COLOR,
+						        message: mapError(CAMERA_NOT_AUTHORIZED)
+						      });
+		            }
+		          }}
+				    </RNCamera>
+
+				    <TouchableOpacity 
+							style={[CameraStyles.actionButton, CameraStyles.takePictureButton]}
+							onPress={() => null}
+							accessible={true}
+						>
+						</TouchableOpacity>
+					</>
+				}
+
+				<TouchableOpacity 
+					onPress={() => this.closeButtonPressed()} 
+					style={[PageStyles.pageButton, PageStyles.closeButton, CameraStyles.closeButton]}
+				>
+          <View style={[closeButtonOneStyle, CameraStyles.closeButtonStyle]}></View>
+          <View style={[closeButtonTwoStyle, CameraStyles.closeButtonStyle]}></View>
+        </TouchableOpacity>
+			</>
 		);
 	}
 }
@@ -91,14 +136,14 @@ class Camera extends Component{
 function mapStateToProps(state){
   return {
     currentCamera: state.camera.currentCamera,
-    pictureCallback: state.camera.pictureCallback,
-    videoCallback: state.camera.videoCallback
+    mediaCallback: state.camera.mediaCallback,
+    closeCallback: state.camera.closeCallback
   };
 }
 
 const mapDispatchToProps = {
-	hidePopup,
-	hideCamera
-}
+	hideCamera,
+	showBanner
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(Camera);

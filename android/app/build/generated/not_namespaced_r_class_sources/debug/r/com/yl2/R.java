@@ -6667,9 +6667,19 @@ public final class R {
     public static final int notification_tile_bg=0x7f0700a4;
     public static final int notify_panel_notification_icon_bg=0x7f0700a5;
     public static final int redbox_top_border_background=0x7f0700a6;
-    public static final int test_custom_background=0x7f0700a7;
-    public static final int tooltip_frame_dark=0x7f0700a8;
-    public static final int tooltip_frame_light=0x7f0700a9;
+    public static final int src_assets_brain=0x7f0700a7;
+    public static final int src_assets_camera=0x7f0700a8;
+    public static final int src_assets_following_brain=0x7f0700a9;
+    public static final int src_assets_loading=0x7f0700aa;
+    public static final int src_assets_magnifyingglass=0x7f0700ab;
+    public static final int src_assets_media=0x7f0700ac;
+    public static final int src_assets_microphone=0x7f0700ad;
+    public static final int src_assets_news=0x7f0700ae;
+    public static final int src_assets_text=0x7f0700af;
+    public static final int src_assets_video=0x7f0700b0;
+    public static final int test_custom_background=0x7f0700b1;
+    public static final int tooltip_frame_dark=0x7f0700b2;
+    public static final int tooltip_frame_light=0x7f0700b3;
   }
   public static final class id {
     public static final int ALT=0x7f080000;
@@ -7166,6 +7176,7 @@ public final class R {
   public static final class raw {
     public static final int app=0x7f0e0000;
     public static final int server_account=0x7f0e0001;
+    public static final int src_server_account=0x7f0e0002;
   }
   public static final class string {
     public static final int abc_action_bar_home_description=0x7f0f0000;

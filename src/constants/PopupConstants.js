@@ -1,21 +1,26 @@
 import store from '../redux';
 import AsyncStorage from '@react-native-community/async-storage';
-import {PICTURE_CAMERA, isIOS, PROFILE_IMAGE, handleAsyncStorageError, TRANSPARENT_COLOR} from '../constants/AppConstants';
+import {showOverlay, closeOverlay} from '../redux/actions/OverlayActions';
+import {
+	isIOS, 
+	PROFILE_IMAGE,
+	handleAsyncStorageError,
+	TRANSPARENT_COLOR,
+	getCurrentPage,
+	getCurrentPopup,
+	PAGE
+} from '../constants/AppConstants';
+import {PICTURE_CAMERA, PHOTO_GALLERY, GALLERY} from '../constants/CameraConstants';
 import {setProfileImage, removeProfileImage} from '../services/UserService';
 import {setUserProfileImage} from '../redux/actions/UserActions';
 
 const newProfileImageContainerMarginTop = (isIOS ? '19%' : '15%');
 const editProfileImageContainerTop = (isIOS ? '39%' : '23%');
 
-const newProfileImageCloseButtonTop = (isIOS ? 51 : 40);
-const editProfileImageCloseButtonTop = (isIOS ? 38 : 14);
-
-const defaultNewProfileImageCloseButtonLeft = (isIOS ? 264 : 282);
-const defaultEditProfileImageCloseButtonLeft = (defaultNewProfileImageCloseButtonLeft + 25);
-
 const profileImagePopupContainerTop = 0;
+const firstItemMarginTop = -28;
 
-//immediately display picture taken using local file (or clear it)
+//immediately display picture using local file (or clear it)
 function setLocalProfileImage(source){
 	const storedSource = (source ? source : '');
 	store.dispatch(setUserProfileImage(source));
@@ -23,8 +28,23 @@ function setLocalProfileImage(source){
 }
 
 function pictureCallback(picture){
+	store.dispatch(closeOverlay());
 	setLocalProfileImage(picture.uri);
 	setProfileImage(picture);
+}
+
+function openPictureGallery(){
+	const currentState = store.getState();
+
+	store.dispatch(showOverlay({
+		name: GALLERY,
+		type: PAGE,
+		galleryType: PHOTO_GALLERY,
+		mediaCallback: pictureCallback,
+		previousOverlay: getCurrentPage(),
+		previousPopup: getCurrentPopup(),
+		clearable: true
+	}));
 }
 
 export const PROFILE_IMAGE_A11Y_LABEL = 'profile pic';
@@ -39,18 +59,21 @@ export const NEW_PROFILE_IMAGE = {
 	options: [
 		{
 			id: '1',
-			label: 'TAKE A PIC',
+			label: 'TAKE PICTURE',
 			a11yLabel: TAKE_A_PIC_A11Y_LABEL,
 			usesCamera: true,
 			cameraType: PICTURE_CAMERA,
-			pictureCallback
+			mediaCallback: pictureCallback,
+			labelStyles: {
+				marginTop: firstItemMarginTop
+			}
 		},
 		{
 			id: '2',
-			label: 'UPLOAD A PIC',
+			label: 'CHOOSE PICTURE',
 			a11yLabel: UPLOAD_A_PIC_A11Y_LABEL,
 			isLast: true,
-			handlerFn: () => {}
+			handlerFn: openPictureGallery
 		}
 	],
 	containerStyles: {
@@ -60,13 +83,6 @@ export const NEW_PROFILE_IMAGE = {
 		marginTop: newProfileImageContainerMarginTop,
 		left: 58,
 		alignSelf: 'flex-start'
-	},
-	closeButtonStyles: {
-		top: newProfileImageCloseButtonTop,
-    left: 228
-	},
-	defaultCloseButtonStyles: {
-		left: defaultNewProfileImageCloseButtonLeft
 	}
 };
 
@@ -74,21 +90,24 @@ export const EDIT_PROFILE_IMAGE = {
 	options: [
 		{
 			id: '1',
-			label: 'TAKE A NEW PIC',
+			label: 'TAKE NEW PICTURE',
 			a11yLabel: TAKE_A_NEW_PIC_A11Y_LABEL,
 			usesCamera: true,
 			cameraType: PICTURE_CAMERA,
-			pictureCallback
+			mediaCallback: pictureCallback,
+			labelStyles: {
+				marginTop: firstItemMarginTop
+			}
 		},
 		{
 			id: '2',
-			label: 'UPLOAD A DIFFERENT PIC',
+			label: 'CHOOSE DIFFERENT PICTURE',
 			a11yLabel: UPLOAD_A_DIFFERENT_PIC_A11Y_LABEL,
-			handlerFn: () => {}
+			handlerFn: openPictureGallery
 		},
 		{
 			id: '3',
-			label: 'REMOVE PIC',
+			label: 'REMOVE PICTURE',
 			a11yLabel: REMOVE_PIC_A11Y_LABEL,
 			isLast: true,
 			labelStyles: {
@@ -97,6 +116,7 @@ export const EDIT_PROFILE_IMAGE = {
 			handlerFn: () => {
 				setLocalProfileImage(null);
 				removeProfileImage();
+				store.dispatch(closeOverlay());
 			}
 		}
 	],
@@ -107,13 +127,6 @@ export const EDIT_PROFILE_IMAGE = {
 	  top: editProfileImageContainerTop,
 		left: 38,
 		alignSelf: 'flex-start'
-	},
-	closeButtonStyles: {
-		top: editProfileImageCloseButtonTop,
-    left: 262
-	},
-	defaultCloseButtonStyles: {
-		left: defaultEditProfileImageCloseButtonLeft
 	}
 };
 

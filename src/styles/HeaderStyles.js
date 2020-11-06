@@ -1,30 +1,28 @@
 import {StyleSheet, Platform} from 'react-native';
-import {appFont, BASE_COLOR_DARK, BASE_COLOR_LIGHT, LIGHT_GRAY, BORDER_WIDTH, isIOS} from '../constants/AppConstants';
+import {
+  appFont, 
+  BASE_COLOR_DARK, 
+  BASE_COLOR_LIGHT, 
+  LIGHT_GRAY, 
+  BORDER_WIDTH, 
+  isIOS,
+  searchBarPaddingLeft
+} from '../constants/AppConstants';
 
 const hamburgerMenuButtonWidth = 25;
-const searchBarPaddingTop = (isIOS ? 13 : 0);
+const searchBarPaddingTop = (isIOS ? 12 : 0);
 
 const HeaderStyles = StyleSheet.create({
   container: {
-  	flex: 1,
   	flexDirection: 'row',
   	alignItems: 'flex-start',
-  	height: 122,
-  	backgroundColor: BASE_COLOR_LIGHT,
-  	elevation: 10,
-  	shadowColor: BASE_COLOR_DARK,
-    shadowOffset: {
-    	width: 0,
-    	height: 4
-    },
-    shadowOpacity: 0.1,
-    shadowRadius: 2
+  	backgroundColor: BASE_COLOR_LIGHT
   },
   hamburgerMenuButton: {
   	width: hamburgerMenuButtonWidth,
   	margin: 20,
   	marginRight: 26,
-  	marginTop: 29
+  	marginTop: 26
   },
   hamburgerMenuLine: {
   	width: hamburgerMenuButtonWidth,
@@ -34,15 +32,17 @@ const HeaderStyles = StyleSheet.create({
   },
   searchBar: {
   	width: '70%',
-  	height: 46,
+  	height: 45,
   	borderWidth: BORDER_WIDTH,
   	borderColor: LIGHT_GRAY,
   	marginTop: 15,
   	paddingTop: searchBarPaddingTop,
-  	paddingLeft: 12,
-  	fontSize: 18,
-  	fontFamily: appFont,
+  	paddingLeft: searchBarPaddingLeft,
   	backgroundColor: BASE_COLOR_LIGHT
+  },
+  search: {
+    fontSize: 16,
+    fontFamily: appFont
   }
 });
 

@@ -14,9 +14,9 @@ import {
 import {TAKE_A_PIC_A11Y_LABEL} from '../src/constants/PopupConstants';
 
 const anonymousUserId = 'YCgfIL7IgbS36BNSE76dcJIv7mC2';
-const signedUpUserId = 'WK9m6Lkz6DeGxlKBWsjyepQRoas2';
-const anonymousProfileImage = '/Users/alihalim/Development/YL2/testing/profileImages/YCgfIL7IgbS36BNSE76dcJIv7mC2.jpg';
-const signedUpProfileImage = '/Users/alihalim/Development/YL2/testing/profileImages/WK9m6Lkz6DeGxlKBWsjyepQRoas2.jpg';
+const signedUpUserId = 'D6t7HjaPL6M4NdVthx0ivyqZik83';
+const anonymousProfileImage = '/Users/alihalim/Development/YL2/testing/profileImages/' + anonymousUserId + '.jpg';
+const signedUpProfileImage = '/Users/alihalim/Development/YL2/testing/profileImages/' + signedUpUserId + '.jpg';
 
 export async function getMenuItems(){
 	const userId = await AsyncStorage.getItem(USER_ID);

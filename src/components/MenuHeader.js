@@ -7,7 +7,6 @@ import {MENU_USERNAME_A11Y_LABEL, MENU_FOLLOW_A11Y_LABEL, MENU_FOLLOWING_A11Y_LA
 
 class MenuHeader extends Component{
   render(){
-    console.log(this.props.signedIn)
   	return (
       <View style={[MenuStyles.header, {height: headerHeight(this.props.signedIn)}]}>
 	  	{this.props.signedIn &&

@@ -35,8 +35,6 @@
 	</dict>
 	<key>NSCameraUsageDescription</key>
 	<string>YL2 needs access to the camera for you to take pictures and videos</string>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string></string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>YL2 needs access to the microphone for you to record audio</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>

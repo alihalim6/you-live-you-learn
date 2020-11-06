@@ -1,7 +1,7 @@
 import {Easing} from 'react-native';
 
 //styles
-export const BANNER_HEIGHT = 46;
+export const BANNER_HEIGHT = 42;
 export const BANNER_INITIAL_TOP = -BANNER_HEIGHT;
 
 //animation

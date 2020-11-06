@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:1:1-44:12
-INJECTED from /Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:1:1-44:12
-INJECTED from /Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:1:1-44:12
-INJECTED from /Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:1:1-44:12
+ADDED from /Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:1:1-43:12
+INJECTED from /Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:1:1-43:12
+INJECTED from /Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:1:1-43:12
+INJECTED from /Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:1:1-43:12
 MERGED from [:@react-native-community_cameraroll] /Users/alihalim/Development/YL2/node_modules/@react-native-community/cameraroll/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-9:12
 MERGED from [com.facebook.flipper:flipper:0.33.1] /Users/alihalim/.gradle/caches/transforms-2/files-2.1/3ed611e0e9cdd622bbe11393ad785b35/jetified-flipper-0.33.1/AndroidManifest.xml:8:1-18:12
 MERGED from [com.facebook.flipper:flipper-network-plugin:0.33.1] /Users/alihalim/.gradle/caches/transforms-2/files-2.1/fa9d249d56579007dba70f8ee4dd5b3f/flipper-network-plugin-0.33.1/AndroidManifest.xml:8:1-15:12
@@ -15,6 +15,7 @@ MERGED from [:react-native-community_cameraroll] /Users/alihalim/Development/YL2
 MERGED from [:react-native-community_masked-view] /Users/alihalim/Development/YL2/node_modules/@react-native-community/masked-view/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-9:12
 MERGED from [:react-native-camera] /Users/alihalim/Development/YL2/node_modules/react-native-camera/android/build/intermediates/library_manifest/generalDebug/AndroidManifest.xml:2:1-18:12
 MERGED from [:react-native-gesture-handler] /Users/alihalim/Development/YL2/node_modules/react-native-gesture-handler/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
+MERGED from [:react-native-permissions] /Users/alihalim/Development/YL2/node_modules/react-native-permissions/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-9:12
 MERGED from [:react-native-reanimated] /Users/alihalim/Development/YL2/node_modules/react-native-reanimated/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
 MERGED from [:react-native-safe-area-context] /Users/alihalim/Development/YL2/node_modules/react-native-safe-area-context/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-9:12
 MERGED from [:react-native-screens] /Users/alihalim/Development/YL2/node_modules/react-native-screens/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
@@ -84,20 +85,20 @@ MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.2.0] /Users/alihalim/.
 MERGED from [androidx.arch.core:core-runtime:2.1.0] /Users/alihalim/.gradle/caches/transforms-2/files-2.1/596fc679c0cd5d4e81c0bb73a34a2445/core-runtime-2.1.0/AndroidManifest.xml:17:1-24:12
 MERGED from [com.facebook.fresco:fbcore:2.0.0] /Users/alihalim/.gradle/caches/transforms-2/files-2.1/3928f053c20f34a6a8ae86921dc51163/jetified-fbcore-2.0.0/AndroidManifest.xml:2:1-9:12
 MERGED from [com.facebook.soloader:annotation:0.8.2] /Users/alihalim/.gradle/caches/transforms-2/files-2.1/562a4d899b3a7a711a398f7636c8c187/annotation-0.8.2/AndroidManifest.xml:2:1-13:12
-INJECTED from /Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:1:1-44:12
-INJECTED from /Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:1:1-44:12
-INJECTED from /Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:1:1-44:12
+INJECTED from /Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:1:1-43:12
+INJECTED from /Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:1:1-43:12
+INJECTED from /Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:1:1-43:12
 	package
 		ADDED from /Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:2:3-20
 		INJECTED from /Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml
 		INJECTED from /Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml
 	android:versionName
 		INJECTED from /Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml
-		ADDED from /Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:1:1-44:12
+		ADDED from /Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:1:1-43:12
 		INJECTED from /Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml
 	android:versionCode
 		INJECTED from /Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml
-		ADDED from /Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:1:1-44:12
+		ADDED from /Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:1:1-43:12
 		INJECTED from /Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:1:11-69
@@ -207,16 +208,10 @@ uses-permission#android.permission.READ_EXTERNAL_STORAGE
 ADDED from /Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:39:5-80
 	android:name
 		ADDED from /Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:39:22-77
-uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from /Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:40:5-81
-MERGED from [:rn-fetch-blob] /Users/alihalim/Development/YL2/node_modules/rn-fetch-blob/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:33:5-81
-MERGED from [:rn-fetch-blob] /Users/alihalim/Development/YL2/node_modules/rn-fetch-blob/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:33:5-81
-	android:name
-		ADDED from /Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:40:22-78
 uses-permission#android.permission.RECORD_AUDIO
-ADDED from /Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:43:5-70
+ADDED from /Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:42:5-70
 	android:name
-		ADDED from /Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:43:22-68
+		ADDED from /Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:42:22-68
 uses-sdk
 INJECTED from /Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml
@@ -243,6 +238,8 @@ MERGED from [:react-native-camera] /Users/alihalim/Development/YL2/node_modules/
 MERGED from [:react-native-camera] /Users/alihalim/Development/YL2/node_modules/react-native-camera/android/build/intermediates/library_manifest/generalDebug/AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-gesture-handler] /Users/alihalim/Development/YL2/node_modules/react-native-gesture-handler/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
 MERGED from [:react-native-gesture-handler] /Users/alihalim/Development/YL2/node_modules/react-native-gesture-handler/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-permissions] /Users/alihalim/Development/YL2/node_modules/react-native-permissions/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-permissions] /Users/alihalim/Development/YL2/node_modules/react-native-permissions/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-reanimated] /Users/alihalim/Development/YL2/node_modules/react-native-reanimated/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
 MERGED from [:react-native-reanimated] /Users/alihalim/Development/YL2/node_modules/react-native-reanimated/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
 MERGED from [:react-native-safe-area-context] /Users/alihalim/Development/YL2/node_modules/react-native-safe-area-context/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-7:41
@@ -421,6 +418,10 @@ uses-permission#android.permission.ACCESS_NETWORK_STATE
 ADDED from [:rn-fetch-blob] /Users/alihalim/Development/YL2/node_modules/rn-fetch-blob/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:27:5-79
 	android:name
 		ADDED from [:rn-fetch-blob] /Users/alihalim/Development/YL2/node_modules/rn-fetch-blob/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:27:22-76
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from [:rn-fetch-blob] /Users/alihalim/Development/YL2/node_modules/rn-fetch-blob/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:33:5-81
+	android:name
+		ADDED from [:rn-fetch-blob] /Users/alihalim/Development/YL2/node_modules/rn-fetch-blob/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:33:22-78
 provider#com.RNFetchBlob.Utils.FileProvider
 ADDED from [:rn-fetch-blob] /Users/alihalim/Development/YL2/node_modules/rn-fetch-blob/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:36:9-44:20
 	android:grantUriPermissions

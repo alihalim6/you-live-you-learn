@@ -1,7 +1,8 @@
 import '@testing-library/jest-dom';
 import * as AsyncStorage from '@react-native-community/async-storage/jest/async-storage-mock';
 import {setUserId, setUserSignedIn, setUserProfileImage} from '../src/redux/actions/UserActions';
-import {hideOverlay, hidePopup} from '../src/redux/actions/OverlayActions';
+//import {hideOverlay, hidePopup} from '../src/redux/actions/OverlayActions';
+import {clearOverlays} from '../src/redux/actions/OverlayActions';
 import store from '../src/redux';
 import {IS_TEST} from '../src/constants/AppConstants';
 
@@ -13,8 +14,9 @@ afterEach(() => {
   store.dispatch(setUserId(null));
   store.dispatch(setUserSignedIn(false));
   store.dispatch(setUserProfileImage(null));
-  store.dispatch(hideOverlay());
-  store.dispatch(hidePopup());
+  /*store.dispatch(hideOverlay());
+  store.dispatch(hidePopup());*/
+  store.dispatch(clearOverlays());
   
   return AsyncStorage.clear();
 });

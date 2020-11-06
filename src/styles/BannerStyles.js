@@ -1,6 +1,8 @@
 import {StyleSheet} from 'react-native';
-import {BASE_COLOR_LIGHT, appFontBold} from '../constants/AppConstants';
+import {BASE_COLOR_LIGHT, appFontBold, isIOS} from '../constants/AppConstants';
 import {BANNER_HEIGHT, BANNER_INITIAL_TOP} from '../constants/BannerConstants';
+
+const textPaddingTop = (isIOS ? 26 : 16);
 
 const BannerStyles = StyleSheet.create({
   container: {
@@ -14,7 +16,7 @@ const BannerStyles = StyleSheet.create({
     fontSize: 12,
     fontFamily: appFontBold,
     textAlign: 'center',
-    paddingTop: 26
+    paddingTop: textPaddingTop
   }
 });
 

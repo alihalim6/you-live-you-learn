@@ -1418,6 +1418,16 @@ drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
 drawable redbox_top_border_background
+drawable src_assets_brain
+drawable src_assets_camera
+drawable src_assets_following_brain
+drawable src_assets_loading
+drawable src_assets_magnifyingglass
+drawable src_assets_media
+drawable src_assets_microphone
+drawable src_assets_news
+drawable src_assets_text
+drawable src_assets_video
 drawable test_custom_background
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
@@ -1903,6 +1913,7 @@ mipmap yl2
 plurals mtrl_badge_content_description
 raw app
 raw server_account
+raw src_server_account
 string abc_action_bar_home_description
 string abc_action_bar_up_description
 string abc_action_menu_overflow_description

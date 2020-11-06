@@ -1,6 +1,6 @@
 import React from 'react';
 import * as AsyncStorage from '@react-native-community/async-storage/jest/async-storage-mock';
-import {PICTURE_CAMERA} from '../src/constants/AppConstants';
+import {PICTURE_CAMERA, getCurrentPopop} from '../src/constants/AppConstants';
 import {initializeUser} from '../src/services/UserService';
 import {render, fireEvent} from '../testing/jest.app.js';
 import {getMenuItems, initializeAnonymousUserTest} from '../testing';
@@ -28,9 +28,10 @@ test('no user id should see you pic placeholder, new pic popup on placeholder pr
 
 	fireEvent.press(noProfileImageItem);
 
-	currentState = store.getState();
+	//currentState = store.getState();
 
-	expect(currentState.overlay.currentPopup).toStrictEqual({
+	//expect(currentState.overlay.currentPopup).toStrictEqual({
+	expect(getCurrentPopop()).toStrictEqual({
 		...NEW_PROFILE_IMAGE,
 		defaultPositioning: false
 	});
@@ -56,9 +57,10 @@ describe('anonymous user', async () => {
 
 		fireEvent.press(noProfileImageItem);
 
-		currentState = store.getState();
+		//currentState = store.getState();
 
-		expect(currentState.overlay.currentPopup).toStrictEqual({
+		//expect(currentState.overlay.currentPopup).toStrictEqual({
+		expect(getCurrentPopop()).toStrictEqual({
 			...NEW_PROFILE_IMAGE,
 			defaultPositioning: false
 		});
@@ -73,9 +75,10 @@ describe('anonymous user', async () => {
 
 		fireEvent.press(profileImageItem);
 
-		currentState = store.getState();
+		//currentState = store.getState();
 		
-		expect(currentState.overlay.currentPopup).toStrictEqual({
+		//expect(currentState.overlay.currentPopup).toStrictEqual({
+		expect(getCurrentPopop()).toStrictEqual({
 			...EDIT_PROFILE_IMAGE,
 			defaultPositioning: false
 		});

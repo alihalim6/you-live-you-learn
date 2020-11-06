@@ -84,6 +84,11 @@ target 'YL2' do
 
   pod 'react-native-splash-screen', :path => '../node_modules/react-native-splash-screen'
 
+  permissions_path = '../node_modules/react-native-permissions/ios'
+  pod 'Permission-PhotoLibrary', :path => "#{permissions_path}/PhotoLibrary.podspec"
+  pod 'Permission-Microphone', :path => "#{permissions_path}/Microphone.podspec"
+  pod 'Permission-MediaLibrary', :path => "#{permissions_path}/MediaLibrary.podspec"
+
   target 'YL2Tests' do
     inherit! :complete
     # Pods for testing
@@ -98,14 +103,5 @@ target 'YL2' do
   add_flipper_pods!
   post_install do |installer|
     flipper_post_install(installer)
-  end
-end
-
-target 'YL2-tvOS' do
-  # Pods for YL2-tvOS
-
-  target 'YL2-tvOSTests' do
-    inherit! :search_paths
-    # Pods for testing
   end
 end

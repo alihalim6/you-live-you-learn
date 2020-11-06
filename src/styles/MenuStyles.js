@@ -7,7 +7,9 @@ import {
 	BORDER_WIDTH,
 	BASE_GRAY,
 	getRandomFadeColor,
-	isIOS
+  getRandomBrightColor,
+	isIOS,
+  COLOR_FADE_OPACITY
 } from '../constants/AppConstants';
 
 const noSignInContainerMarginTop = (isIOS ? 19 : 0);
@@ -91,7 +93,7 @@ const MenuStyles = {
     width: '100%',
     height: 54,
     color: BASE_COLOR_DARK,
-    backgroundColor: getRandomFadeColor()
+    backgroundColor: getRandomBrightColor(COLOR_FADE_OPACITY)
   },
   item: {
     borderTopWidth: BORDER_WIDTH,
