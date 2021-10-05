@@ -2,23 +2,19 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/../node_modules/@react-native-community/async-storage/android/@react-native-community_async-storage.iml" filepath="$PROJECT_DIR$/../node_modules/@react-native-community/async-storage/android/@react-native-community_async-storage.iml" group="YL2/@react-native-community_async-storage" />
-      <module fileurl="file://$PROJECT_DIR$/../node_modules/@react-native-community/cameraroll/android/@react-native-community_cameraroll.iml" filepath="$PROJECT_DIR$/../node_modules/@react-native-community/cameraroll/android/@react-native-community_cameraroll.iml" group="YL2/@react-native-community_cameraroll" />
-      <module fileurl="file://$PROJECT_DIR$/YL2.iml" filepath="$PROJECT_DIR$/YL2.iml" group="YL2" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="YL2/app" />
-      <module fileurl="file://$PROJECT_DIR$/../node_modules/react-native-camera/android/react-native-camera.iml" filepath="$PROJECT_DIR$/../node_modules/react-native-camera/android/react-native-camera.iml" group="YL2/react-native-camera" />
-      <module fileurl="file://$PROJECT_DIR$/../node_modules/@react-native-community/async-storage/android/react-native-community_async-storage.iml" filepath="$PROJECT_DIR$/../node_modules/@react-native-community/async-storage/android/react-native-community_async-storage.iml" group="YL2/react-native-community_async-storage" />
-      <module fileurl="file://$PROJECT_DIR$/../node_modules/@react-native-community/blur/android/react-native-community_blur.iml" filepath="$PROJECT_DIR$/../node_modules/@react-native-community/blur/android/react-native-community_blur.iml" group="YL2/react-native-community_blur" />
-      <module fileurl="file://$PROJECT_DIR$/../node_modules/@react-native-community/cameraroll/android/react-native-community_cameraroll.iml" filepath="$PROJECT_DIR$/../node_modules/@react-native-community/cameraroll/android/react-native-community_cameraroll.iml" group="YL2/react-native-community_cameraroll" />
-      <module fileurl="file://$PROJECT_DIR$/../node_modules/@react-native-community/masked-view/android/react-native-community_masked-view.iml" filepath="$PROJECT_DIR$/../node_modules/@react-native-community/masked-view/android/react-native-community_masked-view.iml" group="YL2/react-native-community_masked-view" />
-      <module fileurl="file://$PROJECT_DIR$/../node_modules/react-native-gesture-handler/android/react-native-gesture-handler.iml" filepath="$PROJECT_DIR$/../node_modules/react-native-gesture-handler/android/react-native-gesture-handler.iml" group="YL2/react-native-gesture-handler" />
-      <module fileurl="file://$PROJECT_DIR$/../node_modules/react-native-permissions/android/react-native-permissions.iml" filepath="$PROJECT_DIR$/../node_modules/react-native-permissions/android/react-native-permissions.iml" group="YL2/react-native-permissions" />
-      <module fileurl="file://$USER_HOME$/.npm-global/lib/node_modules/react-native-randombytes/android/react-native-randombytes.iml" filepath="$USER_HOME$/.npm-global/lib/node_modules/react-native-randombytes/android/react-native-randombytes.iml" group="YL2/react-native-randombytes" />
-      <module fileurl="file://$PROJECT_DIR$/../node_modules/react-native-reanimated/android/react-native-reanimated.iml" filepath="$PROJECT_DIR$/../node_modules/react-native-reanimated/android/react-native-reanimated.iml" group="YL2/react-native-reanimated" />
-      <module fileurl="file://$PROJECT_DIR$/../node_modules/react-native-safe-area-context/android/react-native-safe-area-context.iml" filepath="$PROJECT_DIR$/../node_modules/react-native-safe-area-context/android/react-native-safe-area-context.iml" group="YL2/react-native-safe-area-context" />
-      <module fileurl="file://$PROJECT_DIR$/../node_modules/react-native-screens/android/react-native-screens.iml" filepath="$PROJECT_DIR$/../node_modules/react-native-screens/android/react-native-screens.iml" group="YL2/react-native-screens" />
-      <module fileurl="file://$PROJECT_DIR$/../node_modules/react-native-splash-screen/android/react-native-splash-screen.iml" filepath="$PROJECT_DIR$/../node_modules/react-native-splash-screen/android/react-native-splash-screen.iml" group="YL2/react-native-splash-screen" />
-      <module fileurl="file://$PROJECT_DIR$/../node_modules/rn-fetch-blob/android/rn-fetch-blob.iml" filepath="$PROJECT_DIR$/../node_modules/rn-fetch-blob/android/rn-fetch-blob.iml" group="YL2/rn-fetch-blob" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/YL2.iml" filepath="$PROJECT_DIR$/.idea/modules/YL2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/YL2.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/YL2.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1365262020/YL2.react-native-async-storage_async-storage.iml" filepath="$PROJECT_DIR$/.idea/modules/-1365262020/YL2.react-native-async-storage_async-storage.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1621806764/YL2.react-native-camera.iml" filepath="$PROJECT_DIR$/.idea/modules/1621806764/YL2.react-native-camera.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1481053809/YL2.react-native-community_cameraroll.iml" filepath="$PROJECT_DIR$/.idea/modules/1481053809/YL2.react-native-community_cameraroll.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1949639969/YL2.react-native-gesture-handler.iml" filepath="$PROJECT_DIR$/.idea/modules/-1949639969/YL2.react-native-gesture-handler.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1014168458/YL2.react-native-pager-view.iml" filepath="$PROJECT_DIR$/.idea/modules/-1014168458/YL2.react-native-pager-view.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-976996579/YL2.react-native-permissions.iml" filepath="$PROJECT_DIR$/.idea/modules/-976996579/YL2.react-native-permissions.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-507104291/YL2.react-native-reanimated.iml" filepath="$PROJECT_DIR$/.idea/modules/-507104291/YL2.react-native-reanimated.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-346900600/YL2.react-native-safe-area-context.iml" filepath="$PROJECT_DIR$/.idea/modules/-346900600/YL2.react-native-safe-area-context.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/261906848/YL2.react-native-screens.iml" filepath="$PROJECT_DIR$/.idea/modules/261906848/YL2.react-native-screens.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-787007253/YL2.react-native-splash-screen.iml" filepath="$PROJECT_DIR$/.idea/modules/-787007253/YL2.react-native-splash-screen.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1488228128/YL2.rn-fetch-blob.iml" filepath="$PROJECT_DIR$/.idea/modules/1488228128/YL2.rn-fetch-blob.iml" />
     </modules>
   </component>
 </project>

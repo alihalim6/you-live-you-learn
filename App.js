@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
-import {StatusBar, BackHandler} from 'react-native';
-import {BlurView} from '@react-native-community/blur';
+import {StatusBar, BackHandler, View} from 'react-native';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import {NavigationContainer} from '@react-navigation/native';
 import SplashScreen from 'react-native-splash-screen';
@@ -14,12 +13,16 @@ import Page from './src/components/Page';
 import Popup from './src/components/Popup';
 import Camera from './src/components/Camera';
 import Banner from './src/components/Banner';
-import {BASE_COLOR_LIGHT, getCurrentPage, getCurrentPopup} from './src/constants/AppConstants';
+import {BASE_COLOR_LIGHT, getCurrentPage, getCurrentPopup, isTest} from './src/constants/AppConstants';
 import {initializeUser} from './src/services/UserService';
 import AppStyles from './src/styles/AppStyles';
 import {BLUR_BACKGROUND_TYPE, BLUR_BACKGROUND_AMOUNT, BLUR_BACKGROUND_FALLBACK_COLOR} from './src/constants/AppConstants';
 
 class App extends Component { 
+  state = {
+    test: false
+  };
+
   backAction = () => {
     //TODO:HAVE TO TAP ANDROID BACK BUTTON TWICE TO HIDE THESE
     //GET ERROR ON BACK ON TAP ON POST CONFIG OVERLAY
@@ -30,15 +33,19 @@ class App extends Component {
     return true;
   }
 
-  componentDidMount() {
+  async componentDidMount(){
+    const test = await isTest();
+    
     initializeUser()
       .then(() => {
         SplashScreen.hide();
         this.backHandler = BackHandler.addEventListener('hardwareBackPress', this.backAction);
       });
+
+    this.setState({test});
   }
 
-  componentWillUnmount() {
+  componentWillUnmount(){
     this.backHandler.remove();
   }
 
@@ -59,14 +66,7 @@ class App extends Component {
         </NavigationContainer>
 
         {this.props.currentPage &&
-          <>
-            <BlurView 
-              style={AppStyles.blurBackground}
-              blurType={BLUR_BACKGROUND_TYPE}
-              blurAmount={BLUR_BACKGROUND_AMOUNT}
-              reducedTransparencyFallbackColor={BLUR_BACKGROUND_FALLBACK_COLOR}
-            />
-          </>
+          <View style={AppStyles.overlay}></View>
         }
 
         {this.props.currentPage && !this.props.currentPopup &&
@@ -77,11 +77,11 @@ class App extends Component {
           <Popup popup={this.props.currentPopup}/>
         }
 
-        {this.props.currentCamera &&
+        {this.props.cameraShowing &&
           <Camera/>
         }
 
-        {this.props.currentBanner &&
+        {!this.state.test && this.props.currentBanner &&
           <Banner/>
         }
       </>
@@ -93,7 +93,7 @@ function mapStateToProps(state){
   return {
     currentPage: getCurrentPage(),
     currentPopup: getCurrentPopup(),
-    currentCamera: state.camera.currentCamera,
+    cameraShowing: state.camera.cameraShowing,
     currentBanner: state.banner.currentBanner
   };
 }

@@ -30,6 +30,11 @@ export const INVALID_INPUT = 'INVALID_INPUT';
 //a11y
 export const SIGN_UP_BUTTON_A11Y_LABEL = 'press to sign up'; 
 export const SIGN_UP_LOADING_A11Y_LABEL = 'sign up in progess';
+export const SIGN_IN_PROMPT_A11Y_LABEL = 'press to show form where you can sign in';
+export const SIGN_IN_BUTTON_A11Y_LABEL = 'press to sign in';
+export const SIGN_UP_TITLE_A11Y_LABEL = 'sign up';
+export const SIGN_IN_SUCCESS_A11Y_LABEL = 'sign in succeeded';
+export const SIGN_IN_FAILURE_A11Y_LABEL = 'sign in failed';
 
 //arrays
 export const COLOR_BAR_SCALE_X = [0, 700, 1700, 2700, 3700];

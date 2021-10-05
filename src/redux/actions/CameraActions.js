@@ -1,9 +1,9 @@
 import * as types from '../actions/ActionTypes';
 
-export function showCamera(camera, mediaCallback, closeCallback){
+export function showCamera(cameraShowing, mediaCallback, closeCallback){
   return {
     type: types.CAMERA_SHOWING, 
-    camera,
+    cameraShowing,
     mediaCallback,
     closeCallback
   };
@@ -12,7 +12,7 @@ export function showCamera(camera, mediaCallback, closeCallback){
 export function hideCamera(){
   return {
     type: types.CAMERA_SHOWING, 
-    camera: null,
+    cameraShowing: false,
     mediaCallback: null
   };
 }

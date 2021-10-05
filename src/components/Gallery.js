@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import CameraRoll from "@react-native-community/cameraroll";
 import {View, Text, Image, FlatList, TouchableOpacity} from 'react-native';
 import {version} from '../../package.json';
-import {PageStyles} from '../styles/PageStyles';
+import PageStyles from '../styles/PageStyles';
 import GalleryStyles from '../styles/GalleryStyles';
 import {closeOverlay} from '../redux/actions/OverlayActions';
 import {
@@ -30,24 +30,26 @@ class Gallery extends Component{
 
   handleError(){
     this.setState({fetchInProgress: false});
-    this.props.closeOverlay();
+    
+    if(this.props.errorCallback) this.props.errorCallback();
 
     this.props.showBanner({
       color: ERROR_COLOR,
       message: mapError(GALLERY)
     });
+
+    this.props.closeOverlay();
   }
 
   async componentDidMount(){
-    if(isAndroid){
-      const hasGalleryPermission = await hasPermission('gallery', true);
+    const hasGalleryPermission = await hasPermission('gallery', isAndroid);//ios automaically prompts for this permission
 
-      if(!hasGalleryPermission){
-        this.handleInitializationError();
-      }
+//error already being thrown apparently and caught, which calls handleError, thus overlay closed twice which causes new post to close after gallery 
+/*    if(!hasGalleryPermission){
+      this.handleError();
     }
-
-    const assetType = ((this.props.galleryType === PHOTO_GALLERY) ? 'Photos' : 'Videos');
+  */
+    const assetType = ((this.props.galleryType === PHOTO_GALLERY) ? 'Photos' : 'All');
     const date = new Date();
     const now = date.getTime();
     const aYearAgo = (now - MEDIA_FETCH_TO_TIME);
@@ -75,7 +77,7 @@ class Gallery extends Component{
       else{
         this.fetchMoreMedia(assetType);
       }
-    }).catch(() => {
+    }).catch(e => {
       this.handleError();
     });
   }
@@ -107,6 +109,10 @@ class Gallery extends Component{
         this.setState({media});
         this.fetchMoreMedia(assetType);
       }
+      //no results
+      else{
+        this.setState({fetchInProgress: false});
+      }
     }).catch(() => {
       this.handleError();
     });
@@ -126,7 +132,7 @@ class Gallery extends Component{
 
     return (
       <>
-        <Text style={PageStyles.title}>CHOOSE</Text>
+        <Text style={PageStyles.title}>GALLERY</Text>
 
           <View style={GalleryStyles.mediaContainer}>
             {(this.state.media.items.length > 0) &&
@@ -170,7 +176,8 @@ function mapStateToProps(state){
 
   return {
     galleryType: currentPage.galleryType,
-    mediaCallback: currentPage.mediaCallback
+    mediaCallback: currentPage.mediaCallback,
+    errorCallback: currentPage.errorCallback
   };
 }
 

@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
 import {View, Text, TouchableHighlight, ScrollView} from 'react-native';
 import {connect} from 'react-redux';
-import {BlurView} from "@react-native-community/blur";
-import AsyncStorage from '@react-native-community/async-storage';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import {showOverlay} from '../redux/actions/OverlayActions';
 import {setUserId, setUserSignedIn, setUserProfileImage} from '../redux/actions/UserActions';
 import {MenuStyles, containerMarginTop} from '../styles/MenuStyles';
@@ -115,14 +114,9 @@ class Menu extends Component{
 
 			  </View>
 
-			  {this.props.currentPopup && 
-			  	<BlurView 
-			      style={AppStyles.blurBackground}
-			      blurType={BLUR_BACKGROUND_TYPE}
-		        blurAmount={BLUR_BACKGROUND_AMOUNT}
-		        reducedTransparencyFallbackColor={BLUR_BACKGROUND_FALLBACK_COLOR}
-			    />
-			  }
+			  {this.props.currentPopup &&
+          <View style={AppStyles.overlay}></View>
+        }
 		  </>
 	  ); 
   }

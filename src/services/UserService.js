@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import axios from 'axios';
 import RNFetchBlob from 'rn-fetch-blob';
-import AsyncStorage from '@react-native-community/async-storage';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import config from '../server/config';
 import account from '../server/account.json';
 import {
@@ -101,7 +101,7 @@ async function getProfileImage(userId){
 export async function initializeUser(){
 	const userId = await AsyncStorage.getItem(USER_ID, handleAsyncStorageError);
 	const userSignedIn = await AsyncStorage.getItem(USER_SIGNED_IN, handleAsyncStorageError);
-	
+
 	if(userId){
 		try{
 	    const response = await axios(`http://${serverHost}:${config.serverPort}${config.user.serverEndpoint}${config.user.getUser}`, {
@@ -149,7 +149,7 @@ export async function signUpUser(username, password){
 
 
 //!!!!!!!!!!
-//TODO: ABILITY TO UPDATE USERNAME (SETTINGS?)
+//TODO: ABILITY TO UPDATE USERNAME? (SETTINGS?)
 //!!!!!!!!!!
 
 

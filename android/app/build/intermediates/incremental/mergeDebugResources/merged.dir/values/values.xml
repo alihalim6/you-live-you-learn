@@ -119,7 +119,6 @@
     <color name="common_google_signin_btn_text_light_disabled">#1F000000</color>
     <color name="common_google_signin_btn_text_light_focused">#90000000</color>
     <color name="common_google_signin_btn_text_light_pressed">#DE000000</color>
-    <color name="default_overlay_color">#AAFFFFFF</color>
     <color name="design_bottom_navigation_shadow_color">#14000000</color>
     <color name="design_dark_default_color_background">#121212</color>
     <color name="design_dark_default_color_error">#CF6679</color>
@@ -584,6 +583,7 @@
     <item name="action_bar_spinner" type="id"/>
     <item name="action_menu_divider" type="id"/>
     <item name="action_menu_presenter" type="id"/>
+    <item name="flipper_skip_empty_view_group_traversal" type="id"/>
     <item name="flipper_skip_view_traversal" type="id"/>
     <item name="fragment_container_view_tag" type="id"/>
     <item name="ghost_view" type="id"/>
@@ -634,8 +634,6 @@
     <integer name="bottom_sheet_slide_duration">150</integer>
     <integer name="cancel_button_image_alpha">127</integer>
     <integer name="config_tooltipAnimTime">150</integer>
-    <integer name="default_blur_radius">15</integer>
-    <integer name="default_downsample_factor">8</integer>
     <integer name="design_snackbar_text_max_lines">2</integer>
     <integer name="design_tab_indicator_anim_duration_ms">300</integer>
     <integer name="google_play_services_version">12451000</integer>
@@ -686,7 +684,7 @@
     <string name="abc_shareactionprovider_share_with_application">Share with <ns1:g example="Mail" id="application_name">%s</ns1:g></string>
     <string name="abc_toolbar_collapse_description">Collapse</string>
     <string name="alert_description" translatable="false">Alert</string>
-    <string name="app_name">You Live You Learn</string>
+    <string name="app_name">YL2</string>
     <string name="appbar_scrolling_view_behavior" translatable="false">com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior</string>
     <string name="bottom_sheet_behavior" translatable="false">com.google.android.material.bottomsheet.BottomSheetBehavior</string>
     <string name="button_description" translatable="false">Button</string>
@@ -697,9 +695,9 @@
     <string name="catalyst_debug_chrome_stop" project="catalyst" translatable="false">Stop Chrome Debugging</string>
     <string name="catalyst_debug_connecting" project="catalyst" translatable="false">Connecting to debugger...</string>
     <string name="catalyst_debug_error" project="catalyst" translatable="false">Failed to connect to debugger!</string>
-    <string name="catalyst_debug_nuclide" project="catalyst" translatable="false">Debug with Nuclide</string>
-    <string name="catalyst_debug_nuclide_error" project="catalyst" translatable="false">Failed to communicate with the bundler to enabling debugging with Nuclide.</string>
+    <string name="catalyst_debug_open" project="catalyst" translatable="false">Open Debugger</string>
     <string name="catalyst_debug_stop" project="catalyst" translatable="false">Stop Debugging</string>
+    <string name="catalyst_devtools_open" project="catalyst" translatable="false">Open React DevTools</string>
     <string name="catalyst_dismiss_button" project="catalyst" translatable="false">Dismiss\n(ESC)</string>
     <string name="catalyst_heap_capture" project="catalyst" translatable="false">Capture Heap</string>
     <string name="catalyst_hot_reloading" project="catalyst" translatable="false">Enable Fast Refresh</string>
@@ -708,6 +706,7 @@
     <string name="catalyst_hot_reloading_stop" project="catalyst" translatable="false">Disable Fast Refresh</string>
     <string name="catalyst_inspector" project="catalyst" translatable="false">Toggle Inspector</string>
     <string name="catalyst_loading_from_url" project="catalyst" translatable="false">Loading from %1$s…</string>
+    <string name="catalyst_open_flipper_error" project="catalyst" translatable="false">Failed to open Flipper. Please check that Metro is running.</string>
     <string name="catalyst_perf_monitor" project="catalyst" translatable="false">Show Perf Monitor</string>
     <string name="catalyst_perf_monitor_stop" project="catalyst" translatable="false">Hide Perf Monitor</string>
     <string name="catalyst_reload" project="catalyst" translatable="false">Reload</string>
@@ -2678,12 +2677,6 @@
     <style name="CardView.Light">
         <item name="cardBackgroundColor">@color/cardview_light_background</item>
     </style>
-    <style name="ClockTimePickerDialog" ns2:targetApi="lollipop" parent="Theme.AppCompat.Light.Dialog">
-      <item name="android:timePickerStyle">@style/ClockTimePickerStyle</item>
-    </style>
-    <style name="ClockTimePickerStyle" ns2:targetApi="lollipop" parent="android:Widget.Material.Light.TimePicker">
-      <item name="android:timePickerMode">clock</item>
-    </style>
     <style name="DialogAnimationFade">
     <item name="android:windowEnterAnimation">@anim/catalyst_fade_in</item>
     <item name="android:windowExitAnimation">@anim/catalyst_fade_out</item>
@@ -3028,12 +3021,6 @@
     <style name="SpinnerDatePickerStyle" ns2:targetApi="lollipop" parent="android:Widget.Material.Light.DatePicker">
         <item name="android:datePickerMode">spinner</item>
     </style>
-    <style name="SpinnerTimePickerDialog" ns2:targetApi="lollipop" parent="Theme.AppCompat.Light.Dialog">
-      <item name="android:timePickerStyle">@style/SpinnerTimePickerStyle</item>
-    </style>
-    <style name="SpinnerTimePickerStyle" ns2:targetApi="lollipop" parent="android:Widget.Material.Light.TimePicker">
-      <item name="android:timePickerMode">spinner</item>
-    </style>
     <style name="SplashScreen_Fullscreen" parent="SplashScreen_SplashTheme">
         <item name="android:windowFullscreen">true</item>
     </style>
@@ -3320,6 +3307,7 @@
     <style name="Theme.Catalyst"/>
     <style name="Theme.Catalyst.LogBox">
     <item name="android:windowTranslucentStatus">true</item>
+    <item name="android:windowTranslucentNavigation">false</item>
     <item name="android:windowBackground">@android:color/transparent</item>
     <item name="android:windowAnimationStyle">@style/Animation.Catalyst.LogBox</item>
     <item name="android:inAnimation">@android:anim/fade_in</item>
@@ -5223,14 +5211,6 @@
       <enum name="BOTTOM_START" value="8388691"/>
     </attr>
   </declare-styleable>
-    <declare-styleable name="BlurView">
-        <attr format="color" name="blurOverlayColor"/>
-    </declare-styleable>
-    <declare-styleable name="BlurringView">
-        <attr format="integer" name="blurRadius"/>
-        <attr format="integer" name="downsampleFactor"/>
-        <attr format="color" name="overlayColor"/>
-    </declare-styleable>
     <declare-styleable name="BottomAppBar">
     <!-- Background for the BottomAppBar. -->
     <attr name="backgroundTint"/>
@@ -6119,7 +6099,7 @@
     <!-- Rounding border width-->
     <attr format="dimension" name="roundingBorderWidth"/>
     <!-- Rounding border color -->
-    <attr format="color" name="roundingBorderColor"/>
+    <attr format="color|reference" name="roundingBorderColor"/>
     <!-- Rounding border padding -->
     <attr format="dimension" name="roundingBorderPadding"/>
 

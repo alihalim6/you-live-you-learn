@@ -10,7 +10,8 @@ import {
 	ANIMATION_FUNCTION,
 	ANIMATION_FRAME_LENGTH,
 	ANIMATION_INPUT,
-	ANIMATION_OUTPUT
+	ANIMATION_OUTPUT,
+	BANNER_A11Y_LABEL
 } from '../constants/BannerConstants';
 
 class Banner extends Component{
@@ -43,15 +44,22 @@ class Banner extends Component{
 
 	render(){
 		this.revealBanner();
-		
+
 		return (
-			<Animated.View style={[
-				BannerStyles.container, 
-				{backgroundColor: this.props.currentBanner.color},
-				{transform: [{translateY: this.interpolateAnimTop()}]}
-			]}>
-				<Text style={BannerStyles.text}>{this.props.currentBanner.message}</Text>
-			</Animated.View>
+			<>
+				{this.props.currentBanner &&
+					<Animated.View 
+						accessible={true}
+						accessibilityLabel={BANNER_A11Y_LABEL}
+						style={[BannerStyles.container, 
+							{backgroundColor: this.props.currentBanner.color},
+							{transform: [{translateY: this.interpolateAnimTop()}]}
+						]}
+					>
+						<Text style={BannerStyles.text}>{this.props.currentBanner.message}</Text>
+					</Animated.View>
+				}
+			</>
 		);
 	}
 }

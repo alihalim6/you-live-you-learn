@@ -8,15 +8,13 @@ import {
   Image,
   useWindowDimensions
 } from 'react-native';
-import {BlurView} from '@react-native-community/blur';
+import Icon from 'react-native-vector-icons/MaterialIcons';
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
 import {connect} from 'react-redux';
 import HomeStyles from '../styles/HomeStyles';
 import AppStyles from '../styles/AppStyles';
 import Header from './Header';
 import Learning from './Learning';
-import Page from './Page';
-import Popup from './Popup';
 import {
   BLUR_BACKGROUND_TYPE, 
   BLUR_BACKGROUND_AMOUNT, 
@@ -30,7 +28,7 @@ import UserFeed from './UserFeed';
 import FollowingFeed from './FollowingFeed';
 import NewsFeed from './NewsFeed';
 
-class Home extends Component{
+class Home extends Component {
   componentDidUpdate(){
     //disable menu toggle when popup showing
     this.props.navigation.setOptions({
@@ -40,27 +38,8 @@ class Home extends Component{
   }
 
   render(){
-  /*   <SafeAreaView style={HomeStyles.container}>
-        <FlatList
-          data={test}
-          ListHeaderComponent={() => <Header {...this.props}/>}
-          stickyHeaderIndices={[0]}
-          renderItem={({item}) => (<Learning id={item.id}/>)}
-          keyExtractor={item => item.id}
-        />
-
-        {this.props.currentPopup &&
-          <>
-            <BlurView 
-              style={AppStyles.blurBackground}
-              blurType={BLUR_BACKGROUND_TYPE}
-              blurAmount={BLUR_BACKGROUND_AMOUNT}
-              reducedTransparencyFallbackColor={BLUR_BACKGROUND_FALLBACK_COLOR}
-            />
-          </>
-        }
-      </SafeAreaView>*/
     const Tab = createMaterialTopTabNavigator();
+    
     const test = [
       {
         id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba'
@@ -87,7 +66,6 @@ class Home extends Component{
         <Header {...this.props}/>
 
         <Tab.Navigator
-
           initialRouteName={USER_CONTENT_LABEL}
           backBehavior={TAB_BAR_BACK_BEHAVIOR}
           tabBarOptions={{
@@ -140,14 +118,7 @@ class Home extends Component{
         </Tab.Navigator>
 
         {this.props.currentPopup &&
-          <>
-            <BlurView 
-              style={AppStyles.blurBackground}
-              blurType={BLUR_BACKGROUND_TYPE}
-              blurAmount={BLUR_BACKGROUND_AMOUNT}
-              reducedTransparencyFallbackColor={BLUR_BACKGROUND_FALLBACK_COLOR}
-            />
-          </>
+          <View style={AppStyles.overlay}></View>
         }
       </SafeAreaView>
     );

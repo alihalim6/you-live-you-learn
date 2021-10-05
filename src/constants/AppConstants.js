@@ -3,17 +3,16 @@ import {randomColor} from 'randomcolor';
 import store from '../redux';
 import {check, checkMultiple, PERMISSIONS, RESULTS, request} from 'react-native-permissions';
 import {Platform} from 'react-native';
-import AsyncStorage from '@react-native-community/async-storage';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import {showBanner} from '../redux/actions/BannerActions';
-import mapError from '../utilities/ErrorMapper';
 
 //booleans
 export const isIOS = (Platform.OS === 'ios');
 export const isAndroid = (Platform.OS === 'android');
 
 //strings
-//export const serverHost = '192.168.2.13';//REAL DEVICE
-export const serverHost = (isIOS ? 'localhost' : '10.0.2.2');//EMULATOR
+export const serverHost = '192.168.0.17';//REAL DEVICE
+//export const serverHost = (isIOS ? 'localhost' : '10.0.2.2');//EMULATOR
 
 export const HTTP_GET = 'GET';
 export const BLUR_BACKGROUND_TYPE = 'dark';
@@ -49,6 +48,9 @@ export const BASE_GRAY = '#888888';
 export const ERROR_COLOR = 'red';
 export const TRANSPARENT_COLOR = 'transparent';
 export const BLACK_COLOR = 'black';
+export const BASE_COLOR_GREEN = 'green';
+export const WHITE = 'white';
+export const ACTION_RED = '#ff2a00';
 
 //numbers
 export const OVERLAY_ANIM_KEYFRAME_LENGTH = 5;
@@ -57,24 +59,27 @@ export const BLUR_BACKGROUND_AMOUNT = 4;
 export const BORDER_WIDTH = 2;
 export const THICKER_BORDER_WIDTH = 3;
 export const BORDER_RADIUS = 1;
+export const STRONGER_BORDER_RADIUS = 3;
 export const COLOR_FADE_OPACITY = 0.1;
 export const BUTTON_PADDING_TOP = (isIOS ? 4: 0);
 export const searchBarPaddingLeft = 12;
 export const FINAL_OVERLAY_Y = -255;
+const SIGN_IN_ANIM_DURATION = 298;
 const SIGN_UP_ANIM_DURATION = 1400;
-const SIGN_IN_ANIM_DURATION = 320;
 
 //pages
 export const SIGN_UP = 'SIGN_UP';
 export const ABOUT = 'ABOUT';
 //export const GALLERY = 'GALLERY';//circular dep with ErrorMapper
 export const NEW_POST = 'NEW_POST';
+export const SUBMIT_POST = 'SUBMIT_POST';
 
 //arrays
 export const OVERLAY_ANIM_KEYFRAME_ARRAY = [...Array(OVERLAY_ANIM_KEYFRAME_LENGTH).keys()];
 export const OVERLAY_HIDE_OPACITY = [1, 0.5, 0, 0, 0];
 export const OVERLAY_REVEAL_OPACITY = [0, 0, 0, 0.5, 1];
-export const OVERLAY_X = [0, -170, -240, -400, -600];
+export const OVERLAY_KEEP_OPACITY = [1, 1, 1, 1, 1];
+export const OVERLAY_X = [0, -370, -540, -600, -700];
 export const OVERLAY_Y = [0, -180, -245, FINAL_OVERLAY_Y, FINAL_OVERLAY_Y];
 
 const signUpAnimationProps = {
@@ -139,6 +144,7 @@ export function configureProfileImagePath(path){
 
 export function handleAsyncStorageError(errorMessage){
 	//TODO: HAVE NOT SEEN AN ERROR MESSAGE PASSED IN; GET RID OF THIS?
+	//surround instances of this with try/catch?
 }
 
 export async function isTest(){
@@ -196,6 +202,10 @@ export function getCurrentPopup(){
 	return currentOverlay.find(({type}) => (type === POPUP));
 }
 
+export function booleanToNumber(bool){
+	return bool ? 1 : 0;
+}
+
 //a11y
 export const PROFILE_IMAGE_A11Y_LABEL = 'profile pic';
 export const NO_PROFILE_IMAGE_A11Y_LABEL = 'no profile pic';
@@ -205,6 +215,7 @@ export const MENU_USERNAME_A11Y_LABEL = 'username';
 export const MENU_FOLLOW_A11Y_LABEL = 'following and followers';
 export const MENU_FOLLOWING_A11Y_LABEL = 'number of following';
 export const MENU_FOLLOWERS_A11Y_LABEL = 'number of followers';
+export const PAGE_CLOSE_BUTTON_A11Y_LABEL = 'press to close current page';
 
 //fonts
 const APP_FONT_IOS = 'AppleSDGothicNeo-Regular';

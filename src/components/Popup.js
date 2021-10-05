@@ -1,18 +1,18 @@
 import React, {Component} from 'react';
 import {FlatList, View, TouchableOpacity, Text} from 'react-native';
 import {connect} from 'react-redux';
+import Icon from 'react-native-vector-icons/MaterialIcons';
 import {PopupStyles, setBorder} from '../styles/PopupStyles';
 import AppStyles from '../styles/AppStyles';
-import {PageStyles, closeButtonOneStyle, closeButtonTwoStyle} from '../styles/PageStyles';
 import {closeOverlay} from '../redux/actions/OverlayActions';
 import {showCamera} from '../redux/actions/CameraActions';
-import {getCurrentPopup} from '../constants/AppConstants';
+import {getCurrentPopup, getRandomDarkColor} from '../constants/AppConstants';
 
 class Popup extends Component{
   popupItemPressed = (item) => {  	
   	if(item.usesCamera){
   		//TODO: SHOW INFO IF PERMISSION BLOCKS CAMERA
-  		this.props.showCamera(item.cameraType, item.mediaCallback);
+  		this.props.showCamera(true, item.mediaCallback);
   	}
   	else{
   		//this.props.closeOverlay();
@@ -24,7 +24,6 @@ class Popup extends Component{
 		const popup = this.props.currentPopup;
 		let containerStyles = null;
 		let itemContainerStyles = null;
-		let closeButtonStyles = null;
 
 		if(popup){
 			const defaultPositioning = (popup && popup.defaultPositioning);
@@ -46,11 +45,8 @@ class Popup extends Component{
 								data={popup.options}
 								ListHeaderComponent={() => {
 									return (
-										<TouchableOpacity 
-											onPress={() => this.props.closeOverlay()} 
-											style={[PopupStyles.touchableClose]}>
-												<View style={[closeButtonOneStyle, PopupStyles.closeButton]}></View>
-							        	<View style={[closeButtonTwoStyle, PopupStyles.closeButton]}></View>
+										<TouchableOpacity onPress={() => this.props.closeOverlay()}>
+											<Icon style={PopupStyles.closeButton} name="close" color={getRandomDarkColor()}/>
 										</TouchableOpacity>
 									);
 								}}

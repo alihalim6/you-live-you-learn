@@ -5,159 +5,152 @@
 5    android:versionName="1.0" >
 6
 7    <uses-sdk
-8        android:minSdkVersion="19"
-8-->/Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml
-9        android:targetSdkVersion="28" />
-9-->/Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml
+8        android:minSdkVersion="21"
+9        android:targetSdkVersion="29" />
 10
-11    <uses-permission android:name="android.permission.INTERNET" />
-11-->/Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:4:5-67
-11-->/Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:4:22-64
-12
-13    <!-- Required -->
-14    <uses-permission android:name="android.permission.CAMERA" />
-14-->/Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:36:5-65
-14-->/Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:36:22-62
-15
-16    <!-- Include this only if you are planning to use the camera roll -->
-17    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-17-->/Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:39:5-80
-17-->/Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:39:22-77
-18
-19    <!-- Include this only if you are planning to use the microphone for video recording -->
-20    <uses-permission android:name="android.permission.RECORD_AUDIO" />
-20-->/Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:42:5-70
-20-->/Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:42:22-68
-21    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-21-->[com.facebook.flipper:flipper:0.33.1] /Users/alihalim/.gradle/caches/transforms-2/files-2.1/3ed611e0e9cdd622bbe11393ad785b35/jetified-flipper-0.33.1/AndroidManifest.xml:16:5-76
-21-->[com.facebook.flipper:flipper:0.33.1] /Users/alihalim/.gradle/caches/transforms-2/files-2.1/3ed611e0e9cdd622bbe11393ad785b35/jetified-flipper-0.33.1/AndroidManifest.xml:16:22-73
-22
-23    <uses-feature
-23-->[:react-native-camera] /Users/alihalim/Development/YL2/node_modules/react-native-camera/android/build/intermediates/library_manifest/generalDebug/AndroidManifest.xml:11:5-13:36
-24        android:name="android.hardware.camera"
-24-->[:react-native-camera] /Users/alihalim/Development/YL2/node_modules/react-native-camera/android/build/intermediates/library_manifest/generalDebug/AndroidManifest.xml:12:9-47
-25        android:required="false" />
-25-->[:react-native-camera] /Users/alihalim/Development/YL2/node_modules/react-native-camera/android/build/intermediates/library_manifest/generalDebug/AndroidManifest.xml:13:9-33
-26    <uses-feature
-26-->[:react-native-camera] /Users/alihalim/Development/YL2/node_modules/react-native-camera/android/build/intermediates/library_manifest/generalDebug/AndroidManifest.xml:14:5-16:36
-27        android:name="android.hardware.camera.autofocus"
-27-->[:react-native-camera] /Users/alihalim/Development/YL2/node_modules/react-native-camera/android/build/intermediates/library_manifest/generalDebug/AndroidManifest.xml:15:9-57
-28        android:required="false" /> <!-- Required to access Google Play Licensing -->
-28-->[:react-native-camera] /Users/alihalim/Development/YL2/node_modules/react-native-camera/android/build/intermediates/library_manifest/generalDebug/AndroidManifest.xml:16:9-33
-29    <uses-permission android:name="com.android.vending.CHECK_LICENSE" />
-29-->[:rn-fetch-blob] /Users/alihalim/Development/YL2/node_modules/rn-fetch-blob/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:12:5-73
-29-->[:rn-fetch-blob] /Users/alihalim/Development/YL2/node_modules/rn-fetch-blob/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:12:22-70
+11    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+11-->/Users/alihalim/Development/YL2/android/app/src/debug/AndroidManifest.xml:5:5-77
+11-->/Users/alihalim/Development/YL2/android/app/src/debug/AndroidManifest.xml:5:22-75
+12    <uses-permission android:name="android.permission.INTERNET" /> <!-- Required -->
+12-->/Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:4:5-67
+12-->/Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:4:22-64
+13    <uses-permission android:name="android.permission.CAMERA" /> <!-- Include this only if you are planning to use the camera roll -->
+13-->/Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:33:5-65
+13-->/Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:33:22-62
+14    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" /> <!-- Include this only if you are planning to use the microphone for video recording -->
+14-->/Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:36:5-80
+14-->/Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:36:22-77
+15    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+15-->/Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:39:5-70
+15-->/Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:39:22-68
+16    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+16-->[com.facebook.flipper:flipper:0.75.1] /Users/alihalim/.gradle/caches/transforms-2/files-2.1/a8f6015f96666ab8d93bfe5b64998bc8/jetified-flipper-0.75.1/AndroidManifest.xml:16:5-76
+16-->[com.facebook.flipper:flipper:0.75.1] /Users/alihalim/.gradle/caches/transforms-2/files-2.1/a8f6015f96666ab8d93bfe5b64998bc8/jetified-flipper-0.75.1/AndroidManifest.xml:16:22-73
+17
+18    <uses-feature
+18-->[:react-native-camera] /Users/alihalim/Development/YL2/node_modules/react-native-camera/android/build/intermediates/library_manifest/generalDebug/AndroidManifest.xml:11:5-13:36
+19        android:name="android.hardware.camera"
+19-->[:react-native-camera] /Users/alihalim/Development/YL2/node_modules/react-native-camera/android/build/intermediates/library_manifest/generalDebug/AndroidManifest.xml:12:9-47
+20        android:required="false" />
+20-->[:react-native-camera] /Users/alihalim/Development/YL2/node_modules/react-native-camera/android/build/intermediates/library_manifest/generalDebug/AndroidManifest.xml:13:9-33
+21    <uses-feature
+21-->[:react-native-camera] /Users/alihalim/Development/YL2/node_modules/react-native-camera/android/build/intermediates/library_manifest/generalDebug/AndroidManifest.xml:14:5-16:36
+22        android:name="android.hardware.camera.autofocus"
+22-->[:react-native-camera] /Users/alihalim/Development/YL2/node_modules/react-native-camera/android/build/intermediates/library_manifest/generalDebug/AndroidManifest.xml:15:9-57
+23        android:required="false" /> <!-- Required to access Google Play Licensing -->
+23-->[:react-native-camera] /Users/alihalim/Development/YL2/node_modules/react-native-camera/android/build/intermediates/library_manifest/generalDebug/AndroidManifest.xml:16:9-33
+24    <uses-permission android:name="com.android.vending.CHECK_LICENSE" />
+24-->[:rn-fetch-blob] /Users/alihalim/Development/YL2/node_modules/rn-fetch-blob/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:12:5-73
+24-->[:rn-fetch-blob] /Users/alihalim/Development/YL2/node_modules/rn-fetch-blob/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:12:22-70
+25    <!--
+26         Required to keep CPU alive while downloading files
+27        (NOT to keep screen awake)
+28    -->
+29    <uses-permission android:name="android.permission.WAKE_LOCK" />
+29-->[:rn-fetch-blob] /Users/alihalim/Development/YL2/node_modules/rn-fetch-blob/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:21:5-68
+29-->[:rn-fetch-blob] /Users/alihalim/Development/YL2/node_modules/rn-fetch-blob/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:21:22-65
 30    <!--
-31         Required to keep CPU alive while downloading files
-32        (NOT to keep screen awake)
+31         Required to poll the state of the network connection
+32        and respond to changes
 33    -->
-34    <uses-permission android:name="android.permission.WAKE_LOCK" />
-34-->[:rn-fetch-blob] /Users/alihalim/Development/YL2/node_modules/rn-fetch-blob/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:21:5-68
-34-->[:rn-fetch-blob] /Users/alihalim/Development/YL2/node_modules/rn-fetch-blob/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:21:22-65
-35    <!--
-36         Required to poll the state of the network connection
-37        and respond to changes
-38    -->
-39    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- Required to read and write the expansion files on shared storage -->
-39-->[:rn-fetch-blob] /Users/alihalim/Development/YL2/node_modules/rn-fetch-blob/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:27:5-79
-39-->[:rn-fetch-blob] /Users/alihalim/Development/YL2/node_modules/rn-fetch-blob/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:27:22-76
-40    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-40-->[:rn-fetch-blob] /Users/alihalim/Development/YL2/node_modules/rn-fetch-blob/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:33:5-81
-40-->[:rn-fetch-blob] /Users/alihalim/Development/YL2/node_modules/rn-fetch-blob/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:33:22-78
-41
-42    <application
-42-->/Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:6:5-33:19
-43        android:name="com.yl2.MainApplication"
-43-->/Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:7:7-38
-44        android:allowBackup="false"
-44-->/Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:11:7-34
-45        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-45-->[androidx.core:core:1.1.0] /Users/alihalim/.gradle/caches/transforms-2/files-2.1/4f509a65121478d6153615d7ef5b7c5f/core-1.1.0/AndroidManifest.xml:24:18-86
-46        android:debuggable="true"
-47        android:icon="@mipmap/ic_launcher"
-47-->/Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:9:7-41
-48        android:label="@string/app_name"
-48-->/Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:8:7-39
-49        android:roundIcon="@mipmap/ic_launcher_round"
-49-->/Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:10:7-52
-50        android:testOnly="true"
-51        android:theme="@style/AppTheme"
-51-->/Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:12:7-38
-52        android:usesCleartextTraffic="true" >
-52-->/Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:13:7-42
-53        <activity
-53-->/Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:14:7-22:18
-54            android:name="com.yl2.SplashActivity"
-54-->/Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:15:9-39
-55            android:label="@string/app_name"
-55-->/Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:17:9-41
-56            android:theme="@style/SplashTheme" >
-56-->/Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:16:9-43
-57            <intent-filter>
-57-->/Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:18:9-21:25
-58                <action android:name="android.intent.action.MAIN" />
-58-->/Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:19:13-65
-58-->/Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:19:21-62
-59
-60                <category android:name="android.intent.category.LAUNCHER" />
-60-->/Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:20:13-73
-60-->/Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:20:23-70
-61            </intent-filter>
-62        </activity>
-63        <activity
-63-->/Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:23:7-31:18
-64            android:name="com.yl2.MainActivity"
-64-->/Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:24:9-37
-65            android:configChanges="keyboard|keyboardHidden|orientation|screenSize|uiMode"
-65-->/Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:27:9-86
-66            android:exported="true"
-66-->/Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:28:9-32
-67            android:label="@string/app_name"
-67-->/Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:26:9-41
-68            android:launchMode="singleTask"
-68-->/Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:29:9-40
-69            android:theme="@style/AppTheme"
-69-->/Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:25:9-40
-70            android:windowSoftInputMode="adjustPan" >
-70-->/Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:30:9-48
-71        </activity>
-72        <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
-72-->/Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:32:7-84
-72-->/Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:32:17-81
-73
-74        <provider
-74-->[:rn-fetch-blob] /Users/alihalim/Development/YL2/node_modules/rn-fetch-blob/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:36:9-44:20
-75            android:name="com.RNFetchBlob.Utils.FileProvider"
-75-->[:rn-fetch-blob] /Users/alihalim/Development/YL2/node_modules/rn-fetch-blob/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:37:13-62
-76            android:authorities="com.yl2.provider"
-76-->[:rn-fetch-blob] /Users/alihalim/Development/YL2/node_modules/rn-fetch-blob/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:38:13-60
-77            android:exported="false"
-77-->[:rn-fetch-blob] /Users/alihalim/Development/YL2/node_modules/rn-fetch-blob/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:39:13-37
-78            android:grantUriPermissions="true" >
-78-->[:rn-fetch-blob] /Users/alihalim/Development/YL2/node_modules/rn-fetch-blob/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:40:13-47
-79            <meta-data
-79-->[:rn-fetch-blob] /Users/alihalim/Development/YL2/node_modules/rn-fetch-blob/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:41:13-43:58
-80                android:name="android.support.FILE_PROVIDER_PATHS"
-80-->[:rn-fetch-blob] /Users/alihalim/Development/YL2/node_modules/rn-fetch-blob/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:42:17-67
-81                android:resource="@xml/provider_paths" />
-81-->[:rn-fetch-blob] /Users/alihalim/Development/YL2/node_modules/rn-fetch-blob/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:43:17-55
-82        </provider>
-83
-84        <activity
-84-->[com.google.android.gms:play-services-base:16.0.1] /Users/alihalim/.gradle/caches/transforms-2/files-2.1/c287f5d712175642f4d7110425f0bbfd/jetified-play-services-base-16.0.1/AndroidManifest.xml:23:9-26:75
-85            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-85-->[com.google.android.gms:play-services-base:16.0.1] /Users/alihalim/.gradle/caches/transforms-2/files-2.1/c287f5d712175642f4d7110425f0bbfd/jetified-play-services-base-16.0.1/AndroidManifest.xml:24:13-79
-86            android:exported="false"
-86-->[com.google.android.gms:play-services-base:16.0.1] /Users/alihalim/.gradle/caches/transforms-2/files-2.1/c287f5d712175642f4d7110425f0bbfd/jetified-play-services-base-16.0.1/AndroidManifest.xml:25:13-37
-87            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-87-->[com.google.android.gms:play-services-base:16.0.1] /Users/alihalim/.gradle/caches/transforms-2/files-2.1/c287f5d712175642f4d7110425f0bbfd/jetified-play-services-base-16.0.1/AndroidManifest.xml:26:13-72
-88
-89        <meta-data
-89-->[com.google.android.gms:play-services-basement:16.1.0] /Users/alihalim/.gradle/caches/transforms-2/files-2.1/a5e41e429b688565306f00ad329323a8/jetified-play-services-basement-16.1.0/AndroidManifest.xml:23:9-25:69
-90            android:name="com.google.android.gms.version"
-90-->[com.google.android.gms:play-services-basement:16.1.0] /Users/alihalim/.gradle/caches/transforms-2/files-2.1/a5e41e429b688565306f00ad329323a8/jetified-play-services-basement-16.1.0/AndroidManifest.xml:24:13-58
-91            android:value="@integer/google_play_services_version" />
-91-->[com.google.android.gms:play-services-basement:16.1.0] /Users/alihalim/.gradle/caches/transforms-2/files-2.1/a5e41e429b688565306f00ad329323a8/jetified-play-services-basement-16.1.0/AndroidManifest.xml:25:13-66
-92    </application>
-93
-94</manifest>
+34    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- Required to read and write the expansion files on shared storage -->
+34-->[:rn-fetch-blob] /Users/alihalim/Development/YL2/node_modules/rn-fetch-blob/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:27:5-79
+34-->[:rn-fetch-blob] /Users/alihalim/Development/YL2/node_modules/rn-fetch-blob/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:27:22-76
+35    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+35-->[:rn-fetch-blob] /Users/alihalim/Development/YL2/node_modules/rn-fetch-blob/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:33:5-81
+35-->[:rn-fetch-blob] /Users/alihalim/Development/YL2/node_modules/rn-fetch-blob/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:33:22-78
+36
+37    <application
+37-->/Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:6:5-30:19
+38        android:name="com.yl2.MainApplication"
+38-->/Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:7:7-38
+39        android:allowBackup="false"
+39-->/Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:11:7-34
+40        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+40-->[androidx.core:core:1.1.0] /Users/alihalim/.gradle/caches/transforms-2/files-2.1/d67cd79abd1ca209502f51c69d23182b/core-1.1.0/AndroidManifest.xml:24:18-86
+41        android:debuggable="true"
+42        android:icon="@mipmap/ic_launcher"
+42-->/Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:9:7-41
+43        android:label="@string/app_name"
+43-->/Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:8:7-39
+44        android:roundIcon="@mipmap/ic_launcher_round"
+44-->/Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:10:7-52
+45        android:testOnly="true"
+46        android:theme="@style/AppTheme"
+46-->/Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:12:7-38
+47        android:usesCleartextTraffic="true" >
+47-->/Users/alihalim/Development/YL2/android/app/src/debug/AndroidManifest.xml:8:9-44
+48        <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
+48-->/Users/alihalim/Development/YL2/android/app/src/debug/AndroidManifest.xml:11:9-86
+48-->/Users/alihalim/Development/YL2/android/app/src/debug/AndroidManifest.xml:11:19-83
+49        <activity
+49-->/Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:13:7-21:18
+50            android:name="com.yl2.SplashActivity"
+50-->/Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:14:9-39
+51            android:label="@string/app_name"
+51-->/Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:16:9-41
+52            android:theme="@style/SplashTheme" >
+52-->/Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:15:9-43
+53            <intent-filter>
+53-->/Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:17:9-20:25
+54                <action android:name="android.intent.action.MAIN" />
+54-->/Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:18:13-65
+54-->/Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:18:21-62
+55
+56                <category android:name="android.intent.category.LAUNCHER" />
+56-->/Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:19:13-73
+56-->/Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:19:23-70
+57            </intent-filter>
+58        </activity>
+59        <activity
+59-->/Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:22:7-29:18
+60            android:name="com.yl2.MainActivity"
+60-->/Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:23:9-37
+61            android:configChanges="keyboard|keyboardHidden|orientation|screenSize|uiMode"
+61-->/Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:26:9-86
+62            android:label="@string/app_name"
+62-->/Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:25:9-41
+63            android:launchMode="singleTask"
+63-->/Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:27:9-40
+64            android:theme="@style/AppTheme"
+64-->/Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:24:9-40
+65            android:windowSoftInputMode="adjustPan" >
+65-->/Users/alihalim/Development/YL2/android/app/src/main/AndroidManifest.xml:28:9-48
+66        </activity>
+67
+68        <provider
+68-->[:rn-fetch-blob] /Users/alihalim/Development/YL2/node_modules/rn-fetch-blob/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:36:9-44:20
+69            android:name="com.RNFetchBlob.Utils.FileProvider"
+69-->[:rn-fetch-blob] /Users/alihalim/Development/YL2/node_modules/rn-fetch-blob/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:37:13-62
+70            android:authorities="com.yl2.provider"
+70-->[:rn-fetch-blob] /Users/alihalim/Development/YL2/node_modules/rn-fetch-blob/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:38:13-60
+71            android:exported="false"
+71-->[:rn-fetch-blob] /Users/alihalim/Development/YL2/node_modules/rn-fetch-blob/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:39:13-37
+72            android:grantUriPermissions="true" >
+72-->[:rn-fetch-blob] /Users/alihalim/Development/YL2/node_modules/rn-fetch-blob/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:40:13-47
+73            <meta-data
+73-->[:rn-fetch-blob] /Users/alihalim/Development/YL2/node_modules/rn-fetch-blob/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:41:13-43:58
+74                android:name="android.support.FILE_PROVIDER_PATHS"
+74-->[:rn-fetch-blob] /Users/alihalim/Development/YL2/node_modules/rn-fetch-blob/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:42:17-67
+75                android:resource="@xml/provider_paths" />
+75-->[:rn-fetch-blob] /Users/alihalim/Development/YL2/node_modules/rn-fetch-blob/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:43:17-55
+76        </provider>
+77
+78        <activity
+78-->[com.google.android.gms:play-services-base:16.0.1] /Users/alihalim/.gradle/caches/transforms-2/files-2.1/667072631249d9c82e6cf429ba9a2aaa/jetified-play-services-base-16.0.1/AndroidManifest.xml:23:9-26:75
+79            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+79-->[com.google.android.gms:play-services-base:16.0.1] /Users/alihalim/.gradle/caches/transforms-2/files-2.1/667072631249d9c82e6cf429ba9a2aaa/jetified-play-services-base-16.0.1/AndroidManifest.xml:24:13-79
+80            android:exported="false"
+80-->[com.google.android.gms:play-services-base:16.0.1] /Users/alihalim/.gradle/caches/transforms-2/files-2.1/667072631249d9c82e6cf429ba9a2aaa/jetified-play-services-base-16.0.1/AndroidManifest.xml:25:13-37
+81            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+81-->[com.google.android.gms:play-services-base:16.0.1] /Users/alihalim/.gradle/caches/transforms-2/files-2.1/667072631249d9c82e6cf429ba9a2aaa/jetified-play-services-base-16.0.1/AndroidManifest.xml:26:13-72
+82
+83        <meta-data
+83-->[com.google.android.gms:play-services-basement:16.1.0] /Users/alihalim/.gradle/caches/transforms-2/files-2.1/8065761b440187869ae472ff6dd8b867/jetified-play-services-basement-16.1.0/AndroidManifest.xml:23:9-25:69
+84            android:name="com.google.android.gms.version"
+84-->[com.google.android.gms:play-services-basement:16.1.0] /Users/alihalim/.gradle/caches/transforms-2/files-2.1/8065761b440187869ae472ff6dd8b867/jetified-play-services-basement-16.1.0/AndroidManifest.xml:24:13-58
+85            android:value="@integer/google_play_services_version" />
+85-->[com.google.android.gms:play-services-basement:16.1.0] /Users/alihalim/.gradle/caches/transforms-2/files-2.1/8065761b440187869ae472ff6dd8b867/jetified-play-services-basement-16.1.0/AndroidManifest.xml:25:13-66
+86    </application>
+87
+88</manifest>

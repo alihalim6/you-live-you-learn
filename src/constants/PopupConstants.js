@@ -1,5 +1,5 @@
 import store from '../redux';
-import AsyncStorage from '@react-native-community/async-storage';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import {showOverlay, closeOverlay} from '../redux/actions/OverlayActions';
 import {
 	isIOS, 
@@ -8,7 +8,8 @@ import {
 	TRANSPARENT_COLOR,
 	getCurrentPage,
 	getCurrentPopup,
-	PAGE
+	PAGE,
+	POPUP
 } from '../constants/AppConstants';
 import {PICTURE_CAMERA, PHOTO_GALLERY, GALLERY} from '../constants/CameraConstants';
 import {setProfileImage, removeProfileImage} from '../services/UserService';
@@ -18,6 +19,7 @@ const newProfileImageContainerMarginTop = (isIOS ? '19%' : '15%');
 const editProfileImageContainerTop = (isIOS ? '39%' : '23%');
 
 const profileImagePopupContainerTop = 0;
+const profileImagePopupLeft = 38;
 const firstItemMarginTop = -28;
 
 //immediately display picture using local file (or clear it)
@@ -34,8 +36,6 @@ function pictureCallback(picture){
 }
 
 function openPictureGallery(){
-	const currentState = store.getState();
-
 	store.dispatch(showOverlay({
 		name: GALLERY,
 		type: PAGE,
@@ -81,16 +81,17 @@ export const NEW_PROFILE_IMAGE = {
 	},
 	itemContainerStyles: {
 		marginTop: newProfileImageContainerMarginTop,
-		left: 58,
+		left: profileImagePopupLeft,
 		alignSelf: 'flex-start'
-	}
+	},
+	type: POPUP
 };
 
 export const EDIT_PROFILE_IMAGE = {
 	options: [
 		{
 			id: '1',
-			label: 'TAKE NEW PICTURE',
+			label: 'TAKE PICTURE',
 			a11yLabel: TAKE_A_NEW_PIC_A11Y_LABEL,
 			usesCamera: true,
 			cameraType: PICTURE_CAMERA,
@@ -101,7 +102,7 @@ export const EDIT_PROFILE_IMAGE = {
 		},
 		{
 			id: '2',
-			label: 'CHOOSE DIFFERENT PICTURE',
+			label: 'CHOOSE PICTURE',
 			a11yLabel: UPLOAD_A_DIFFERENT_PIC_A11Y_LABEL,
 			handlerFn: openPictureGallery
 		},
@@ -125,9 +126,10 @@ export const EDIT_PROFILE_IMAGE = {
 	},
 	itemContainerStyles: {
 	  top: editProfileImageContainerTop,
-		left: 38,
+		left: profileImagePopupLeft,
 		alignSelf: 'flex-start'
-	}
+	},
+	type: POPUP
 };
 
 //MAY BE NEEDED FOR OLDER ANDROID VERSIONS?

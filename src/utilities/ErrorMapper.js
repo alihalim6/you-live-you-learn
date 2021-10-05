@@ -2,6 +2,7 @@ import config from '../server/config';
 //import {GALLERY, INVALID_INPUT} from '../constants/AppConstants';//circular dep with AppConstants
 import {CAMERA_NOT_AUTHORIZED, INIT_USER_PROFILE_IMAGE, GALLERY} from '../constants/CameraConstants';
 import {INVALID_INPUT} from '../constants/SignUpConstants';
+import {RECORD_AUDIO} from '../constants/AudioConstants';
 
 export default function mapError(error){
 	const usernamePasswordInvalid = 'INVALID USERNAME OR PASSWORD.';
@@ -37,6 +38,10 @@ export default function mapError(error){
 			//camera
 			case CAMERA_NOT_AUTHORIZED :
 				return 'PERMISSION NEEDED FOR YL2 TO ACCESS CAMERA.';
+
+			//audio
+			case RECORD_AUDIO :
+				return 'PERMISSION NEEDED FOR YL2 TO ACCESS MICROPHONE.';
 
 			default :
 				return 'ERROR OCCURED BEHIND THE SCENES.'

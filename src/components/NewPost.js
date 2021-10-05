@@ -1,429 +1,160 @@
 import React, {Component} from 'react';
+import {View, TouchableOpacity, Animated, Text, Image} from 'react-native';
+import Icon from 'react-native-vector-icons/MaterialIcons';
 import {connect} from 'react-redux';
+import {showOverlay, closeOverlay, overlayInvisible} from '../redux/actions/OverlayActions';
+import {PostStyles} from '../styles/PostStyles';
 import {
-  View, 
-  Text, 
-  Image, 
-  TouchableOpacity, 
-  Animated,
-  TextInput
-} from 'react-native';
-import {showOverlay, closeOverlay, overlayInvisible, navigateOverlay} from '../redux/actions/OverlayActions';
-import {PageStyles} from '../styles/PageStyles';
-import {PostStyles, captionBarStyles, upperContainerStyles} from '../styles/PostStyles';
-import {setPostPage} from '../redux/actions/PostActions';
-import {
-  postAnimationFn,
-  POST_PAGE_HEIGHT,
-  TEXT_INPUT_PLACEHOLDER,
-  MEDIA_TEXT_INPUT_PLACEHOLDER,
-  URL_INPUT_PLACEHOLDER,
-  PICTURE_OPTION_CONFIG,
-  VIDEO_OPTION_CONFIG,
-  TAG_PLACEHOLDER,
-  POST_PAGE_FINAL_HEIGHT,
-  POST_PAGE_INITIAL_TOP,
-  POST_CONFIG_OPTIONS
+	selectPostAnimationFn, 
+	UNSELECTED_POST_TYPE_OPACITY, 
+	TEXT_OPTION_CONFIG,
+	PICTURE_OPTION_CONFIG
 } from '../constants/PostConstants';
+import PageStyles from '../styles/PageStyles';
+import {interpolateOverlayAnimProp, PAGE, SUBMIT_POST} from '../constants/AppConstants';
 import FeedStyles from '../styles/FeedStyles';
-import {
-  interpolateOverlayAnimProp,
-  OVERLAY_X, 
-  OVERLAY_HIDE_OPACITY, 
-  NEW_POST, 
-  OVERLAY_Y,
-  OVERLAY_REVEAL_OPACITY,
-  getCurrentPage,
-  PAGE,
-  FINAL_OVERLAY_Y
-} from '../constants/AppConstants';
-import {PICTURE_CAMERA, GALLERY} from '../constants/CameraConstants';
 import {showCamera} from '../redux/actions/CameraActions';
+import {PICTURE_CAMERA, GALLERY} from '../constants/CameraConstants';
 
 class NewPost extends Component{
-  state = {
-    animatedPostTypesX: new Animated.Value(0),
-    animatedPostTypesOpacity: new Animated.Value(0),
-    animatedPostConfigY: new Animated.Value(0),
-    animatedPostConfigOpacity: new Animated.Value(0),
-    animatedPostConfigHeight: new Animated.Value(0),
+	state = {
+		cameraOptionSelected: false,
 
-    get postTypesX(){
-      return interpolateOverlayAnimProp(this.animatedPostTypesX, OVERLAY_X);
-    },
-    get postTypesOpacity(){
-      return interpolateOverlayAnimProp(this.animatedPostTypesOpacity, OVERLAY_HIDE_OPACITY);
-    },
-    get postConfigY(){
-      return interpolateOverlayAnimProp(this.animatedPostConfigY, OVERLAY_Y);
-    },
-    get postConfigOpacity(){
-      return interpolateOverlayAnimProp(this.animatedPostConfigOpacity, OVERLAY_REVEAL_OPACITY);
-    },
-    get postConfigHeight(){
-      return interpolateOverlayAnimProp(this.animatedPostConfigHeight, POST_PAGE_HEIGHT);
+		animatedPostTypesOpacity: new Animated.Value(0),
+
+		get postTypesOpacity(){
+      return interpolateOverlayAnimProp(this.animatedPostTypesOpacity, UNSELECTED_POST_TYPE_OPACITY);
     }
-  };
+	};
 
-  componentDidMount(){
-    if(this.props.currentPage.config){
-      this.props.setPostPage(this.props.currentPage.config);
-    }
-    //initial state on overlay launch
-    else{
-      this.props.setPostPage({postContainerPosition: 'absolute'});
-    }
-  }
-
-  componentWillUnmount(){
-    this.props.setPostPage({});
-  }
-
-  navBackToPostTypes = () => {
-    this.navigatePage({
-      backButtonFn: this.backToPostTypes,
-      enableBackButton: true
-    });
-  }
-
-  backToPostTypes = () => {
-    this.state.animatedPostTypesX.setValue(0);
-    this.state.animatedPostTypesOpacity.setValue(0);
-    this.state.animatedPostConfigY.setValue(0);
-    this.state.animatedPostConfigOpacity.setValue(0);
-    this.state.animatedPostConfigHeight.setValue(0);
-
-    this.props.setPostPage({
-      postContainerPosition: 'absolute',
-      postConfigShowing: false,
-      postSubmitFormShowing: false
-    });
-
-    this.props.navigateOverlay({
-      name: NEW_POST,
-      styles: FeedStyles.userFeedPage,
-      type: PAGE
-    });
-  }
-
-  navigatePage = (config) => {
-    this.props.navigateOverlay({
-      ...config,
-      name: NEW_POST,
-      enableBackButton: config.enableBackButton,
-      backButtonFn: () => config.backButtonFn(),
-      styles: FeedStyles.userFeedPage,
-      type: PAGE
-    });
-  }
-
-  handlePostPage = (config) => {
-    Animated.parallel([
-      postAnimationFn(this.state.animatedPostTypesX),
-      postAnimationFn(this.state.animatedPostTypesOpacity),
+	cameraOptionPressed = () => {
+		Animated.parallel([
+      selectPostAnimationFn(this.state.animatedPostTypesOpacity)
     ]).start(() => {
-      if(config.noOptions){
-        this.props.setPostPage({
-          ...config,
-          postConfigShowing: true,
-          postSubmitFormShowing: true
-        });
-
-        this.navBackToPostTypes();
-      }
-      else{
-        //allow container to handle animation
-        this.props.setPostPage({
-          ...config,
-          postContainerPosition: 'relative',
-          postConfigShowing: true
-        });
-
-        Animated.parallel([
-          postAnimationFn(this.state.animatedPostConfigHeight),
-          postAnimationFn(this.state.animatedPostConfigY),
-          postAnimationFn(this.state.animatedPostConfigOpacity),
-        ]).start(this.navBackToPostTypes);
-      }
+    	this.setState({cameraOptionSelected: true});
     });
+	}
+
+	textOptionPressed = () => {
+		this.goToSubmitPost(TEXT_OPTION_CONFIG);
+	}
+
+	submitPostBackButtonFn = () => {
+		this.props.closeOverlay();
+	}
+
+	picturePostMediaCallback = (media) => {
+    this.goToSubmitPost({
+    	enableBackButton: true,
+    	mediaUri: (media ? media.uri : null),
+    	backButtonFn: this.submitPostBackButtonFn,
+    	captionPlaceholder: PICTURE_OPTION_CONFIG.captionPlaceholder
+    });
+
+    this.props.overlayInvisible(false);
   }
 
-  mediaConfig = () => {
-    return ((this.props.cameraType === PICTURE_CAMERA) ? PICTURE_OPTION_CONFIG : VIDEO_OPTION_CONFIG);
-  }
+	takePicturePressed = () => {
+		this.props.overlayInvisible(true);
 
-  mediaCloseCallbackConfig = () => {
-    return {
-      enableBackButton: true,
-      backButtonFn: this.backToPostTypes,
-      config: {
-        ...this.mediaConfig(),
-        ...POST_CONFIG_OPTIONS
-      }
-    };
-  }
-
-  mediaCallbackConfig = (media) => {
-    return {
-      enableBackButton: true,
-      backButtonFn: () => {
-        this.props.setPostPage({
-          ...this.mediaConfig(),
-          ...POST_CONFIG_OPTIONS
-        });
-
-        this.navBackToPostTypes();
-      },
-      config: {
-        mediaUri: (media ? media.uri : null),
-        captionPlaceholder: MEDIA_TEXT_INPUT_PLACEHOLDER,
-        postSubmitFormShowing: true,
-        postConfigShowing: true
-      }
-    };
-  }
-
-  cameraOptionPressed = () => {
-    this.props.overlayInvisible(true);
-
-    this.props.showCamera(this.props.cameraType, (media) => {
-      this.navigatePage(this.mediaCallbackConfig(media));
-      this.props.overlayInvisible(false);
-    }, closeCallback => {
-      this.navigatePage(this.mediaCloseCallbackConfig());
+		//can't use showOverlay() due to style needs of camera not working with Page
+    this.props.showCamera(true, this.picturePostMediaCallback, closeCallback => {
       this.props.overlayInvisible(false);
     });
-  }
+	}
 
-  galleryOptionPressed = () => {
-    this.props.showOverlay({
+	chooseFromGalleryPressed = () => {
+		this.props.showOverlay({
       name: GALLERY,
-      galleryType: this.props.galleryType,
+      galleryType: PICTURE_OPTION_CONFIG.galleryType,
       type: PAGE,
-      mediaCallback: (media) => {
-        this.navigatePage(this.mediaCallbackConfig(media));
-      },
-      closeCallback: () => {
-        this.navigatePage(this.mediaCloseCallbackConfig());
-      }
+      mediaCallback: this.picturePostMediaCallback,
+      errorCallback: () => {}
     });
-  }
+	}
 
-  expandPostMediaPressed = () => {
+	goToSubmitPost = (config) => {
+		this.props.showOverlay({
+			...config,
+      name: SUBMIT_POST,
+      styles: FeedStyles.userFeedPage,
+      type: PAGE,
+      enableBackButton: true,
+      hideCloseButton: true,
+     	backButtonFn: this.submitPostBackButtonFn
+    });
+	}
 
-  }
+	render(){
+		return (
+			<>
+	        <Text style={PageStyles.title}>NEW POST</Text>
 
-  //CREATE ANON USER WHEN POST
-  //ALL POSTS PRIVATE (SELECTED AND DISABLED W MSGING) UNTIL SIGN UP
-  //DEFAULT TO PUBLIC AFTER SIGN UP WITH DIFF MSGING
-  //WOULD HAVE TO GO BACK AND PUBLIC-IZE POSTS PRE-SIGN UP
-  //HAVE TOGGLE IN SETTINGS TO SET ALL PUBLIC/SET ALL PRIVATE
+	        <>
+	          <View>
+	            <Text style={PostStyles.prompt}>Morbi convallis orci sed bibendum enim?</Text>
+	          </View>
+	        
+	          <View style={PostStyles.postTypeContainer}>
+	            <TouchableOpacity 
+	              style={PostStyles.postType} 
+	              onPress={() => this.textOptionPressed()}
+	            >
+	              <Animated.View style={[PostStyles.postTypeIconContainer, {opacity: this.state.postTypesOpacity}]}>
+	              	<Icon style={PostStyles.postTypeIcon} name="text-fields"/>
+	              </Animated.View>
+	            </TouchableOpacity>
 
-  //CAPTION/TEXT => PRSITINE -> BORDER THEN AFTER GOING IN COMING OUT NO BORDER UNLESS EDITING (FOCUSED)...NO SAVE BUTTON
+	            <TouchableOpacity 
+	              style={PostStyles.postType} 
+	              onPress={() => this.cameraOptionPressed()}
+	            >
+	              <Animated.View style={PostStyles.postTypeIconContainer}>
+	                <Icon style={PostStyles.postTypeIcon} name="photo-camera"/>
+	              </Animated.View>
+	            </TouchableOpacity>
 
-  //CHANGE MAG GLASS TO FOUR CORNER LINES
+	            <TouchableOpacity 
+	              style={PostStyles.postType}
+	              onPress={() => {}}
+	            >
+	              <Animated.View style={[PostStyles.postTypeIconContainer, {opacity: this.state. postTypesOpacity}]}>
+	                <Image style={PostStyles.postTypeImage} source={require('../assets/media.png')}/>
+	              </Animated.View>
+	            </TouchableOpacity>
+	          </View>
 
-  render() {
-    const postConfigTop = (POST_PAGE_INITIAL_TOP + FINAL_OVERLAY_Y);
-
-    let postConfigStyles = {
-      opacity: 1,
-      height: POST_PAGE_FINAL_HEIGHT,
-      transform: [{translateY: 0}],
-      top: postConfigTop
-    };
-
-    //DOESN'T WORK OTHER WAY AROUND
-    if(!this.props.fromBackNav){
-      postConfigStyles.opacity = this.state.postConfigOpacity;
-      postConfigStyles.height = this.state.postConfigHeight;
-      postConfigStyles.transform = [{translateY: this.state.postConfigY}];
-      postConfigStyles.top = POST_PAGE_INITIAL_TOP;
-    }
-
-    return (
-      <>
-        <Text style={PageStyles.title}>NEW POST</Text>
-
-        {!this.props.postConfigShowing &&
-          <>
-            <Animated.View style={[
-              {transform: [{translateX: this.state.postTypesX}]},
-              {opacity: this.state.postTypesOpacity}
-            ]}>
-              <Text style={PostStyles.prompt}>Morbi convallis orci sed bibendum enim?</Text>
-            </Animated.View>
-          
-            <Animated.View style={[
-              PostStyles.postTypeContainer,
-              {transform: [{translateX: this.state.postTypesX}]},
-              {opacity: this.state.postTypesOpacity}
-            ]}>
-              <TouchableOpacity 
-                style={PostStyles.postType} 
-                onPress={() => this.handlePostPage({
-                  noOptions: true,
-                  captionPlaceholder: TEXT_INPUT_PLACEHOLDER,
-                  noPreview: true
-                })}
-              >
-                <View style={PostStyles.postTypeIconContainer}>
-                  <Image style={PostStyles.postTypeIcon} source={require('../assets/text.png')}/>
-                </View>
-                <Text style={PostStyles.optionLabel}>Text</Text>
-              </TouchableOpacity>
-
-              <TouchableOpacity 
-                style={PostStyles.postType} 
-                onPress={() => this.handlePostPage(PICTURE_OPTION_CONFIG)}
-              >
-                <View style={PostStyles.postTypeIconContainer}>
-                  <Image style={PostStyles.postTypeIcon} source={require('../assets/camera.png')}/>
-                </View>
-                <Text style={PostStyles.optionLabel}>Picture</Text>
-              </TouchableOpacity>
-
-              <TouchableOpacity 
-                style={PostStyles.postType} 
-                onPress={() => this.handlePostPage(VIDEO_OPTION_CONFIG)}
-              >
-                <View style={PostStyles.postTypeIconContainer}>
-                  <Image style={PostStyles.postTypeIcon} source={require('../assets/video.png')}/>
-                </View>
-                <Text style={PostStyles.optionLabel}>Video</Text>
-              </TouchableOpacity>
-
-              <TouchableOpacity 
-                style={PostStyles.postType}
-                onPress={() => this.handlePostPage({
-                  optionURL: true,
-                  captionPlaceholder: URL_INPUT_PLACEHOLDER
-                })}
-              >
-                <View style={PostStyles.postTypeIconContainer}>
-                  <Image style={PostStyles.postTypeIcon} source={require('../assets/media.png')}/>
-                </View>
-                <Text style={PostStyles.optionLabel}>Social Media</Text>
-              </TouchableOpacity>
-
-              <TouchableOpacity 
-                style={PostStyles.postType}>
-                <View style={PostStyles.postTypeIconContainer}>
-                  <Image style={PostStyles.postTypeIcon} source={require('../assets/microphone.png')}/>
-                </View>
-                <Text style={PostStyles.optionLabel}>Audio (+UPLOAD?)</Text>
-              </TouchableOpacity>
-            </Animated.View>
-          </>
-        }
-
-        {!this.props.postSubmitFormShowing &&
-          <Animated.View style={[
-            PostStyles.postConfigContainer,
-            {position: this.props.postContainerPosition},
-            postConfigStyles
-          ]}>
-            {this.props.optionButtons &&
-              <>
-                <Text style={[PostStyles.prompt, PostStyles.postConfigContainerPrompt]}>Mauris eleifend leo faucibus?</Text>
-
-                <View style={PostStyles.optionButtonContainer}>
-                  <TouchableOpacity 
-                    style={PostStyles.optionButton}
-                    onPress={() => this.cameraOptionPressed()}>
-                      <Text style={PostStyles.optionButtonLabel}>TAKE {this.props.optionLabelCameraType}</Text>
-                  </TouchableOpacity>
-
-                  <TouchableOpacity
-                    style={PostStyles.optionButton}
-                    onPress={() => this.galleryOptionPressed()}>
-                      <Text style={PostStyles.optionButtonLabel}>CHOOSE {this.props.optionLabelCameraType}</Text>
-                  </TouchableOpacity>
-                </View>
-              </>
-            }
-
-            {this.props.optionURL &&
-              <>
-                <Text style={[PostStyles.prompt, PostStyles.postConfigContainerPrompt]}>Donec pharetra nisi a sagittis?</Text>
-
-                <View style={[PostStyles.inputBar, PostStyles.urlInputBar]}>
-                  <TextInput style={PostStyles.inputBarText} placeholder={URL_INPUT_PLACEHOLDER}/>
-                </View>
-              </>
-            }
-          </Animated.View>
-        }
-
-        <>
-          {this.props.postSubmitFormShowing &&
-            <>
-              <View style={[PostStyles.postSubmitFormUpperContainer, upperContainerStyles(this.props)]}>
-                {this.props.mediaUri &&
-                  <View style={PostStyles.postImageContainer}>
-                    <Image style={PostStyles.postImage} source={{uri: this.props.mediaUri}}/>
-
-                    <TouchableOpacity onPress={() => this.expandPostMediaPressed()} style={PostStyles.expandMediaContainer}>
-                        <Image source={require('../assets/magnifyingGlass.png')} style={PostStyles.expandMedia}/>
-                    </TouchableOpacity>
-                  </View>
-                }
-
-                <View style={[PostStyles.captionBar, captionBarStyles(this.props)]}>
-                  <TextInput style={PostStyles.caption} placeholder={this.props.captionPlaceholder} multiline={true}/>
-                </View>
-              </View>
-
-              <Text style={PostStyles.configTitle}>POST VISIBILITY</Text>
-
-              <View style={PostStyles.postVisiblityButtonContainer}>
-                <TouchableOpacity
-                  style={[PostStyles.optionButton, PostStyles.postVisiblityButton, {backgroundColor: 'black'}]}
-                  onPress={() => null}>
-                    <Text style={[PostStyles.optionButtonLabel, PostStyles.postVisiblityButtonLabel, {color: 'white'}]}>PRIVATE</Text>
+	          {this.state.cameraOptionSelected &&
+	            <View style={PostStyles.optionButtonContainer}>
+                <TouchableOpacity 
+                  onPress={() => this.takePicturePressed()}>
+                    <Text style={PostStyles.optionLabel}>TAKE PICTURE OR VIDEO</Text>
                 </TouchableOpacity>
 
+                <View style={PostStyles.optionDivider}></View>
+
                 <TouchableOpacity
-                  style={[PostStyles.optionButton, PostStyles.postVisiblityButton]}
-                  onPress={() => null}>
-                    <Text style={[PostStyles.optionButtonLabel, PostStyles.postVisiblityButtonLabel]}>PUBLIC</Text>
+                  onPress={() => this.chooseFromGalleryPressed()}>
+                    <Text style={PostStyles.optionLabel}>GALLERY</Text>
                 </TouchableOpacity>
-              </View>
-
-              <Text style={PostStyles.configTitle}>TAGS</Text>
-
-              <View style={PostStyles.inputBar}>
-                <TextInput style={PostStyles.inputBarText} placeholder={TAG_PLACEHOLDER}/>
-              </View>
-
-              <TouchableOpacity
-                style={[PostStyles.optionButton, PostStyles.submitButton, {backgroundColor: 'black'}]}
-                onPress={() => null}>
-                  <Text style={[PostStyles.optionButtonLabel, PostStyles.postVisiblityButtonLabel, {color: 'white'}]}>POST</Text>
-              </TouchableOpacity>
-            </>
-          }
-        </>
-      </>
+	            </View>
+	          }
+	        </>
+	    </>
     );
-  }
+	}
 }
 
+
 function mapStateToProps(state){
-  return {
-    ...state.post.page,
-    currentPage: getCurrentPage(),
-    currentCamera: state.camera.currentCamera
-  }
+  return {}
 }
 
 const mapDispatchToProps = {
   showOverlay,
-  showCamera,
   closeOverlay,
-  overlayInvisible,
-  setPostPage,
-  navigateOverlay
+ 	showCamera,
+ 	overlayInvisible
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(NewPost);
