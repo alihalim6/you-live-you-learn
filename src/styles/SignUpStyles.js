@@ -1,3 +1,4 @@
+import {StyleSheet} from 'react-native';
 import {
 	appFontBold,
 	appFont, 
@@ -16,7 +17,7 @@ const credentialsFieldPaddingTop = (isIOS ? 4 : 10);
 const credentialsMessageFontSize = 12;
 const transitionBarTop = (isIOS ? 65: 74);
 
-const SignUpStyles = {
+const SignUpStyles = StyleSheet.create({
 	title: {
 	  marginBottom: 22
 	},
@@ -107,6 +108,6 @@ const SignUpStyles = {
 	signInStyles: {
 		height: 'auto'
 	}
-};
+});
 
 export default SignUpStyles;

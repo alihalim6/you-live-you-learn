@@ -1,7 +1,7 @@
 import React from 'react';
 import {View, Text, Image} from 'react-native';
 import {version} from '../../package.json';
-import {PageStyles} from '../styles/PageStyles';
+import PageStyles from '../styles/PageStyles';
 import AboutStyles from '../styles/AboutStyles';
 
 export default function About(){

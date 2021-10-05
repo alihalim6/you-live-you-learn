@@ -6,8 +6,7 @@ import {
   BORDER_RADIUS,
   BORDER_WIDTH, 
   LIGHT_GRAY,
-  isIOS,
-  getRandomDarkColor
+  isIOS
 } from '../constants/AppConstants';
 
 function setBorder(item){
@@ -18,8 +17,8 @@ function setBorder(item){
   }
 }
 
-const closeButtonContainerSize = 40;
 const itemPaddingLeftRight = 30;
+const closeButtonPadding = 4;
 
 const PopupStyles = StyleSheet.create({
   container: {
@@ -35,8 +34,8 @@ const PopupStyles = StyleSheet.create({
   item: {
     paddingLeft: itemPaddingLeftRight,
     paddingRight: itemPaddingLeftRight,
-    paddingTop: 17,
-    paddingBottom: 13,
+    paddingTop: 13,
+    paddingBottom: 9,
     minWidth: 226
   },
   label: {
@@ -46,16 +45,11 @@ const PopupStyles = StyleSheet.create({
     color: BASE_COLOR_DARK,
     //backgroundColor: 'orange'
   },
-  touchableClose: {
-    alignSelf: 'flex-end',
-    width: 60,
-    height: 40
-  },
   closeButton: {
-    backgroundColor: getRandomDarkColor(),
-    top: 8,
-    right: 26,
-    height: 32
+    alignSelf: 'flex-end',
+    fontSize: 36,
+    paddingTop: closeButtonPadding,
+    paddingRight: closeButtonPadding
   },
   camera: {
     height: '100%'

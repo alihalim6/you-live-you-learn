@@ -22,8 +22,7 @@ const ProfileImageStyles = StyleSheet.create({
 	  marginTop: 24
   },
   camera: {
-    width: 32,
-    height: 26
+    fontSize: 32
   }
 });
 

@@ -1,11 +1,7 @@
 /assets/
-  camera.png: by IYIKON <https://pngtree.com>
-
   brain.png: Tumblr Nylngfjbpk1uh0am0o1 - Brain Icon Png <https://www.clipartmax.com/middle/m2i8K9H7d3m2m2G6_tumblr-nylngfjbpk1uh0am0o1-brain-icon-png/>
   
   following_brain.png: by Wuilki <https://www.cleanpng.com/png-computer-icons-user-profile-symbol-person-vector-1327520/>
-
-  video.png: Video Cam Icon Outline Png - <https://www.clipartmax.com/middle/m2i8H7N4A0G6b1m2_video-camera-svg-png-icon-free-download-video-cam-icon-outline-png/>
 
   twitter logo: Twitter Logo Png File Clipart <https://www.pikpng.com/pngvi/TxhbmJ_white-twitter-logo-transparent-transparent-background-twitter-logo/>
 
@@ -16,3 +12,5 @@
   facebook logo: Facebook Logo Png <https://www.pinclipart.com/pindetail/iTmmm_download-transparent-background-facebook-logo-clipart-facebook-logo/>
 
   microphone logo: <https://www.picpng.com/image/mic-microphone-icon-png-56814>
+
+  lock: <https://www.cleanpng.com/png-computer-icons-security-hacker-computer-security-u-5838786>

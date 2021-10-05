@@ -8,6 +8,7 @@ import {
   Text, 
   TouchableOpacity
 } from 'react-native';
+import Icon from 'react-native-vector-icons/MaterialIcons';
 import ProfileImageStyles from '../styles/ProfileImageStyles';
 import Popup from './Popup';
 import {showOverlay} from '../redux/actions/OverlayActions';
@@ -27,7 +28,7 @@ class ProfileImage extends Component{
 
     this.props.showOverlay({
       ...popupConfig,
-      defaultPositioning: (this.props.currentPage && (this.props.currentPage.name === SIGN_UP)),
+      defaultPositioning: (this.props.currentPage ? (this.props.currentPage.name === SIGN_UP) : false),
       type: POPUP
     });
   }
@@ -39,7 +40,7 @@ class ProfileImage extends Component{
           <Text style={ProfileImageStyles.you}>YOU</Text>
         }
 
-        <Image style={ProfileImageStyles.camera} source={require('../assets/camera.png')} accessible={true} accessibilityLabel={CAMERA_ICON_A11Y_LABEL}/>
+        <Icon style={ProfileImageStyles.camera} name="photo-camera" accessible={true} accessibilityLabel={CAMERA_ICON_A11Y_LABEL}/>
       </View>
     );
 

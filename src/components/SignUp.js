@@ -9,7 +9,7 @@ import {
   Keyboard
 } from 'react-native';
 import {connect} from 'react-redux';
-import {PageStyles} from '../styles/PageStyles';
+import PageStyles from '../styles/PageStyles';
 import SignUpStyles from '../styles/SignUpStyles';
 import {signUpUser, signInUser} from '../services/UserService';
 import ProfileImage from './ProfileImage';
@@ -48,7 +48,10 @@ import {
   TRANSLATEY_ANIM_DELAY,
   SIGN_IN_TITLE_Y,
   CHANGE_TITLE_ANIM_DELAY,
-  PAGE_HEIGHT
+  PAGE_HEIGHT,
+  SIGN_IN_PROMPT_A11Y_LABEL,
+  SIGN_IN_BUTTON_A11Y_LABEL,
+  SIGN_UP_TITLE_A11Y_LABEL
 } from '../constants/SignUpConstants';
 import {showBanner} from '../redux/actions/BannerActions';
 import {closeOverlay, showOverlay, navigateOverlay} from '../redux/actions/OverlayActions';
@@ -216,11 +219,10 @@ class SignUp extends Component{
 
   signInCredentialsValid = () => {
     const credentials = [this.state.username, this.state.password];
-    let allValid = true;
 
-    credentials.forEach(credential => {
-      allValid = ((allValid && credential.value) ? true : false);
-    });
+    const allValid = credentials.reduce((valid, credential) => {
+      return !!(valid && credential.value);
+    }, true);
 
     return allValid;
   }
@@ -246,7 +248,7 @@ class SignUp extends Component{
     this.state.animatedSignInTitleY.setValue(0);
   }
 
-  signInTextPressed = () => {
+  signInPromptPressed = () => {
     this.setState({signInShowing: true});
 
     //clear out field in case it has a value on sign in press (which hides field), then user presses back to sign up (re-shown empty on iOS)
@@ -263,7 +265,7 @@ class SignUp extends Component{
       signInAnimationFn(this.state.animatedSignInOpacity, TRANSLATEY_ANIM_DELAY),
       signInAnimationFn(this.state.animatedSignInTitleY, TRANSLATEY_ANIM_DELAY)
     ]).start(() => {
-            //make height auto
+      //make height auto
       this.props.navigateOverlay({
         name: SIGN_UP,
         styles: SignUpStyles.signInStyles,
@@ -329,7 +331,7 @@ class SignUp extends Component{
   	return (
   	  <Animated.View style={{height: this.state.pageHeight}}>
         {!this.state.signInTitleShowing &&
-    	    <Text style={[PageStyles.title, SignUpStyles.title]}>
+    	    <Text style={[PageStyles.title, SignUpStyles.title]} accessible={true} accessibilityLabel={SIGN_UP_TITLE_A11Y_LABEL}>
             SIGN UP
           </Text>
         }
@@ -370,7 +372,7 @@ class SignUp extends Component{
           ]}>
     	      <ProfileImage cameraOnly={true} defaultPositioning={true}/>
 
-            <TouchableOpacity onPress={() => this.signInTextPressed()}>
+            <TouchableOpacity onPress={() => this.signInPromptPressed()} accessible={true} accessibilityLabel={SIGN_IN_PROMPT_A11Y_LABEL}>
       	      <Text style={SignUpStyles.prompt}>
                 Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt. Ut labore? <Text style={SignUpStyles.signInText}>SIGN IN</Text>
               </Text>
@@ -435,7 +437,9 @@ class SignUp extends Component{
             <Animated.View style={{opacity: this.state.signInOpacity}}>
               <TouchableOpacity 
                 style={SignUpStyles.submitButton}
-                onPress={() => this.signInPressed()}>
+                onPress={() => this.signInPressed()}
+                accessible={true}
+                accessibilityLabel={SIGN_IN_BUTTON_A11Y_LABEL}>
                   <Text style={SignUpStyles.signUpLabel}>SIGN IN</Text>
               </TouchableOpacity>
             </Animated.View>

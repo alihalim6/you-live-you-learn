@@ -1,0 +1,11 @@
+leaving off here 10/5/21 ~noon:
+-working on camera functionality for New Posts => error 'Video is not recroding' when trying to recrod video (press and hold button)
+-taking a pic and seeing preview and going back to camera to 'retake it' works; pressing checkmark to use pic taking you to Submit Post works but I don't think it properly brings in picture to Submit Post page
+-social media option for New Post not implemented
+-gallery is working fine for profile pic and New Post
+-idea to flip feed headers (see label for current feed category instead of icon, and icon for other feeds) not done but just thougt of recently
+-all else pretty much just stubbed out in terms of functionality
+-last testing was on real iphone; I think ios emulator works; last status for android emulator was issue with build I believe.  Been long since tested on real android.
+	-by time get back to this (if ever), things may be broken due to outdated libraries and/or react native iteself; mac OS upgrade may be needed like was needed earlier this year, which was hell to get app back working after upgrading.  Who knows?
+	-YL2* under Development folder on mac folder is the pre-upgrade application fyi
+-now checking in code copied from YL2 folder to you-live-you-learn (git folder)

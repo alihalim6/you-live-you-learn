@@ -8,22 +8,29 @@ import {
 	KeyboardAvoidingView, 
 	SafeAreaView
 } from 'react-native';
+import Icon from 'react-native-vector-icons/MaterialIcons';
 import {randomColor} from 'randomcolor';
 import {connect} from 'react-redux';
 import {closeOverlay} from '../redux/actions/OverlayActions';
-import {PageStyles, closeButtonOneStyle, closeButtonTwoStyle} from '../styles/PageStyles';
+import PageStyles from '../styles/PageStyles';
 import About from './About';
 import SignUp from './SignUp';
 import Gallery from './Gallery';
 import NewPost from './NewPost';
+import SubmitPost from './SubmitPost';
 import {
   SIGN_UP,
   ABOUT,
   isIOS,
   getRandomDarkColor,
-  NEW_POST
+  NEW_POST,
+  PAGE_CLOSE_BUTTON_A11Y_LABEL,
+  SUBMIT_POST,
+  booleanToNumber
 } from '../constants/AppConstants';
 import {GALLERY} from '../constants/CameraConstants';
+import {RECORD_AUDIO} from '../constants/PostConstants';
+import RecordAudio from '../components/RecordAudio';
 
 class Page extends Component{
   state = {
@@ -44,9 +51,11 @@ class Page extends Component{
 
   render(){
 //  TODO: HANDLE ROTATION OF DEVICE (PAGE SHRINKS AND MOVES) (see supportedOrientations on Modal API?)
+// iOS DOESN'T EVEN ROTATE?
 
   	const keyboardAvoidingBehavior = (isIOS ? 'padding' : 'height');
     const enableBackButton = this.props.page.enableBackButton;
+    const hideCloseButton = this.props.page.hideCloseButton;
     const disableKeyboardAvoidingView = this.props.page.disableKeyboardAvoidingView;
 
   	return (
@@ -64,23 +73,28 @@ class Page extends Component{
                 {(this.props.page.name === ABOUT) && <About/>}
                 {(this.props.page.name === SIGN_UP) && <SignUp/>}
                 {(this.props.page.name === NEW_POST) && <NewPost/>}
-  			 		  </ScrollView>
+                {(this.props.page.name === SUBMIT_POST) && <SubmitPost/>}
+              </ScrollView>
             }
 
             {(this.props.page.name === GALLERY) && <Gallery/>}
 
-            {enableBackButton &&
-              <TouchableOpacity onPress={() => this.backArrowPressed()} style={[PageStyles.pageButton, PageStyles.backButton]}>
-                <View style={[PageStyles.arrowOneStyle, {backgroundColor: this.state.pageButtonColor}]}></View>
-                <View style={[PageStyles.arrowTwoStyle, {backgroundColor: this.state.pageButtonColor}]}></View>
-                <View style={[PageStyles.arrowThreeStyle, {backgroundColor: this.state.pageButtonColor}]}></View>
+            <View style={PageStyles.buttonContainer}>
+              <TouchableOpacity onPress={() => this.backArrowPressed()}>
+                <Icon style={[PageStyles.pageButton, PageStyles.backButton, {opacity: booleanToNumber(enableBackButton)}]} name="west" color={this.state.pageButtonColor}/>
               </TouchableOpacity>
-            }
-
-            <TouchableOpacity onPress={() => this.closeButtonPressed()} style={[PageStyles.overlayButton, PageStyles.closeButton]}>
-              <View style={[closeButtonOneStyle, {backgroundColor: this.state.pageButtonColor}]}></View>
-              <View style={[closeButtonTwoStyle, {backgroundColor: this.state.pageButtonColor}]}></View>
-            </TouchableOpacity>
+                  
+              
+              {!hideCloseButton &&
+                <TouchableOpacity 
+                  onPress={() => this.closeButtonPressed()} 
+                  accessible={true}
+                  accessibilityLabel={PAGE_CLOSE_BUTTON_A11Y_LABEL}
+                >
+                  <Icon style={PageStyles.closeButton} name="close" color={this.state.pageButtonColor}/>
+                </TouchableOpacity>
+              }
+            </View>
           </SafeAreaView>
         </KeyboardAvoidingView>
       </Modal>

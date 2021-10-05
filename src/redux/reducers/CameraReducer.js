@@ -5,7 +5,7 @@ export default function(state = {}, action){
   	case types.CAMERA_SHOWING :
   	  return {
         ...state, 
-        currentCamera: action.camera,
+        cameraShowing: action.cameraShowing,
         mediaCallback: action.mediaCallback,
         closeCallback: action.closeCallback
       };

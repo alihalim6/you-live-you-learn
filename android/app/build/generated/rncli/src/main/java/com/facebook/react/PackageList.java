@@ -11,20 +11,18 @@ import com.facebook.react.shell.MainReactPackage;
 import java.util.Arrays;
 import java.util.ArrayList;
 
-// @react-native-community/async-storage
+// @react-native-async-storage/async-storage
 import com.reactnativecommunity.asyncstorage.AsyncStoragePackage;
-// @react-native-community/blur
-import com.cmcewen.blurview.BlurViewPackage;
 // @react-native-community/cameraroll
 import com.reactnativecommunity.cameraroll.CameraRollPackage;
-// @react-native-community/masked-view
-import org.reactnative.maskedview.RNCMaskedViewPackage;
 // react-native-camera
 import org.reactnative.camera.RNCameraPackage;
 // react-native-gesture-handler
 import com.swmansion.gesturehandler.react.RNGestureHandlerPackage;
+// react-native-pager-view
+import com.reactnativepagerview.PagerViewPackage;
 // react-native-permissions
-import com.reactnativecommunity.rnpermissions.RNPermissionsPackage;
+import com.zoontek.rnpermissions.RNPermissionsPackage;
 // react-native-reanimated
 import com.swmansion.reanimated.ReanimatedPackage;
 // react-native-safe-area-context
@@ -81,11 +79,10 @@ public class PackageList {
     return new ArrayList<>(Arrays.<ReactPackage>asList(
       new MainReactPackage(mConfig),
       new AsyncStoragePackage(),
-      new BlurViewPackage(),
       new CameraRollPackage(),
-      new RNCMaskedViewPackage(),
       new RNCameraPackage(),
       new RNGestureHandlerPackage(),
+      new PagerViewPackage(),
       new RNPermissionsPackage(),
       new ReanimatedPackage(),
       new SafeAreaContextPackage(),
