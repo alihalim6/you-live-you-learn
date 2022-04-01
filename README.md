@@ -1,3 +1,3 @@
 Social learning app built with React Native, Redux, Jest, Firebase Auth, and Node.js. App is still in development.
-<img src="https://res.cloudinary.com/develpement/image/upload/v1648838503/yl2/sign_in_s00chi.gif" width="320" height="585"/><br>
-<img src="https://res.cloudinary.com/develpement/image/upload/v1599760671/yl2/signed_in_gppwd3.gif" width="320" height="585"/><br><img src="https://res.cloudinary.com/develpement/image/upload/v1599760671/yl2/new_post_ujw5jo.gif" width="320" height="585"/>
+<img src="https://ik.imagekit.io/alihalim/sign_in_72-kicUR7.gif?ik-sdk-version=javascript-1.4.3&updatedAt=1648843025227" width="320" height="585"/><br>
+<img src="https://ik.imagekit.io/alihalim/new_post_xDYT4jkMJ.gif?ik-sdk-version=javascript-1.4.3&updatedAt=1648843039467" width="320" height="585"/><br><img src="https://ik.imagekit.io/alihalim/new_post_xDYT4jkMJ.gif?ik-sdk-version=javascript-1.4.3&updatedAt=1648843039467" width="320" height="585"/>
